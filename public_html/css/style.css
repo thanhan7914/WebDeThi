@@ -9,7 +9,7 @@ body{
 }
 header{
 	margin-top: 10px;
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 }
 a{
 	color: #14928e;
@@ -46,6 +46,10 @@ a{
 	background: #ffffff;
 }
 
+.nav>li>a:focus, .nav>li>a:hover {
+	background-color: #34495e !important;
+}
+
 #myCarousel{
 	margin-top: 10px;
 }
@@ -64,7 +68,7 @@ ul li{
 }
 .footerbar{
 	height: 50px;
-	background-color:#14928e; 
+	background-color:#14928e;
 }
 h4{
 	line-height: 1.5;
@@ -72,7 +76,7 @@ h4{
 footer{
 	margin-top: 20px;
 	height: 200px;
-	background-color:#f1f1f1; 
+	background-color:#f1f1f1;
 }
 .contact{
 	margin-left: 15px;

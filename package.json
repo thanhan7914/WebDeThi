@@ -1,0 +1,28 @@
+{
+  "name": "webdethi",
+  "version": "1.0.0",
+  "description": "ranh roi vay thoi",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhan7914/WebDeThi.git"
+  },
+  "keywords": [
+    "de",
+    "thi",
+    "nodejs"
+  ],
+  "author": "than han",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhan7914/WebDeThi/issues"
+  },
+  "homepage": "https://github.com/thanhan7914/WebDeThi#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "serve-favicon": "^2.3.0"
+  }
+}
