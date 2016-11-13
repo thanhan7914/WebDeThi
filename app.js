@@ -16,4 +16,4 @@ server.listen(port, function(){
   console.log(`application run on port ${port}`);
 });
 
-app.get('/', require('./router').get);
+app.use(require('./router'));

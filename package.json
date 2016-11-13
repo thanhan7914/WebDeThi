@@ -23,6 +23,7 @@
   "homepage": "https://github.com/thanhan7914/WebDeThi#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "mongo-promise": "git+https://github.com/thanhan7914/mongo-promise.git",
     "serve-favicon": "^2.3.0"
   }
 }
