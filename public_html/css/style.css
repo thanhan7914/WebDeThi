@@ -130,7 +130,7 @@ hr{
 }
 /*login-page*/
 .body-login{
-	background: url("assets/images/photo_bg.jpg") no-repeat center center fixed;
+	background: url("/assets/images/photo_bg.jpg") no-repeat center center fixed;
 	background-size: cover;
 }
 
