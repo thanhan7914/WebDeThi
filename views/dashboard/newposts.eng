@@ -57,36 +57,18 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Newfeed</h1>
+				<h1 class="page-header">Newfeed > Posts</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
         <!-- hien thi tin tuc-->
-        <div class="col-md-8">
+        <div class="col-md-12">
           <div class="panel panel-default">
-            <div class="news">
-              <p><input type="checkbox" style="display: inline; margin: auto 6px;"><a href="#">Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</a></p>
-              <small><b>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</b></small>
-              <div class="tools"><a href="">Edit</a>|<a href="">Delete</a></div>
-            </div>
+
           </div>
 
        </div>
-       <div class="col-md-4">
-
-         <div class="panel panel-primary">
-           <div class="panel-heading">Tools</div>
-           <div class="panel-body">
-             <ul>
-               <li id="addnew" class="btn-newfeed">Add new</li>
-               <li id="chooseall" class="btn-newfeed">Choose all</li>
-               <li id="dischoose" class="btn-newfeed">Dischoose all</li>
-               <li id="delete" class="btn-newfeed">Delete rows</li>
-             </ul>
-           </div>
-         </div>
-			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 
@@ -94,9 +76,6 @@
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#addnew').click(function() {
-        location.href = 'newfeed?newposts';
-      });
     });
   </script>
 </body>
