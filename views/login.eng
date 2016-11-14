@@ -8,54 +8,78 @@
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/assets/css/animate.css">
-	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="/assets/css/style.css">
+	 <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
-<body>
-	<div class="container">
-		<div class="top">
-			<!-- <h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1> -->
-		</div>
-		<div class="login-box animated fadeInUp">
-			<div class="box-header">
-				<h2>Log In</h2>
-			</div>
-			<label for="username">Username</label>
-			<br/>
-			<input type="text" id="username">
-			<br/>
-			<label for="password">Password</label>
-			<br/>
-			<input type="password" id="password">
-			<br/>
-			<button type="submit">Sign In</button>
-			<br/>
-			<a href="#"><p class="small">Forgot your password?</p></a>
-		</div>
-	</div>
+<body class="body-login">
+
+	<div id="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                        <span class="sr-only">MENU</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand" style="color: #f1f1f1">FREE ACADEMY</a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">TRANG CHỦ</a></li>
+                        <li><a href="#">THƯ VIỆN</a></li>
+                        <li><a href="#">THI ONLINE</a></li>
+                        <li><a href="#">TIẾNG ANH</a></li>
+                        <li><a href="#">LIÊN LẠC</a></li>
+                    </ul>
+
+                    <form class="navbar-form navbar-right" method="post" >
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Tìm kiếm..">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+    	<div class="col-md-5 col-centered">
+    		<div class="login-box wrap">
+    			<div class="login-box">
+    				<h4 class="dangnhap" style="text-align: center;">ĐĂNG NHẬP</h4>
+    			</div>
+    			<div class="login-box title-box" style="text-align: center;">
+    				<label>TÀI KHOẢN</label>
+    			</div>
+    			<div class="login-box">
+    				<input class="login-box-input" type="text" name="">
+    			</div>
+    			<div class="login-box title-box">
+    				<label>MẬT KHẨU</label>
+    			</div>
+    			<div class="login-box">
+    				<input class="login-box-input"  type="text" name="">
+    			</div>
+    			<div class="login-box title-box">
+    				<small>Quên mật khẩu?</small>
+    			</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>   
+	
+
+
 </body>
 
-<script>
-	$(document).ready(function () {
-    	$('#logo').addClass('animated fadeInDown');
-    	$("input:text:visible:first").focus();
-	});
-	$('#username').focus(function() {
-		$('label[for="username"]').addClass('selected');
-	});
-	$('#username').blur(function() {
-		$('label[for="username"]').removeClass('selected');
-	});
-	$('#password').focus(function() {
-		$('label[for="password"]').addClass('selected');
-	});
-	$('#password').blur(function() {
-		$('label[for="password"]').removeClass('selected');
-	});
-</script>
+
 
 </html>

@@ -1,3 +1,4 @@
+/*home-page*/
 *{
 	margin: 0;
 	padding: 0;
@@ -127,6 +128,37 @@ div.container.news-content{
 hr{
  border-color: #14928e !important;
 }
-table td{
-	border: 1px solid #f1f1f1;
+/*login-page*/
+.body-login{
+	background: url("assets/images/photo_bg.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+.container>.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.login-box.title-box{
+	text-align: center !important;
+	color: #14928e;
+}
+.login-box-input{
+	margin-left: 140px !important;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.login-box.wrap{
+	margin-top: 30px;
+	border: 1px solid #14928e;
+	border-radius: 5px;
+	padding-bottom: 40px;
+	background-color: #f1f1f1;
+}
+.dangnhap{
+	background-color: #14928e;
+	padding-top: 10px;
+	margin-top: 0;
+	padding-bottom: 10px;
+	color: #ffffff;
 }
