@@ -33,7 +33,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.use(function(req, res) {
-  console.log('ext');
   res.render('dashboard/newposts');
 });
 
