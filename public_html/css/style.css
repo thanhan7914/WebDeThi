@@ -81,3 +81,51 @@ footer{
 .contact{
 	margin-left: 15px;
 }
+
+.checkbox label, .radio label {
+	color: #888;
+}
+.modal-header{
+   	background: #14928e;
+}
+
+.modal-dialog{
+	height: 260px !important;
+	width: 400px !important;
+}
+.btn-info{
+  	background: #14928e !important;
+}
+.modal-body{
+	margin-left: 10px;
+}
+.modal-footer{
+	border: none;
+	margin-right: 40px;
+}
+h4.title-header{
+	background-color: #14928e;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #ffffff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-top: 0;
+}
+div.col-md-4.gioithieu{
+	border: 1px solid #14928e;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+p.introduce-content{
+	margin-left: 5px;
+	height: 170px;
+}
+div.container.news-content{
+	margin-top: 20px;
+}
+hr{
+ border-color: #14928e !important;
+}
+/*login*/
+/*/**/

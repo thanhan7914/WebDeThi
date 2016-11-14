@@ -1,9 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', function(req, res) {
-  res.render('index', {title: 'co gi hot', name: 'hello world'});
+  res.render('dashboard/index.eng');
 });
-
-router.use(require('./login'));
 
 module.exports = router;

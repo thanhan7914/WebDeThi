@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/thanhan7914/WebDeThi#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-session": "^2.0.0-alpha.2",
     "express": "^4.14.0",
     "mongo-promise": "git+https://github.com/thanhan7914/mongo-promise.git",
     "serve-favicon": "^2.3.0"

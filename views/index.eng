@@ -35,12 +35,49 @@
                 <div class="login">
                     <div class="col-md-7 right text-right">
                         <div id="log-in">
-                            <a href="#">Đăng nhập</a> |
+                            <a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a> |
                             <a href="#">Đăng ký</a>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="container">
+                 <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                       <div class="modal-dialog">
+                         <!-- Modal content-->
+                         <div class="modal-content">
+                            <div class="modal-header">
+                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                 <h5 class="modal-title" text-align="center" style="color: #ffffff">ĐĂNG NHẬP</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                      <div class="form-group">
+                                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                                      </div>
+
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox"> Duy trì đăng nhập?
+                                        </label>
+                                      </div>
+                                      <button type="submit" class="btn btn-info">ĐĂNG NHẬP</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <p>Bạn chưa có tài khoản? Mời đăng ký <a href="#">TẠI ĐÂY</a> </p>
+                            </div>
+                         </div>
+
+                    </div>
+                </div>
         </header>
     </div>
 
@@ -119,46 +156,91 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                 <div id="gioithieu">
-                     <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <p>GIỚI THIỆU</p>
-                            </div>
-                        </div>
-
-                        <div class="panel-body">
-                            <p>FREE ACADEMY là trang học và luyện thi trực tuyến hoàn toàn miễn phí cho các bạn ôn thi đại học hoặc tốt nghiệp trung học phổ thông.<br>Với kho tài liệ lớn gồm các sách, bài giảng cho các môn cùng các bộ thi trắc nghiệm và tự luận được cập nhật liên tục.<br>Chúc các bạn thành công trên con đường của mình!
-                            </p>
-                        </div>
-                     </div>
-
+            <div class="col-md-4 gioithieu">
+                 <div id="introduce">
+                    <div class="row">
+                        <h4 class="title-header" style="text-align: center;">Giới Thiệu</h4>
+                    </div>
+                    <div class="row">
+                        <p style="text-align: left;" class="introduce-content">FREE ACADEMY là trang học và luyện thi trực tuyến hoàn toàn miễn phí cho các bạn ôn thi đại học hoặc tốt nghiệp trung học phổ thông.
+                        Với kho tài liệu lớn gồm các sách, bài giảng cho các môn cùng các bộ thi trắc nghiệm và tự luận được cập nhật liên tục.
+                        <br>Chúc các bạn thành công trên con đường của mình!</p>
+                    </div>
                  </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="home-news">
-                <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <p>BẢNG TIN</p>
+        <div class="container news-content">
+            <div class="news-content">
+                <table class="col-md-12">
+                    <thead><h4><a href="#" style="text-decoration: none;">TIN TỨC</a></h4></thead>
+                    <hr >
+                    <tr>
+                        <td valign="top">
+                            <div class="col-md-6">
+                                <a href="#"><img src="assets/images/news.png"></a>
                             </div>
-                        </div>
+                        </td>
+                        <td valign="top">
+                            <div class="row" >
+                                <div class="col-md-8">
+                                    <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
+                                    <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="assets/images/news1.png">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
+                                    <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
 
-                        <div class="panel-body">
-                            <p>phúc chó an chó đạt chó vkl
-                            </p>
-                        </div>
-                     </div>
-
+                                </div>
+                                <div class="col-md-4 ">
+                                    <img src="assets/images/news1.png">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
 
         <div class="container">
+            <div class="news-document">
+                <table>
+                    <thead>
+                        <h4>ĐỀ THI MỚI</h4>
+                        <hr>
+                    </thead>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+         <div class="container">
+            <div class="news-document">
+                <table>
+                    <thead>
+                        <h4>TÀI LIỆU MỚI</h4>
+                        <hr>
+                    </thead>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="container">
             <div class="danhmuc-header">
-                    <a href="#"><h4>DANH MỤC</h4></a>
+                    <h4>DANH MỤC</h4>
             </div>
             <div class="danhmuc">
                 <div class="row">
