@@ -35,8 +35,7 @@
                 <div class="login">
                     <div class="col-md-7 right text-right">
                         <div id="log-in">
-                            <a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a> |
-                            <a href="#">Đăng ký</a>
+                          <eng data=login>
                         </div>
                     </div>
                 </div>
@@ -218,15 +217,15 @@
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_208190179.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_220852665.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
-                    <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_305983931.png"></a></div> <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div> 
+                    <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_305983931.png"></a></div> <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
                 </div>
             </div>
 
@@ -238,17 +237,17 @@
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_208190179.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_220852665.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_305983931.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
             </div>
         </div>
@@ -269,17 +268,17 @@
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_208190179.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_220852665.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_305983931.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
             </div>
             <div class="row">
@@ -290,23 +289,23 @@
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_208190179.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_220852665.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_305983931.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
-                    
+
                 </div>
             </div>
 
 
         </div>
-        
+
 
         <div class="container">
             <div class="danhmuc-header">

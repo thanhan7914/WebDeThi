@@ -65,7 +65,7 @@
         <!-- hien thi tin tuc-->
         <div class="col-md-12">
           <div class="panel panel-default">
-            <form>
+            <form class="newposts" method="post" action="">
               <div class="form-group">
                 <label for="fd_title">Title:</label>
                 <input type="text" class="form-control" id="fd_title" name="fd_title">
@@ -74,6 +74,15 @@
                 <label for="fd_content">Content:</label>
                 <textarea class="form-control" rows="15" name="fd_content" id="fd_content"></textarea>
               </div>
+							<div class="form-group">
+								<label for="fd_des">Description:</label>
+								<textarea class="form-control" rows="5" name="fd_des" id="fd_des"></textarea>
+							</div>
+							<div class="form-group">
+                <label for="fd_img">Url Image:</label>
+                <input type="text" class="form-control" id="fd_img" name="fd_img">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Create new">
             </form>
           </div>
 

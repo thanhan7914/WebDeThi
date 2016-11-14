@@ -24,10 +24,15 @@
   font-weight: 800;
   font-size: 14px;
   cursor: pointer;
+  color: #30a5ff;
+  margin: auto -40px;
 }
 
 .btn-newfeed:hover {
   color: blue;
 }
 
- #editor {overflow:scroll; max-height:300px}
+.newposts {
+  margin: 18px 6px;
+  padding: 16px 8px;
+}
