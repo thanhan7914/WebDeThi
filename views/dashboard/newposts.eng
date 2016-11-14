@@ -65,7 +65,16 @@
         <!-- hien thi tin tuc-->
         <div class="col-md-12">
           <div class="panel panel-default">
-
+            <form>
+              <div class="form-group">
+                <label for="fd_title">Title:</label>
+                <input type="text" class="form-control" id="fd_title" name="fd_title">
+              </div>
+              <div class="form-group">
+                <label for="fd_content">Content:</label>
+                <textarea class="form-control" rows="15" name="fd_content" id="fd_content"></textarea>
+              </div>
+            </form>
           </div>
 
        </div>
