@@ -170,12 +170,7 @@
                     <h4><a href="#" style="text-decoration: none;">TIN TỨC</a></h4>
                 </div>
             </div>
-             <div class="col-md-6">
-                    <a href="#"><img class="img-responsive" src="assets/images/news.png"></a>
-                </div>
-                <div class="col-md-6">
-                  <eng data=newfeed>
-                </div>
+                <eng data=newfeed>
             </div>
         </div>
 

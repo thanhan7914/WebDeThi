@@ -21,22 +21,30 @@ router.get('/', function(req, res) {
   let db = new Query(utils.config.dbname)
   .find({}, 'newfeed', {sort: {datecreate: -1}, limit: 3})
   .handle((rows) => {
-    options.newfeed = '<table class="table">';
-    rows.forEach(function(obj) {
-      options.newfeed += `
-      <tr>
-         <td class="top">
-             <a href="#"><img width="200px" src="${obj.image}"></a>
-         </td>
-         <td style="text-align: left;">
-             <a href="#"><p>${obj.title}</p></a>
-             <small>${obj.description}</small>
-         </td>
-      </tr>
-      `;
-    });
+    if(rows.length < 1) return;
+    options.newfeed = `
+      <div class="col-md-6">
+        <a href="#"><img class="img-news" src="${rows[0].image}"></a>
+        <p class="ipnews">${rows[0].title}</p>
+      </div>
+      <div class="col-md-6">
+        <table class="table">
+    `;
 
-    options.newfeed += '</table>';
+    for(let i = 1; i < rows.length; i++)
+       options.newfeed += `
+        <tr>
+           <td class="top">
+               <a href="#"><img width="200px" src="${rows[i].image}"></a>
+           </td>
+           <td style="text-align: left;">
+               <a href="#"><p>${rows[i].title}</p></a>
+               <small>${rows[i].description}</small>
+           </td>
+        </tr>
+        `;
+
+    options.newfeed += '</table></div>';
   })
   .close()
   .handle(() => {

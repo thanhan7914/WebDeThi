@@ -73,8 +73,8 @@ router.post('/', function(req, res) {
       });
     }
   }
-
-  res.redirect('/dashboard/newfeed');
+  else
+    res.redirect('/dashboard/newfeed');
 });
 
 module.exports = router;

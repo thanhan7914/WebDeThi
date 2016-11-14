@@ -175,3 +175,17 @@ hr{
 .box-login-middle{
 	margin-top: 100px;
 }
+
+.ipnews {
+	position: relative;
+  top: -32px;
+  color: white;
+  margin: auto 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.img-news {
+	width: 100%;
+	height: auto;
+}
