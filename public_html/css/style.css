@@ -8,6 +8,7 @@ body{
 	font-size: 13px;
 	color: #333;
 }
+
 header{
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -127,6 +128,12 @@ div.container.news-content{
 }
 hr{
  border-color: #14928e !important;
+}
+.table>tr>td{
+	padding-right:10px;
+}
+.table{
+	margin-top: 0px;
 }
 /*login-page*/
 .body-login{

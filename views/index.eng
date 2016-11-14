@@ -165,51 +165,48 @@
         </div>
 
         <div class="container news-content">
-            <div class="news-content">
-                <table class="col-md-12">
-                    <thead><h4><a href="#" style="text-decoration: none;">TIN TỨC</a></h4></thead>
-                    <hr >
-                    <tr>
-                        <td valign="top">
-                            <div class="col-md-6">
-                                <a href="#"><img src="assets/images/news.png"></a>
-                            </div>
-                        </td>
-                        <td valign="top">
-                            <div class="row" >
-                                <div class="col-md-8">
-                                    <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
-                                    <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="assets/images/news1.png">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
-                                    <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
-
-                                </div>
-                                <div class="col-md-4 ">
-                                    <img src="assets/images/news1.png">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4><a href="#" style="text-decoration: none;">TIN TỨC</a></h4>
+                </div>
+            </div>
+             <div class="col-md-6">
+                    <a href="#"><img class="img-responsive" src="assets/images/news.png"></a>
+                </div>
+                <div class="col-md-6">
+                    <table class="table">
+                        <tr>
+                            <td class="top">
+                                <a href="#"><img src="assets/images/news1.png"></a>
+                            </td>
+                            <td style="text-align: left;">
+                                <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
+                                <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="top">
+                                <a href="#"><img src="assets/images/news2.png"></a>
+                            </td>
+                            <td style="text-align: left;">
+                                <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
+                                <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
          <div class="container">
            <div class="row">
                 <div class="col-md-12">
-                    <a href="#"><h4>TÀI LIỆU</h4></a>
+                    <a href="#" style="text-decoration: none;"><h4>TÀI LIỆU</h4></a>
                     <hr>
                 </div>
-           </div>
+            </div>
 
-           <div class="row">
+            <div class="row">
                 <div class="col-md-3">
                     <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_116304587.png"></a></div>
                     <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
@@ -250,12 +247,16 @@
 
                 </div>
             </div>
+
+        </div>
+
+           
         </div>
 
         <div class="container">
             <div class="row dethi-title">
                 <div class="col-md-12">
-                    <a href="#"><h4>ĐỀ THI</h4></a>
+                    <a href="#" style="text-decoration: none;"><h4>ĐỀ THI</h4></a>
                     <hr>
                 </div>
             </div>
@@ -409,9 +410,9 @@
                     <div class="col-md-4">
                         <form class="navbar-form navbar-left" role="email">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="email" class="form-control" placeholder="Email">
                             </div>
-                            <button type="submit" class="btn btn-default">Đăng ký</button>
+                            <button type="submit" class="btn btn-info">Đăng ký</button>
                         </form>
                      </div>
                 </div>
