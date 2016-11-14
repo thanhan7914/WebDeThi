@@ -66,7 +66,7 @@
     				<label>MẬT KHẨU</label>
     			</div>
     			<div class="login-box">
-    				<input class="login-box-input"  type="text" name="">
+    				<input class="login-box-input"  type="password" name="">
     			</div>
     			<div class="login-box title-box">
     				<small>Quên mật khẩu?</small>
