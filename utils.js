@@ -1,5 +1,7 @@
 'use strict'
 
+const crypto = require('crypto');
+let config = require('./config.json');
 //
 if(typeof String.prototype.addslashes === 'undefined')
 {
@@ -10,6 +12,42 @@ if(typeof String.prototype.addslashes === 'undefined')
 }
 
 module.exports = {
+  _ : {
+    isUndefined: function(_var) {
+      return typeof _var === 'undefined';
+    }
+  },
+  config,
+  secret: 'L1gCZwDdLET5KoJzNq7B',
+  encode: function(text, secret, code){
+    if(this._.isUndefined(code)) code = 'aes256';
+    if(this._.isUndefined(secret)) secret = this.secret;
+    const cipher = crypto.createCipher(code, secret);
+    let encode = cipher.update(text, 'utf8', 'hex');
+    return encode + cipher.final('hex');
+  },
+  decode: function(encode, secret, code){
+    if(this._.isUndefined(code)) code = 'aes256';
+    if(this._.isUndefined(secret)) secret = this.secret;
+    const decipher = crypto.createDecipher(code, secret);
+    let text = decipher.update(encode, 'hex', 'utf8');
+    return text + decipher.final('utf8');
+  },
+  createHash: function(text, code) {
+    if(this._.isUndefined(code)) code = 'sha256';
+    const hash = crypto.createHash(code);
+
+    hash.update(text);
+    return hash.digest('hex');
+  },
+  createHmac: function(text, secret, code) {
+    if(this._.isUndefined(code)) code = 'sha256';
+    if(this._.isUndefined(secret)) secret = this.secret;
+    const hmac = crypto.createHmac(code, secret);
+
+    hmac.update(text);
+    return hmac.digest('hex');
+  },
   inherit: function(a, b) {
     for(let i in a)
       if(a.hasOwnProperty(i)) b[i] = a[i];
