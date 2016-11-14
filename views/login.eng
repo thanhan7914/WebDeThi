@@ -71,6 +71,9 @@
     			<div class="login-box title-box">
     				<small>Quên mật khẩu?</small>
     			</div>
+    			<div class="login-box box-submit">
+    				<button type="submit" class="btn btn-info">ĐĂNG NHẬP</button>
+    			</div>
     			</div>
     		</div>
     	</div>
