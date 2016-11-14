@@ -189,3 +189,32 @@ hr{
 	width: 100%;
 	height: auto;
 }
+/*existlist-page*/
+.list-exam{
+	margin-top: 30px;
+	
+}
+.col-md-4.list-examination{
+	border: 1px solid #888;
+	text-align: center;
+}
+.list-title{
+	background: #14928e;
+	color: #ffffff;
+}
+.row.exl{
+	border-bottom: 1px solid #888;
+	max-height: 100px;
+	min-height: 50px;
+	background: #f1f1f1;
+}
+.row.exl a{
+	color: #333 !important;
+}
+.row.exl>a:hover{
+	color: #14928e;
+	list-style-type: none !important;
+}
+.col-md-2.number-exam{
+	border-right: 1px solid #888;
+}
