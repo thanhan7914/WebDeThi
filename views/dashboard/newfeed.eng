@@ -9,6 +9,7 @@
 <link href="/assets/css/datepicker3.css" rel="stylesheet">
 <link href="/assets/css/dashboard.css" rel="stylesheet">
 <link href="/assets/css/newfeed.css" rel="stylesheet">
+<link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
 
 <!--Icons-->
 <script src="/assets/js/libs/lumino.glyphs.js"></script>
@@ -50,8 +51,8 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">dashboard</li>
+				<li><a href="/"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active"><a href="/dashboard">dashboard</a></li>
 			</ol>
 		</div><!--/.row-->
 
@@ -64,9 +65,19 @@
 		<div class="row">
         <!-- hien thi tin tuc-->
         <div class="col-md-8">
-          <div class="panel panel-default">
-						<eng data=news>
-          </div>
+					<div class="row">
+						<div class="panel panel-default">
+							<eng data=news>
+						</div>
+					</div>
+					<div class="row" id="pagination">
+						<ul class="pagination">
+						  <li><a href="#">«</a></li>
+						  <li><a href="#">1</a></li>
+						  <li><a class="active" href="#">2</a></li>
+						  <li><a href="#">»</a></li>
+						</ul>
+					</div>
        </div>
        <div class="col-md-4">
 
@@ -87,6 +98,7 @@
 
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
+	<script src="/assets/js/pagination.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('#addnew').click(function() {

@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
   .exec('count')
   .handle((c) => {
     count = c;
-    if(skip >= c) throw new Error('Page not found.');
+    if(skip > c) throw new Error('Page not found.');
   })
   .find({}, 'newfeed', {sort: {datecreate: -1}, skip, limit})
   .handle((docs) => {
@@ -38,7 +38,7 @@ router.get('/', function(req, res) {
       options.news += `
           <div class="news">
             <p><input type="checkbox" style="display: inline; margin: auto 6px;"><a href="#">${docs[i].title}</a></p>
-            <small><b>${docs[i].content}</b></small>
+            <small><b>${docs[i].description}</b></small>
             <div class="tools"><a href="">Edit</a>|<a href="">Delete</a></div>
           </div>
       `;
@@ -50,6 +50,31 @@ router.get('/', function(req, res) {
   .handle((done) => {
     res.render('dashboard/newfeed', options);
   });
+});
+
+router.post('/', function(req, res) {
+  if(req.url === '/?newposts')
+  {
+    if(typeof req.body['method'] === 'undefined')
+      return res.redirect('/dashboard/newfeed');
+
+    if(req.body['method'] === 'addnew')
+    {
+      if(!utils.hasattr(req.body, ['title', 'content', 'description', 'image']))
+        return res.redirect('/dashboard/newfeed');
+
+      let row = {datecreate: Date.now(), dateupdate: 0, author: req.session.user.username};
+      utils.clonewith(req.body, row, ['title', 'content', 'description', 'image']);
+      let db = new Query(utils.config.dbname)
+      .insert(row, 'newfeed')
+      .close()
+      .handle(() => {
+        res.redirect('/dashboard/newfeed');
+      });
+    }
+  }
+
+  res.redirect('/dashboard/newfeed');
 });
 
 module.exports = router;

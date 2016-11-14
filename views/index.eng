@@ -174,26 +174,7 @@
                     <a href="#"><img class="img-responsive" src="assets/images/news.png"></a>
                 </div>
                 <div class="col-md-6">
-                    <table class="table">
-                        <tr>
-                            <td class="top">
-                                <a href="#"><img src="assets/images/news1.png"></a>
-                            </td>
-                            <td style="text-align: left;">
-                                <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
-                                <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="top">
-                                <a href="#"><img src="assets/images/news2.png"></a>
-                            </td>
-                            <td style="text-align: left;">
-                                <a href="#"><p>Tự học tiếng Anh, bé 8 tuổi nói như người bản ngữ</p></a>
-                                <small>Chỉ xem phim và bắt chước lời của nhân vật, cậu bé 8 tuổi Nguyễn Đăng Nhật Minh khiến nhiều người ngoại quốc bất ngờ, phải thốt lên: 'Không có sự khác biệt trong nói tiếng Anh giữa Minh và một cậu bé Mỹ'.</small>
-                            </td>
-                        </tr>
-                    </table>
+                  <eng data=newfeed>
                 </div>
             </div>
         </div>
@@ -250,7 +231,7 @@
 
         </div>
 
-           
+
         </div>
 
         <div class="container">
