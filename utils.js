@@ -1,5 +1,6 @@
 'use strict'
 
+//
 if(typeof String.prototype.addslashes === 'undefined')
 {
   String.prototype.addslashes = function() {
