@@ -69,7 +69,7 @@
     				<input class="login-box-input"  type="password" name="">
     			</div>
     			<div class="login-box title-box">
-    				<small>Quên mật khẩu?</small>
+    				<a href="#"><small>Quên mật khẩu?</small></a>
     			</div>
     			<div class="login-box box-submit">
     				<button type="submit" class="btn btn-info">ĐĂNG NHẬP</button>
