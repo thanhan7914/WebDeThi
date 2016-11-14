@@ -19,6 +19,10 @@ router.get('/', function(req, res) {
   res.render('index', options);
 });
 
+router.get('/exlist', function(req, res) {
+  res.render('exlist');
+});
+
 router.use(require('./login'));
 
 module.exports = router;
