@@ -114,8 +114,8 @@ h4.title-header{
 }
 div.col-md-4.gioithieu{
 	border: 1px solid #14928e;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 }
 p.introduce-content{
 	margin-left: 5px;
@@ -127,5 +127,6 @@ div.container.news-content{
 hr{
  border-color: #14928e !important;
 }
-/*login*/
-/*/**/
+table td{
+	border: 1px solid #f1f1f1;
+}
