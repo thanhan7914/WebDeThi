@@ -22,3 +22,8 @@ ul.pagination li a.active {
 }
 
 ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+#pagination {
+  margin: 16px 8px;
+  margin-top: 2px;
+}

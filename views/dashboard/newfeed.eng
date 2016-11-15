@@ -10,6 +10,7 @@
 <link href="/assets/css/dashboard.css" rel="stylesheet">
 <link href="/assets/css/newfeed.css" rel="stylesheet">
 <link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
+<link href="/assets/css/msc-style.css" rel="stylesheet" type="text/css">
 
 <!--Icons-->
 <script src="/assets/js/libs/lumino.glyphs.js"></script>
@@ -58,7 +59,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Newfeed</h1>
+				<h1 class="page-header">Newfeed (<eng data=count_new_feed>)</h1>
 			</div>
 		</div><!--/.row-->
 
@@ -72,10 +73,6 @@
 					</div>
 					<div class="row" id="pagination">
 						<ul class="pagination">
-						  <li><a href="#">«</a></li>
-						  <li><a href="#">1</a></li>
-						  <li><a class="active" href="#">2</a></li>
-						  <li><a href="#">»</a></li>
 						</ul>
 					</div>
        </div>
@@ -88,7 +85,7 @@
                <li id="addnew" class="btn-newfeed">Add new</li>
                <li id="chooseall" class="btn-newfeed">Choose all</li>
                <li id="dischoose" class="btn-newfeed">Dischoose all</li>
-               <li id="delete" class="btn-newfeed">Delete rows</li>
+               <li id="delete" class="btn-newfeed" data-target="">Delete rows</li>
              </ul>
            </div>
          </div>
@@ -98,12 +95,64 @@
 
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
+	<script src="/assets/js/msc-script.js"></script>
 	<script src="/assets/js/pagination.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('#addnew').click(function() {
         location.href = 'newfeed?newposts';
       });
+
+			$('a[href^="?method\=delete"]').click(function(e) {
+				let $this = $(this);
+				mscConfirm("Delete?",function(){
+					location.href = $this.attr('href');
+				});
+
+				e.preventDefault();
+			});
+
+			$('input[type="checkbox"]').click(function() {
+				let target = $('#delete');
+				let id = String(target.attr('data-target')).trim();
+				let link = $(this).next().attr('href');
+
+				let href = link.substring(link.lastIndexOf('.') + 1);
+
+				if(id === '') id = href;
+				else if(id.indexOf(href) === -1)
+					id += ',' + href;
+				else
+				{
+					let pos = id.indexOf(href);
+					id = (id.substring(0, pos) + id.substring(pos + 24))
+					.replace(/,+,/g,',')
+					.replace(/^,]|,$/, '');
+				}
+
+				target.attr('data-target', id);
+			});
+
+			$('#delete').click(function() {
+				let idx = String($(this).attr('data-target')).trim();
+				if(idx === '') return;
+
+				let url = '/dashboard/newfeed?method=delete&id=' + idx;
+				console.log(url);
+				mscConfirm("Delete selected?",function(){
+					location.href = url;
+				});
+			});
+
+			$('#chooseall, #dischoose').click(function() {
+				$('input[type="checkbox"]').click();//.prop("checked", true);
+			});
+
+			let pages = <eng data=pages>;
+			let curpage = <eng data=curpage>;
+			let pagination = $('.pagination');
+
+			new $Pagination(pagination, pages, curpage).init();
     });
   </script>
 </body>
