@@ -3,7 +3,7 @@ const app = express();
 const server = require('http').Server(app);
 const favicon = require('serve-favicon');
 const engine = require('./engine');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 const utils = require('./utils');
 const session = require('cookie-session')({//express-session
   secret: 'chuoi gi do o day',
