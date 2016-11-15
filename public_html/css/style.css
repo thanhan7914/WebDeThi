@@ -178,14 +178,75 @@ hr{
 
 .ipnews {
 	position: relative;
-  top: -32px;
-  color: white;
-  margin: auto 14px;
+  top: -64px;
+  background: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   font-weight: 600;
+	height: 64px;
+}
+
+.ipnews p{
+	padding: 4px 14px;
+	color: rgba(44, 62, 80,1.0);
+}
+
+.ipnews a {
+	color: rgba(44, 62, 80,1.0);
+}
+
+.ipnews a:hover, .ipnews a:focus {
+	text-decoration: none;
 }
 
 .img-news {
-	width: 100%;
-	height: auto;
+	  width: 100%;
+	  height: 312px;
+	  margin: auto;
+	  box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset;
+		overflow: hidden;
+		cursor: pointer;
+	}
+.img-news img {
+	  position: relative;
+	  z-index: -1;
+	  top: 50%;
+	  left: 50%;
+	  width: 100%;
+	  transform: translate(-50%, -50%);
+	}
+.img-news > img.max {
+	  width: auto;
+	  height: 100%;
+	}
+
+.img-newfeed {
+	width: 200px;
+	height: 134px;
+}
+
+.newfeed {
+	border-top: 1px solid #eee;
+	max-height: 164px;
+}
+
+.newfeed-left, .newfeed-right {
+	position: relative;
+	display: inline-block;
+	max-width: 320px;
+}
+
+.newfeed-left {
+	margin: 6px;
+}
+
+.newfeed-right {
+  top: -18px;
+}
+
+.newfeed-right > small {
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+  overflow: hidden;
+  max-height: 2.4em;
+  line-height: 1.2em;
 }

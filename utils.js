@@ -1,6 +1,7 @@
 'use strict'
 
 const crypto = require('crypto');
+const mongo_promise = require('mongo-promise');
 let config = require('./config.json');
 //
 if(typeof String.prototype.addslashes === 'undefined')
