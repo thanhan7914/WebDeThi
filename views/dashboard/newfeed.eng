@@ -59,7 +59,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Newfeed</h1>
+				<h1 class="page-header">Newfeed (<eng data=count_new_feed>)</h1>
 			</div>
 		</div><!--/.row-->
 
@@ -85,7 +85,7 @@
                <li id="addnew" class="btn-newfeed">Add new</li>
                <li id="chooseall" class="btn-newfeed">Choose all</li>
                <li id="dischoose" class="btn-newfeed">Dischoose all</li>
-               <li id="delete" class="btn-newfeed">Delete rows</li>
+               <li id="delete" class="btn-newfeed" data-target="">Delete rows</li>
              </ul>
            </div>
          </div>
@@ -96,6 +96,7 @@
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
 	<script src="/assets/js/msc-script.js"></script>
+	<script src="/assets/js/pagination.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('#addnew').click(function() {
@@ -111,25 +112,47 @@
 				e.preventDefault();
 			});
 
+			$('input[type="checkbox"]').click(function() {
+				let target = $('#delete');
+				let id = String(target.attr('data-target')).trim();
+				let link = $(this).next().attr('href');
+
+				let href = link.substring(link.lastIndexOf('.') + 1);
+
+				if(id === '') id = href;
+				else if(id.indexOf(href) === -1)
+					id += ',' + href;
+				else
+				{
+					let pos = id.indexOf(href);
+					id = (id.substring(0, pos) + id.substring(pos + 24))
+					.replace(/,+,/g,',')
+					.replace(/^,]|,$/, '');
+				}
+
+				target.attr('data-target', id);
+			});
+
+			$('#delete').click(function() {
+				let idx = String($(this).attr('data-target')).trim();
+				if(idx === '') return;
+
+				let url = '/dashboard/newfeed?method=delete&id=' + idx;
+				console.log(url);
+				mscConfirm("Delete selected?",function(){
+					location.href = url;
+				});
+			});
+
+			$('#chooseall, #dischoose').click(function() {
+				$('input[type="checkbox"]').click();//.prop("checked", true);
+			});
+
 			let pages = <eng data=pages>;
 			let curpage = <eng data=curpage>;
 			let pagination = $('.pagination');
-			let pre = curpage - 1;
-			let next = curpage + 1;
-			pre = pre < 1 ? 1: pre;
-			next = next > pages ? pages : next;
 
-			pagination.append('<li><a href="?page=' + pre + '">«</a></li>');
-			if(curpage - 2 > 0)
-				pagination.append('<li><a href="?page=' + (curpage - 2) + '">'+ (curpage - 2) +'</a></li>');
-			if(curpage - 1 > 0)
-				pagination.append('<li><a href="?page=' + (curpage - 1) + '">'+ (curpage - 1) +'</a></li>');
-			pagination.append('<li><a class="active" href="?page=' + curpage + '">'+ curpage +'</a></li>');
-			if(curpage + 1 <= pages)
-				pagination.append('<li><a href="?page=' + (curpage + 1) + '">'+ (curpage + 1) +'</a></li>');
-			if(curpage + 2 <= pages)
-				pagination.append('<li><a href="?page=' + (curpage + 2) + '">'+ (curpage + 2) +'</a></li>');
-			pagination.append('<li><a href="?page=' + next + '">»</a></li>');
+			new $Pagination(pagination, pages, curpage).init();
     });
   </script>
 </body>

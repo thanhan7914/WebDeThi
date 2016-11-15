@@ -89,6 +89,7 @@ router.get('/', function(req, res) {
     let len = docs.length;
     options.pages = Math.floor(count / limit);
     options.curpage = req.body.page;
+    options.count_new_feed = (limit + skip) + '/' + count;
     options.news = '';
 
     for(let i = 0; i < len; i++)
@@ -131,11 +132,21 @@ router.post('/', function(req, res) {
       if(POST['method'] === 'addnew')
         db.insert(row, 'newfeed');
       else if(POST['method'] === 'edit' && POST['newfeedid'].length === 24)
-        db.update({_id: new ObjectID(POST['newfeedid'])}, row, 'newfeed');
+      {
+        db.find({_id: new ObjectID(POST['newfeedid'])}, 'newfeed')
+        .handle((docs) => {
+          if(docs.length === 0) throw new Error('Not found');
 
-      db.close()
-      .handle(() => {
+          row.datecreate = docs[0].datecreate;
+        })
+        .update({_id: new ObjectID(POST['newfeedid'])}, row, 'newfeed');
+      }
+
+      db.close(() => {
         res.redirect('/dashboard/newfeed');
+      }, (error) => {
+        console.log(error);
+        res.redirect('/404');
       });
     }
   }

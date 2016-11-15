@@ -264,7 +264,8 @@ hr{
 }
 
 .newfeed-right {
-  /*top: -18px;*/
+	vertical-align: top;
+	margin: 10px auto;
 }
 
 .newfeed-right > small {
