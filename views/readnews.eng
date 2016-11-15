@@ -117,10 +117,10 @@
             <div class="col-md-8">
               <div class="">
                 <h2><eng data=title></h2>
+                <p><small><eng data=datecreate></small></p>
               </div>
               <div class="">
                 <p><b><eng data=description></b></p>
-                <p><small><eng data=datecreate></small></p>
                 <div class="">
                   <eng data=content>
                 </div>

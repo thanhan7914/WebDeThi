@@ -10,6 +10,7 @@
 <link href="/assets/css/dashboard.css" rel="stylesheet">
 <link href="/assets/css/newfeed.css" rel="stylesheet">
 <link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
+<link href="/assets/css/msc-style.css" rel="stylesheet" type="text/css">
 
 <!--Icons-->
 <script src="/assets/js/libs/lumino.glyphs.js"></script>
@@ -72,10 +73,6 @@
 					</div>
 					<div class="row" id="pagination">
 						<ul class="pagination">
-						  <li><a href="#">«</a></li>
-						  <li><a href="#">1</a></li>
-						  <li><a class="active" href="#">2</a></li>
-						  <li><a href="#">»</a></li>
 						</ul>
 					</div>
        </div>
@@ -98,12 +95,41 @@
 
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
-	<script src="/assets/js/pagination.js"></script>
+	<script src="/assets/js/msc-script.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('#addnew').click(function() {
         location.href = 'newfeed?newposts';
       });
+
+			$('a[href^="?method\=delete"]').click(function(e) {
+				let $this = $(this);
+				mscConfirm("Delete?",function(){
+					location.href = $this.attr('href');
+				});
+
+				e.preventDefault();
+			});
+
+			let pages = <eng data=pages>;
+			let curpage = <eng data=curpage>;
+			let pagination = $('.pagination');
+			let pre = curpage - 1;
+			let next = curpage + 1;
+			pre = pre < 1 ? 1: pre;
+			next = next > pages ? pages : next;
+
+			pagination.append('<li><a href="?page=' + pre + '">«</a></li>');
+			if(curpage - 2 > 0)
+				pagination.append('<li><a href="?page=' + (curpage - 2) + '">'+ (curpage - 2) +'</a></li>');
+			if(curpage - 1 > 0)
+				pagination.append('<li><a href="?page=' + (curpage - 1) + '">'+ (curpage - 1) +'</a></li>');
+			pagination.append('<li><a class="active" href="?page=' + curpage + '">'+ curpage +'</a></li>');
+			if(curpage + 1 <= pages)
+				pagination.append('<li><a href="?page=' + (curpage + 1) + '">'+ (curpage + 1) +'</a></li>');
+			if(curpage + 2 <= pages)
+				pagination.append('<li><a href="?page=' + (curpage + 2) + '">'+ (curpage + 2) +'</a></li>');
+			pagination.append('<li><a href="?page=' + next + '">»</a></li>');
     });
   </script>
 </body>

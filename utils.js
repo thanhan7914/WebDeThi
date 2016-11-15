@@ -3,6 +3,22 @@
 const crypto = require('crypto');
 const mongo_promise = require('mongo-promise');
 let config = require('./config.json');
+let entityMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;',
+    '`': '&#x60;',
+    '=': '&#x3D;'
+  };
+
+String.prototype.escapeHtml = function() {
+  return this.replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
+    return entityMap[s];
+  });
+}
 //
 if(typeof String.prototype.addslashes === 'undefined')
 {
@@ -119,10 +135,15 @@ module.exports = {
     str= str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
     str= str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
     str= str.replace(/đ/g,"d");
-    str= str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g,"-");
+    str= str.replace(/“|”|!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g,"-");
     str= str.replace(/-+-/g,"-"); //thay thế 2- thành 1-
     str= str.replace(/^\-+|\-+$/g,"");
 
     return str;
+  },
+  escapeHtml(a, c) {
+    if(!(c instanceof Array)) c = [];
+    for(let i in a)
+      if(a.hasOwnProperty(i) && c.indexOf(i.toString()) !== -1) a[i] = a[i].escapeHtml();
   }
 };

@@ -66,24 +66,25 @@
         <div class="col-md-12">
           <div class="panel panel-default">
             <form class="newposts" method="post" action="newfeed?newposts">
-              <input type="hidden" name="method" value="addnew">
+              <input type="hidden" name="method" value="<eng data=method>">
+              <input type="hidden" name="newfeedid" value="<eng data=newfeedid>">
               <div class="form-group">
                 <label for="fd_title">Title:</label>
-                <input type="text" class="form-control" id="fd_title" name="title">
+                <input type="text" class="form-control" id="fd_title" name="title" value="<eng data=title>">
               </div>
               <div class="form-group">
                 <label for="fd_content">Content:</label>
-                <textarea class="form-control" rows="15" name="content" id="fd_content"></textarea>
+                <textarea class="form-control" rows="15" name="content" id="fd_content"><eng data=content></textarea>
               </div>
 							<div class="form-group">
 								<label for="fd_des">Description:</label>
-								<textarea class="form-control" rows="5" name="description" id="fd_des"></textarea>
+								<textarea class="form-control" rows="5" name="description" id="fd_des"><eng data=description></textarea>
 							</div>
 							<div class="form-group">
                 <label for="fd_img">Url Image:</label>
-                <input type="text" class="form-control" id="fd_img" name="image">
+                <input type="text" class="form-control" id="fd_img" name="image" value="<eng data=image>">
               </div>
-              <input type="submit" class="btn btn-primary" value="Create new">
+              <input type="submit" class="btn btn-primary" value="Submit">
             </form>
           </div>
 
