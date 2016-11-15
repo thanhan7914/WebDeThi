@@ -19,7 +19,9 @@ a{
 #log-in>a{
 	color: #14928e;
 }
-
+.active{
+	background:  #34495e !important;
+}
 .nav{
 	background-color: #14928e;
 	height: 40px;
@@ -253,7 +255,7 @@ hr{
 /*existlist-page*/
 .list-exam{
 	margin-top: 30px;
-	
+
 }
 .col-md-4.list-examination{
 	border: 1px solid #888;

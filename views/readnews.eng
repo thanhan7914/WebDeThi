@@ -7,9 +7,9 @@
     <title>Học và luyện thi trực tuyến</title>
 
     <!-- Bootstrap -->
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
   </head>
   <body>
@@ -19,7 +19,7 @@
                 <div class="logo-header">
                     <div class="col-md-4">
                         <div id="logo">
-                            <a href="/"><img class="img-responsive" src="assets/images/logo.png"></a>
+                            <a href="/"><img class="img-responsive" src="/assets/images/logo.png"></a>
                         </div>
                     </div>
                 </div>
@@ -113,6 +113,28 @@
         </div>
 
         <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="">
+                <h2><eng data=title></h2>
+              </div>
+              <div class="">
+                <p><b><eng data=description></b></p>
+                <p><small><eng data=datecreate></small></p>
+                <div class="">
+                  <eng data=content>
+                </div>
+                <p style="text-align: right; margin: 8px">
+                  <eng data=author>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="">
+                <eng data=relative_news>
+              </div>
+            </div>
+          </div>
         </div>
 
         <footer>
@@ -143,9 +165,9 @@
 
                     <div class="col-md-4">
                         <div class="contact">
-                                <a href="#"><img src="assets/images/facebook.png"></a>
-                                <a href="#"><img src="assets/images/google-plus.png"></a>
-                                <a href="#"><img src="assets/images/twitter.png"></a>
+                                <a href="#"><img src="/assets/images/facebook.png"></a>
+                                <a href="#"><img src="/assets/images/google-plus.png"></a>
+                                <a href="#"><img src="/assets/images/twitter.png"></a>
                         </div>
                     </div>
                 </div>
@@ -153,9 +175,9 @@
         </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="assets/js/libs/jquery.min.js"></script>
+    <script src="/assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="assets/js/libs/bootstrap.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="/assets/js/libs/bootstrap.min.js"></script>
+    <script src="/assets/js/app.js"></script>
   </body>
 </html>

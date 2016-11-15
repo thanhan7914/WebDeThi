@@ -25,29 +25,33 @@ router.get('/', function(req, res) {
     options.newfeed = `
       <div class="col-md-6" style="max-height: 320px;">
         <div class="img-news">
-          <a href="#"><img src="${rows[0].image}" alt="${rows[0].title}"></a>
+          <a href="/readnews/${utils.toUrl(rows[0].title)}.${rows[0]._id}"><img src="${rows[0].image}" alt="${rows[0].title}"></a>
         </div>
         <div class="ipnews">
-          <p><a href="#">${rows[0].title}</a></p>
+          <p><a href="/readnews/${utils.toUrl(rows[0].title)}.${rows[0]._id}">${rows[0].title}</a></p>
         </div>
       </div>
       <div class="col-md-6">
     `;
 
     for(let i = 1; i < rows.length; i++)
+    {
+      let href = `/readnews/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
+
        options.newfeed += `
        <div class="row newfeed">
          <div class="newfeed-left">
            <div class="newfeed-left img-news img-newfeed">
-             <a href="#"><img src="${rows[i].image}"></a>
+             <a href="${href}"><img src="${rows[i].image}"></a>
            </div>
         </div>
          <div class="newfeed-right">
-             <a href="#"><p>${rows[i].title}</p></a>
+             <a href="${href}"><p>${rows[i].title}</p></a>
              <small>${rows[i].description}</small>
          </div>
        </div>
         `;
+    }
 
     options.newfeed += '</div>';
   })
