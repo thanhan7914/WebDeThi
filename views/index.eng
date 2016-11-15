@@ -27,7 +27,7 @@
                 <div class="logo-header">
                     <div class="col-md-4">
                         <div id="logo">
-                            <a href="#"><img class="img-responsive" src="assets/images/logo.png"></a>
+                            <a href="/"><img class="img-responsive" src="assets/images/logo.png"></a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
 
                     <div class="navbar-collapse collapse" id="menu">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">TRANG CHỦ</a></li>
+                            <li><a class="active" href="#">TRANG CHỦ</a></li>
                             <li><a href="#">THƯ VIỆN</a></li>
                             <li><a href="#">THI ONLINE</a></li>
                             <li><a href="#">TIẾNG ANH</a></li>
@@ -418,5 +418,6 @@
     <script src="assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/libs/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>

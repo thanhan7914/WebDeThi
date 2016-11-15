@@ -5,8 +5,8 @@ const utils = require('../utils');
 router.get('/', function(req, res) {
   let options = {
     login: `
-    <a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a> |
-    <a href="#">Đăng ký</a>`
+    <a href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a>
+    `
   };
 
   if(typeof req.session !== 'undefined' && req.session.hasOwnProperty('user'))
@@ -23,28 +23,37 @@ router.get('/', function(req, res) {
   .handle((rows) => {
     if(rows.length < 1) return;
     options.newfeed = `
-      <div class="col-md-6">
-        <a href="#"><img class="img-news" src="${rows[0].image}"></a>
-        <p class="ipnews">${rows[0].title}</p>
+      <div class="col-md-6" style="max-height: 320px;">
+        <div class="img-news">
+          <a href="/readnews/${utils.toUrl(rows[0].title)}.${rows[0]._id}"><img src="${rows[0].image}" alt="${rows[0].title}"></a>
+        </div>
+        <div class="ipnews">
+          <p><a href="/readnews/${utils.toUrl(rows[0].title)}.${rows[0]._id}">${rows[0].title}</a></p>
+        </div>
       </div>
       <div class="col-md-6">
-        <table class="table">
     `;
 
     for(let i = 1; i < rows.length; i++)
-       options.newfeed += `
-        <tr>
-           <td class="top">
-               <a href="#"><img width="200px" src="${rows[i].image}"></a>
-           </td>
-           <td style="text-align: left;">
-               <a href="#"><p>${rows[i].title}</p></a>
-               <small>${rows[i].description}</small>
-           </td>
-        </tr>
-        `;
+    {
+      let href = `/readnews/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
 
-    options.newfeed += '</table></div>';
+       options.newfeed += `
+       <div class="row newfeed">
+         <div class="newfeed-left">
+           <div class="newfeed-left img-news img-newfeed">
+             <a href="${href}"><img src="${rows[i].image}"></a>
+           </div>
+        </div>
+         <div class="newfeed-right">
+             <a href="${href}"><p>${rows[i].title}</p></a>
+             <small>${rows[i].description}</small>
+         </div>
+       </div>
+        `;
+    }
+
+    options.newfeed += '</div>';
   })
   .close()
   .handle(() => {
@@ -52,10 +61,8 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/exlist', function(req, res) {
-  res.render('exlist');
-});
-
 router.use(require('./login'));
+router.use(require('./readnews'));
+router.use(require('./exlist'));
 
 module.exports = router;
