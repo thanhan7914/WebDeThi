@@ -218,3 +218,8 @@ hr{
 .col-md-2.number-exam{
 	border-right: 1px solid #888;
 }
+select{
+	background: #ffffff;
+	color: #333 !important;
+	margin-top: 10px !important;
+}
