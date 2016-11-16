@@ -8,38 +8,35 @@
 
     <!-- Bootstrap -->
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
 
   </head>
   <body>
     <include filename=include/header>
     <include filename=include/nav>
 
-        <div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
           <div class="row">
-            <div class="col-md-8">
-              <div class="">
-                <h2><eng data=title></h2>
-                <p><small><eng data=datecreate></small></p>
-              </div>
-              <div class="">
-                <p><b><eng data=description></b></p>
-                <div class="">
-                  <eng data=content>
-                </div>
-                <p style="text-align: right; margin: 8px">
-                  <eng data=author>
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="">
-                <eng data=relative_news>
-              </div>
-            </div>
+            <h2>Tin Tức</h2>
+          </div>
+          <div class="row">
+            <eng data=news>
+          </div>
+          <div class="row" id="pagination">
+            <ul class="pagination">
+            </ul>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="">
+            <eng data=relative_news>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <include filename=include/footer>
 
@@ -48,5 +45,14 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/libs/bootstrap.min.js"></script>
     <script src="/assets/js/app.js"></script>
+    <script type="text/javascript" src="/assets/js/pagination.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var pages = <eng data=pages>;
+        var curpage = <eng data=curpage>;
+
+        (new $Pagination($('.pagination'), pages, curpage)).init();
+      });
+    </script>
   </body>
 </html>

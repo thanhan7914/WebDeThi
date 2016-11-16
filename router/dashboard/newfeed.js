@@ -87,7 +87,7 @@ router.get('/', function(req, res) {
   .handle((docs) => {
     //query
     let len = docs.length;
-    options.pages = Math.floor(count / limit);
+    options.pages = Math.ceil(count / limit);
     options.curpage = req.body.page;
     options.count_new_feed = (limit + skip) + '/' + count;
     options.news = '';

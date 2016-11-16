@@ -4,5 +4,8 @@
     "newfeed": {
       "limit": 5
     }
+  },
+  "show": {
+    "newfeed": 5
   }
 }

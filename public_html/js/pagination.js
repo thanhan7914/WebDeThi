@@ -4,6 +4,8 @@
 **/
 
 function $Pagination(pagination, pages, curpage) {
+  if(typeof pages !== 'number') pages = 0;
+  if(typeof curpage != 'number') curpage = 0;
   this.pages = pages;
   this.curpage = curpage;
   this.pagination = pagination;

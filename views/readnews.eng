@@ -13,167 +13,36 @@
 
   </head>
   <body>
+    <include filename=include/header>
+    <include filename=include/nav>
     <div class="container">
-        <header>
-            <div class="row">
-                <div class="logo-header">
-                    <div class="col-md-4">
-                        <div id="logo">
-                            <a href="/"><img class="img-responsive" src="/assets/images/logo.png"></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="login">
-                    <div class="col-md-7 right text-right">
-                        <div id="log-in">
-                          <eng data=login>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container">
-                 <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                       <div class="modal-dialog">
-                         <!-- Modal content-->
-                         <div class="modal-content">
-                            <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h5 class="modal-title" text-align="center" style="color: #ffffff">ĐĂNG NHẬP</h5>
-                            </div>
-                            <div class="modal-body">
-                                <form action="/login" method="post">
-                                      <div class="form-group">
-                                        <label class="sr-only" for="exampleInputEmail3">Username</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email" name="username">
-                                      </div>
-
-                                      <div class="form-group">
-                                        <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" name="password">
-                                      </div>
-
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox"> Duy trì đăng nhập?
-                                        </label>
-                                      </div>
-                                      <button type="submit" class="btn btn-info">ĐĂNG NHẬP</button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <p>Bạn chưa có tài khoản? Mời đăng ký <a href="#">TẠI ĐÂY</a> </p>
-                            </div>
-                         </div>
-
-                    </div>
-                </div>
-        </header>
-    </div>
-
-    <div id="header">
-            <nav class="nav">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                            <span class="sr-only">MENU</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar">
-                            </span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="#" class="navbar-brand" style="color: #f1f1f1">FREE ACADEMY</a>
-                    </div>
-
-                    <div class="navbar-collapse collapse" id="menu">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">TRANG CHỦ</a></li>
-                            <li><a href="#">THI ONLINE</a></li>
-                            <li><a href="#">TÀI LIỆU</a></li>
-                            <li><a href="#" class="active">TIN TỨC</a></li>
-                            <li><a href="#">LIÊN HỆ</a></li>
-                            <!-- <li class="dropdown">
-                                <a href="#" data-toggle="dropdown">TÀI KHOẢN<span class="caret"></span></a>
-                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Thông tin</a></li>
-                                        <li><a href="#">Thoát</a></li>
-                                    </ul>
-                            </li> -->
-                        </ul>
-
-                        <form class="navbar-form navbar-right" method="post" >
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm..">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="">
-                <h2><eng data=title></h2>
-                <p><small><eng data=datecreate></small></p>
-              </div>
-              <div class="">
-                <p><b><eng data=description></b></p>
-                <div class="">
-                  <eng data=content>
-                </div>
-                <p style="text-align: right; margin: 8px">
-                  <eng data=author>
-                </p>
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="">
+              <h2><eng data=title></h2>
+              <p><small><eng data=datecreate></small></p>
             </div>
-            <div class="col-md-4">
-              <div class="">
-                <eng data=relative_news>
+            <div class="">
+              <p><b><eng data=description></b></p>
+              <div class="news-content">
+                <eng data=content>
               </div>
+              <p style="text-align: right; margin: 8px">
+                <i>Đăng bởi <strong><eng data=author></strong></i>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="">
+              <eng data=relative_news>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h4 style="color: #14928e"><strong>Đăng ký nhận tài liệu miễn phí</strong></h4>
-                    </div>
-                    <div class="col-md-4">
-                        <form class="navbar-form navbar-left" role="email">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
-                            </div>
-                            <button type="submit" class="btn btn-info">Đăng ký</button>
-                        </form>
-                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="Copyright">
-                        <div class="col-md-4">
-                            <p style="color:#14928e">&copy Copyright: FREE ACADEMY COMPANY</p>
-                            <a href="#">RSS</a> |
-                            <a href="#">HOME</a> |
-                            <a href="#">CONTACT</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="contact">
-                                <a href="#"><img src="/assets/images/facebook.png"></a>
-                                <a href="#"><img src="/assets/images/google-plus.png"></a>
-                                <a href="#"><img src="/assets/images/twitter.png"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
+    <include filename=include/footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
