@@ -298,6 +298,7 @@ hr{
 select{
 	background: #ffffff;
 	color: #333 !important;
+	border-radius: 2px;
 }
 .block-exam{
 	max-height: 300px !important;

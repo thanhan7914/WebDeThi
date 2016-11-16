@@ -117,6 +117,20 @@
     					</select>
     				</li>
 
+                    <li>
+                        <select>
+                            <option value="Môn">Môn</option>
+                            <option value="Toán">Toán</option>
+                            <option value=" Vật Lý">Vật lý</option>
+                            <option value="Hóa Học">Hóa Học</option>
+                            <option value="Sinh Học">Sinh học</option>
+                            <option value="Tiếng Anh">Tiếng Anh</option>
+                            <option value="Ngữ Văn">Ngữ Văn</option>
+                            <option value="Lịch sử">Lịch Sử</option>
+                            <option value="Địa lý">Địa lý</option>
+                        </select>
+                    </li>
+                    
     				<li>
     					<select>
     						<option value="Năm">Năm</option>
