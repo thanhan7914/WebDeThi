@@ -64,5 +64,6 @@ router.get('/', function(req, res) {
 router.use(require('./login'));
 router.use(require('./readnews'));
 router.use(require('./exlist'));
+router.use(require('./newslist'));
 
 module.exports = router;

@@ -19,7 +19,7 @@
                 <div class="logo-header">
                     <div class="col-md-4">
                         <div id="logo">
-                            <a href="#"><img class="img-responsive" src="assets/images/logo.png"></a>
+                            <a href="/"><img class="img-responsive" src="assets/images/logo.png"></a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                             <option value="Địa lý">Địa lý</option>
                         </select>
                     </li>
-                    
+
     				<li>
     					<select>
     						<option value="Năm">Năm</option>
@@ -154,10 +154,10 @@
                     </div>
                     <div class="col-md-10">
                        <div class="author-time">
-                           <small style="color: #888;">óc chó an</small>
+                           <small style="color: #888;"><script>document.write(new Date())</script></small>
                        </div>
                        <div class="decriptions">
-                           <a href="#"><p style="color: #333;">óc chó an anh chém cả nhà</p></a>
+                           <a href="#"><p style="color: #333;">description</p></a>
                        </div>
                     </div>
                 </div>
@@ -199,9 +199,9 @@
                 </div>
             </div>
 
-            
+
     	</div>
-        
+
         <div class="col-md-4 slider-left">
 
             <div class="row">
@@ -230,7 +230,7 @@
                 <div class="link-exam">
                     <a href="#">Đề thi thử chuyên Phan Bội châu 2017</a>
                 </div>
-                
+
             </div>
         </div>
 
