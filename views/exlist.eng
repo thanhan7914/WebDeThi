@@ -9,7 +9,6 @@
     <!-- Bootstrap -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
   </head>
   <body>
 
@@ -236,7 +235,9 @@
 
     </div>
 
-    <footer>
+    <eng include="\include">
+
+   <!--  <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -246,7 +247,7 @@
                     <form class="navbar-form navbar-left" role="email">
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Email">
-                        </div>
+                        </div
                         <button type="submit" class="btn btn-info">Đăng ký</button>
                     </form>
                  </div>
@@ -271,7 +272,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

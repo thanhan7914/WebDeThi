@@ -57,8 +57,11 @@ a{
 #myCarousel{
 	margin-top: 10px;
 }
-#gioithieu{
-	margin-top: 10px
+.carousel-indicators >.active{
+	background: #ffffff !important;
+}
+.gioithieu{
+	margin-top: 5px !important;
 }
 
 .danhmuc{
@@ -123,7 +126,7 @@ div.col-md-4.gioithieu{
 }
 p.introduce-content{
 	margin-left: 5px;
-	height: 170px;
+	min-height: 165px;
 }
 div.container.news-content{
 	margin-top: 20px;
