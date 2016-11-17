@@ -91,6 +91,7 @@ router.post('/', function(req, res) {
       subject: Number(POST['level']),
       level: Number(POST['level']),
       type: Number(POST['type']),
+      year: Number(POST['year']),
       image: POST['image'],
       datecreate: Date.now(),
       dateupdate: Date.now()
