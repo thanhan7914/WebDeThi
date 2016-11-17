@@ -113,6 +113,10 @@
 							<div class="form-group">
 								<label for="info">Count:</label>
                 <input type="number" id="info" name="info" value="">
+								<div class="tools" id="cttip" style="display: inline-block;">
+									<span target="add" style="color: blue; cursor: pointer">+</span>
+									<span target="sub" style="color: blue; cursor: pointer">-</span>
+								</div>
 							</div>
 							<div id="question">
 							</div>
@@ -131,19 +135,70 @@
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
 	<script type="text/javascript">
-	  $('select[name="type"]').change(function() {
+    let cchange = function(n) {
+			let c = parseInt($('#info').val());
+			if(c + n > 0 && c + n < 100)
+				$('#info').val(c + n).change();
+		};
+
+		let showTextBox = function() {
+			let count = parseInt($('#info').val());
+			if(count > 0 && count < 100)
+			{
+				let $q = $('#question');
+				let hasDiv = $q.find('div.form-group').length;
+
+        if(hasDiv === count) return;
+				if(hasDiv > count)
+				{
+					let $qdiv = $q.find('div.form-group');
+					for(let i = hasDiv - 1; i >= count; i--)
+					  $($qdiv[i]).remove();
+
+					return;
+				}
+
+				for(let i = hasDiv; i < count; i++)
+				{
+					$q.append(`
+						<div class="form-group">
+							<strong>Question ${i + 1}:</strong>
+							<textarea class="form-control" name="question_${i}" rows="4"></textarea>
+							<span>Answer: </span>
+							<div style="margin: 6px 8px; display: inline-block;" class="answer">
+								<input type="hidden" name="question_${i}_n_answer" value="4">
+								<span>A.</span> <input type="radio" name="question_${i}_choose" value="0">
+								   <input type="text" name="question_${i}_answer_0" value="">
+								<span>B.</span> <input type="radio" name="question_${i}_choose" value="1">
+								   <input type="text" name="question_${i}_answer_1" value="">
+								<span>C.</span> <input type="radio" name="question_${i}_choose" value="2">
+								   <input type="text" name="question_${i}_answer_2" value="">
+								<span>D.</span> <input type="radio" name="question_${i}_choose" value="3">
+								   <input type="text" name="question_${i}_answer_3" value="">
+							</div>
+							<span class="add_answer">+</span>
+							<span class="remove_answer">-</span>
+						</div>
+						`);
+				}
+			}
+		}
+
+		$('select[name="type"]').change(function() {
 			let choose = parseInt($(this).val());
 			$('label[for="info"]').text(choose == 0? 'Count:' : 'File pdf:');
 			if(choose === 0)
 			{
-			  $('#info').attr('type', 'number').val(12);
+				$('#info').attr('type', 'number').val(5);
 				showTextBox();
+				$('#cttip').show();
 			}
 			else
 			{
-			  $('#info').attr('type', 'text');
+				$('#info').attr('type', 'text');
 				$('#question').empty();
 				$('#question').append('<strong>Answer file:</strong> <input type="text" name="answer" value="">');
+				$('#cttip').hide();
 			}
 		});
 
@@ -153,37 +208,35 @@
 			showTextBox();
 		});
 
-		let showTextBox = function() {
-			let count = parseInt($('#info').val());
-			if(count > 0 && count < 100)
-			{
-				let $q = $('#question');
-				$q.empty();
+		$('span[target="add"]').click(cchange.bind(null, 1));
+		$('span[target="sub"]').click(cchange.bind(null, -1));
 
-				for(let i = 0; i < count; i++)
-				{
-					$q.append(`
-						<div class="form-group">
-							<strong>Question ${i + 1}:</strong>
-							<textarea class="form-control" name="question_${i}" rows="4"></textarea>
-							<span>Answer: </span>
-							<div style="margin: 6px 8px; display: inline-block;" class="answer">
-								<input type="hidden" name="question_${i}_n_answer" value="4">
-								A. <input type="radio" name="question_${i}_choose" value="0">
-								   <input type="text" name="question_${i}_answer_0" value="">
-								B. <input type="radio" name="question_${i}_choose" value="1">
-								   <input type="text" name="question_${i}_answer_1" value="">
-								C. <input type="radio" name="question_${i}_choose" value="2">
-								   <input type="text" name="question_${i}_answer_2" value="">
-								D. <input type="radio" name="question_${i}_choose" value="3">
-								   <input type="text" name="question_${i}_answer_3" value="">
-							</div>
-							<span class="add_answer">+</span
-						</div>
-						`);
-				}
-			}
-		}
+		$('body').on('click', 'span.add_answer', function() {
+			let keys = 'ABCDEFGHIJKLM';
+			let pretag = $(this).prev();
+			let radio = pretag.find('input[type="radio"]');
+			let c = pretag.find('input[type="hidden"]');
+
+			let count = parseInt($(c).val());
+			c.val(count + 1);
+			let name = String(c.attr('name'));
+			name = name.substring(0, name.length - 9);
+			pretag.append(`
+				<span>${keys[count]}.</span> <input type="radio" name="${name}_choose" value="${count}">
+					 <input type="text" name="${name}_answer_${count}" value="">
+					 `);
+		});
+
+		$('body').on('click', 'span.remove_answer', function() {
+			let pretag = $(this).prev().prev().find('input');
+			let c = $(this).prev().prev().find('input[type="hidden"]');
+
+			let count = parseInt($(c).val());
+			c.val(count - 1);
+			pretag.last().prev().prev().remove();
+			pretag.last().prev().remove();
+			pretag.last().remove();
+		});
 
     $('select[name="type"]').change();
 	</script>

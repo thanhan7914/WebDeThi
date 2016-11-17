@@ -37,7 +37,16 @@
   padding: 16px 8px;
 }
 
-.add_answer {
+.add_answer, .remove_answer {
+  font-weight: 800;
+  font-size: 18px;
+  margin: auto 6px;
   color: blue;
   cursor: pointer;
+}
+
+span[target="add"], span[target="sub"] {
+  font-weight: 800;
+  font-size: 18px;
+  margin: auto 6px;
 }
