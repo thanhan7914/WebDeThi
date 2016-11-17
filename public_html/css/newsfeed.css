@@ -16,7 +16,7 @@
   list-style-type: square;
 }
 
-.btn-newfeed {
+.btn-newsfeed {
   width: 100%;
   display: block;
   margin: 0;
@@ -28,7 +28,7 @@
   margin: auto -40px;
 }
 
-.btn-newfeed:hover {
+.btn-newsfeed:hover {
   color: blue;
 }
 

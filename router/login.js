@@ -2,6 +2,13 @@ const router = require('express').Router();
 const Query = require('mongo-promise');
 const utils = require('../utils');
 
+router.all('/login', function(req, res, next) {
+  if(typeof req.session !== 'undefined' && req.session.hasOwnProperty('user'))
+    return res.redirect('/dashboard');
+
+  return next();
+});
+
 router.get('/login', function(req, res) {
   res.render('login');
 });
@@ -22,6 +29,8 @@ router.post('/login', function(req, res) {
       throw new Error('No User');
 
     req.session.user = docs[0];
+    req.session.hash = utils.createHash(docs[0].username
+      + docs[0].password + utils.rhex(10));
     res.redirect('dashboard');
   })
   .except((error) => {

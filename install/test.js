@@ -3,7 +3,7 @@ const utils = require('../utils');
 const fs = require('fs');
 
 let db = new Query('Academy')
-.find({}, 'newfeed')
+.find({}, 'newsfeed')
 .close((data) => {
   let rows = [];
   data.forEach((doc) => {

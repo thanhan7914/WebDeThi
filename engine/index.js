@@ -50,7 +50,7 @@ exports.compile = function(str, options)
 
       let reg = new RegExp('<eng data=' + String(key) + '>','g');
       if(reg.test(str))
-        str = str.replace(reg, content.toString());
+        str = str.replace(reg, String(content));
     }
   }
 

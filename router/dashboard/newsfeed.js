@@ -4,8 +4,17 @@ const ObjectID = require('mongodb').ObjectID;
 const querystring = require('querystring');
 const utils = require('../../utils');
 
-let newposts = function(req, res, options = {method: 'addnew', title: '', content: '', description: '', image: '', username: req.session.user.username}) {
-  res.render('dashboard/newposts', options);
+let newposts = function(req, res, options) {
+  res.render('dashboard/newposts', options || {
+    method: 'addnew',
+    title: '',
+    content: '',
+    description: '',
+    image: '',
+    newsfeedid: '',
+    username: req.session.user.username,
+    hash: req.session.hash
+  });
 };
 
 router.get('*', function(req, res, next) {
@@ -24,16 +33,16 @@ router.get('*', function(req, res, next) {
     return res.redirect('/404');
 
   let id = GET['id'];
-  if(GET['method'] === 'delete')
+  if(GET['method'] === 'delete' && GET['hash'] === req.session.hash)
   {
     ids = id.split(',');
     let db = new Query(utils.config.dbname);
     ids.forEach(function(idx) {
-      db.remove({_id: new ObjectID(idx)}, 'newfeed');
+      db.remove({_id: new ObjectID(idx)}, 'newsfeed');
     });
 
     return db.close(() => {
-      return res.redirect('/dashboard/newfeed');
+      return res.redirect('/dashboard/newsfeed');
     }, (error) =>{
       return res.end(error);
     });
@@ -41,11 +50,12 @@ router.get('*', function(req, res, next) {
 
   let options = {};
   options.method = GET['method'];
-  options.newfeedid = id;
+  options.newsfeedid = id;
   options.username = req.session.user.username;
+  options.hash = req.session.hash;
 
   let db = new Query(utils.config.dbname)
-  .find({_id: new ObjectID(id)}, 'newfeed')
+  .find({_id: new ObjectID(id)}, 'newsfeed')
   .handle((rows) => {
     if(rows.length === 0) throw new Error('Not found');
 
@@ -64,11 +74,14 @@ router.get('*', function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-  let options = {username: req.session.user.username};
+  let options = {
+    username: req.session.user.username,
+    hash: req.session.hash
+  };
 
   let count, skip = 0, limit;
   try {
-    limit = utils.config.dashboard.newfeed.limit;
+    limit = utils.config.dashboard.newsfeed.limit;
     if(typeof req.body.page !== 'undefined')
       skip = Math.floor((parseInt(req.body.page) - 1) * limit);
     else req.body.page = 1;
@@ -77,19 +90,19 @@ router.get('/', function(req, res) {
   }catch(e){}
 
   let db = new Query(utils.config.dbname, true);
-  db.query({}, 'newfeed')
+  db.query({}, 'newsfeed')
   .exec('count')
   .handle((c) => {
     count = c;
     if(skip > c) throw new Error('Page not found.');
   })
-  .find({}, 'newfeed', {sort: {datecreate: -1}, skip, limit})
+  .find({}, 'newsfeed', {sort: {datecreate: -1}, skip, limit})
   .handle((docs) => {
     //query
     let len = docs.length;
     options.pages = Math.ceil(count / limit);
     options.curpage = req.body.page;
-    options.count_new_feed = (limit + skip) + '/' + count;
+    options.count_news_feed = (limit + skip) + '/' + count;
     options.news = '';
 
     for(let i = 0; i < len; i++)
@@ -106,7 +119,7 @@ router.get('/', function(req, res) {
     }
   })
   .close((done) => {
-    res.render('dashboard/newfeed', options);
+    res.render('dashboard/newsfeed', options);
   }, (error) => {
     res.redirect('/404');
   });
@@ -117,33 +130,33 @@ router.post('/', function(req, res) {
 
   if(req.url === '/?newposts')
   {
-    if(typeof POST['method'] === 'undefined')
-      return res.redirect('/dashboard/newfeed');
+    if(typeof POST['method'] === 'undefined' && POST['hash'] !== req.session.hash)
+      return res.redirect('/dashboard/newsfeed');
 
     if(POST['method'] === 'addnew' || POST['method'] === 'edit')
     {
       if(!utils.hasattr(POST, ['title', 'content', 'description', 'image']))
-        return res.redirect('/dashboard/newfeed');
+        return res.redirect('/dashboard/newsfeed');
 
       let row = {datecreate: Date.now(), dateupdate: Date.now(), author: req.session.user.username};
       utils.clonewith(POST, row, ['title', 'content', 'description', 'image']);
 
       let db = new Query(utils.config.dbname);
       if(POST['method'] === 'addnew')
-        db.insert(row, 'newfeed');
-      else if(POST['method'] === 'edit' && POST['newfeedid'].length === 24)
+        db.insert(row, 'newsfeed');
+      else if(POST['method'] === 'edit' && POST['newsfeedid'].length === 24)
       {
-        db.find({_id: new ObjectID(POST['newfeedid'])}, 'newfeed')
+        db.find({_id: new ObjectID(POST['newsfeedid'])}, 'newsfeed')
         .handle((docs) => {
           if(docs.length === 0) throw new Error('Not found');
 
           row.datecreate = docs[0].datecreate;
         })
-        .update({_id: new ObjectID(POST['newfeedid'])}, row, 'newfeed');
+        .update({_id: new ObjectID(POST['newsfeedid'])}, row, 'newsfeed');
       }
 
       db.close(() => {
-        res.redirect('/dashboard/newfeed');
+        res.redirect('/dashboard/newsfeed');
       }, (error) => {
         console.log(error);
         res.redirect('/404');
@@ -151,7 +164,7 @@ router.post('/', function(req, res) {
     }
   }
   else
-    res.redirect('/dashboard/newfeed');
+    res.redirect('/dashboard/newsfeed');
 });
 
 module.exports = router;

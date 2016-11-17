@@ -1,11 +1,11 @@
 {
   "dbname": "Academy",
   "dashboard": {
-    "newfeed": {
+    "newsfeed": {
       "limit": 5
     }
   },
   "show": {
-    "newfeed": 5
+    "newsfeed": 5
   }
 }

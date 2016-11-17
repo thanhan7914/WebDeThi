@@ -6,9 +6,9 @@ fs.readFile(__dirname + '/nf_data.json', (err, data) => {
   if (err) throw err;
   let obj = JSON.parse(data);
   let db = new Query('Academy');
-  db.remove({}, 'newfeed');
+  db.remove({}, 'newsfeed');
   for(let doc of obj)
-    db.insert(doc, 'newfeed');
+    db.insert(doc, 'newsfeed');
 
   db.close();
 });

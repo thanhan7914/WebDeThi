@@ -40,7 +40,7 @@
     </div>
 		<ul class="nav menu">
 			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li><a href="/dashboard/newfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newfeed</a></li>
+			<li><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
 			<li class="active"><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
 		</ul>
 
@@ -56,12 +56,37 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Question</h1>
+				<h1 class="page-header">Question(?/?)</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
         <!-- hien thi tin tuc-->
+				<div class="col-md-8">
+					<div class="row">
+						<div class="panel panel-default">
+							<eng data=news>
+						</div>
+					</div>
+					<div class="row" id="pagination">
+						<ul class="pagination">
+						</ul>
+					</div>
+			 </div>
+			 <div class="col-md-4">
+
+				 <div class="panel panel-primary">
+					 <div class="panel-heading">Tools</div>
+					 <div class="panel-body">
+						 <ul>
+							 <li id="addnew" class="btn-newsfeed">Add new</li>
+							 <li id="chooseall" class="btn-newsfeed">Choose all</li>
+							 <li id="dischoose" class="btn-newsfeed">Dischoose all</li>
+							 <li id="delete" class="btn-newsfeed" data-target="">Delete rows</li>
+						 </ul>
+					 </div>
+				 </div>
+			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 

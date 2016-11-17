@@ -3,7 +3,8 @@ const Query = require('mongo-promise');
 const utils = require('../../utils');
 
 router.use(function(req, res, next) {
-  if(typeof req.session === 'undefined' || !req.session.hasOwnProperty('user'))
+  if(typeof req.session === 'undefined'
+      || !req.session.hasOwnProperty('user') || !req.session.hasOwnProperty('hash'))
     return res.redirect('/');
 
   next();
@@ -16,6 +17,6 @@ router.get('/', function(req, res) {
   res.render('dashboard/index', options);
 });
 
-router.use('/newfeed', require('./newfeed'));
+router.use('/newsfeed', require('./newsfeed'));
 router.use('/question', require('./question'));
 module.exports = router;
