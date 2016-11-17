@@ -24,26 +24,29 @@ a{
 }
 .nav{
 	background-color: #14928e;
-	height: 40px;
+	height: 37px;
 }
 .navbar{
-	min-height: 40px !important;
-	height: 40px;
+	min-height: 30px !important;
+	height: 37px;
 }
 .navbar-nav>li>a{
 	color: #ffffff;
-	padding-top: 10px !important;
-	padding-bottom: 10px !important;
+	padding-top: 8px !important;
+	padding-bottom: 9px !important;
 }
 .navbar-brand{
 	padding: 10px 10px !important;
-	height: 40px !important;
+	height: 37px !important;
+}
+div#menu.navbar-collapse.collapse{
+	height: 37px !important;
 }
 .navbar-collapse.collapse{
-	height: 40px !important;
+	height: 37px !important;
 }
 .navbar-form{
-	margin-top: 4px !important;
+	margin-top: 1.5px !important;
 }
 
 .navbar-toggle .icon-bar{

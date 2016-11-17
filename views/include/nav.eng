@@ -15,18 +15,18 @@
 
             <div class="navbar-collapse collapse" id="menu">
                 <ul class="nav navbar-nav">
-                    <li><a class="active" href="/">TRANG CHỦ</a></li>
+                    <li><a href="/">TRANG CHỦ</a></li>
                     <li><a href="#">THI ONLINE</a></li>
                     <li><a href="#">TÀI LIỆU</a></li>
                     <li><a href="/newslist">TIN TỨC</a></li>
                     <li><a href="#">LIÊN HỆ</a></li>
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a href="#" data-toggle="dropdown">TÀI KHOẢN<span class="caret"></span></a>
                              <ul class="dropdown-menu">
                                 <li><a href="#">Thông tin</a></li>
                                 <li><a href="#">Thoát</a></li>
                             </ul>
-                    </li>
+                    </li> -->
                 </ul>
 
                 <form class="navbar-form navbar-right" method="post" >
