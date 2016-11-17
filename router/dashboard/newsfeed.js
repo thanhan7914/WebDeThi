@@ -89,7 +89,7 @@ router.get('/', function(req, res) {
     if(skip < 0) skip = 0;
   }catch(e){}
 
-  let db = new Query(utils.config.dbname, true);
+  let db = new Query(utils.config.dbname);
   db.query({}, 'newsfeed')
   .exec('count')
   .handle((c) => {
@@ -102,7 +102,7 @@ router.get('/', function(req, res) {
     let len = docs.length;
     options.pages = Math.ceil(count / limit);
     options.curpage = req.body.page;
-    options.count_news_feed = (limit + skip) + '/' + count;
+    options.count_news_feed = (len + skip) + '/' + count;
     options.news = '';
 
     for(let i = 0; i < len; i++)

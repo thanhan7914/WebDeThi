@@ -139,7 +139,6 @@
 				if(idx === '') return;
 
 				let url = '/dashboard/newsfeed?method=delete&id=' + idx + '&hash=' + hash;
-				console.log(url);
 				mscConfirm("Delete selected?",function(){
 					location.href = url;
 				});

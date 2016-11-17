@@ -36,3 +36,8 @@
   margin: 18px 6px;
   padding: 16px 8px;
 }
+
+.add_answer {
+  color: blue;
+  cursor: pointer;
+}

@@ -3,9 +3,17 @@
   "dashboard": {
     "newsfeed": {
       "limit": 5
+    },
+    "exam": {
+      "limit": 10
     }
   },
   "show": {
-    "newsfeed": 5
+    "newsfeed": 5,
+    "exam": 10
+  },
+  "exam": {
+    "subject": ["Toan Hoc", "Vat Ly", "Hoa Hoc", "Sinh Hoc", "Dia Ly"],
+    "level": ["Đề Thi Tốt Nghiệp THPT", "Đề Thi Đại Học"]
   }
 }

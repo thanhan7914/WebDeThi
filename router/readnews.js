@@ -8,7 +8,7 @@ router.get('/readnews/([a-zA-Z0-9_\-]+)\.([a-z0-9]{24})', function(req, res) {
   let options = {};
 
   let db = new Query(utils.config.dbname)
-  .find({_id: new ObjectID(id)}, 'newfeed')
+  .find({_id: new ObjectID(id)}, 'newsfeed')
   .handle((rows) => {
     if(rows.length === 0) throw new Error('not found');
 
