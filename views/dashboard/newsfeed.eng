@@ -8,7 +8,7 @@
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="/assets/css/datepicker3.css" rel="stylesheet">
 <link href="/assets/css/dashboard.css" rel="stylesheet">
-<link href="/assets/css/newfeed.css" rel="stylesheet">
+<link href="/assets/css/newsfeed.css" rel="stylesheet">
 <link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
 <link href="/assets/css/msc-style.css" rel="stylesheet" type="text/css">
 
@@ -43,7 +43,7 @@
     </div>
 		<ul class="nav menu">
 			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li class="active"><a href="/dashboard/newfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newfeed</a></li>
+			<li class="active"><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
 			<li><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
 		</ul>
 
@@ -59,7 +59,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Newfeed (<eng data=count_new_feed>)</h1>
+				<h1 class="page-header">newsfeed (<eng data=count_news_feed>)</h1>
 			</div>
 		</div><!--/.row-->
 
@@ -82,10 +82,10 @@
            <div class="panel-heading">Tools</div>
            <div class="panel-body">
              <ul>
-               <li id="addnew" class="btn-newfeed">Add new</li>
-               <li id="chooseall" class="btn-newfeed">Choose all</li>
-               <li id="dischoose" class="btn-newfeed">Dischoose all</li>
-               <li id="delete" class="btn-newfeed" data-target="">Delete rows</li>
+               <li id="addnew" class="btn-newsfeed">Add new</li>
+               <li id="chooseall" class="btn-newsfeed">Choose all</li>
+               <li id="dischoose" class="btn-newsfeed">Dischoose all</li>
+               <li id="delete" class="btn-newsfeed" data-target="">Delete rows</li>
              </ul>
            </div>
          </div>
@@ -99,14 +99,15 @@
 	<script src="/assets/js/pagination.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
+			let hash = '<eng data=hash>';
       $('#addnew').click(function() {
-        location.href = 'newfeed?newposts';
+        location.href = 'newsfeed?newposts';
       });
 
 			$('a[href^="?method\=delete"]').click(function(e) {
 				let $this = $(this);
 				mscConfirm("Delete?",function(){
-					location.href = $this.attr('href');
+					location.href = $this.attr('href') + '&hash=' + hash;
 				});
 
 				e.preventDefault();
@@ -137,8 +138,7 @@
 				let idx = String($(this).attr('data-target')).trim();
 				if(idx === '') return;
 
-				let url = '/dashboard/newfeed?method=delete&id=' + idx;
-				console.log(url);
+				let url = '/dashboard/newsfeed?method=delete&id=' + idx + '&hash=' + hash;
 				mscConfirm("Delete selected?",function(){
 					location.href = url;
 				});
@@ -153,6 +153,9 @@
 			let pagination = $('.pagination');
 
 			new $Pagination(pagination, pages, curpage).init();
+			(function() {
+
+			});
     });
   </script>
 </body>

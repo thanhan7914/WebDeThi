@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Academy - Dashboard</title>
+
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/css/dashboard.css" rel="stylesheet">
+<link href="/assets/css/newsfeed.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="/assets/js/libs/lumino.glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/"><span>Free Academy</span></a>
+			</div>
+
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<div class="info">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <eng data=username> </a>
+    </div>
+		<ul class="nav menu">
+			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
+			<li class="active"><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
+		</ul>
+
+	</div><!--/.sidebar-->
+
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="/"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active"><a href="/dashboard">dashboard</a></li>
+			</ol>
+		</div><!--/.row-->
+
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header"><a href="/dashboard/question">Question</a> > Posts</h1>
+			</div>
+		</div><!--/.row-->
+
+		<div class="row">
+        <!-- hien thi tin tuc-->
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <form class="newposts" method="post" action="question?newposts">
+              <input type="hidden" name="method" value="<eng data=method>">
+              <input type="hidden" name="examid" value="<eng data=examid>">
+              <input type="hidden" name="hash" value="<eng data=hash>">
+              <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="<eng data=title>">
+              </div>
+              <div class="form-group">
+								<strong>Category: </strong>
+								<select name="level">
+									<option value="0">Tốt nghiệp THPT</option>
+									<option value="1">Đại học</option>
+								</select>
+								<select name="subject">
+									<option value="0">Toán</option>
+									<option value="1">Vật lý</option>
+									<option value="2">Hóa Học</option>
+									<option value="3">Sinh học</option>
+									<option value="4">Tiếng Anh</option>
+									<option value="5">Ngữ Văn</option>
+									<option value="6">Lịch Sử</option>
+									<option value="7">Địa lý</option>
+								</select>
+								<select name="year">
+									<option value="2016">2016</option>
+									<option value="2015">2015</option>
+									<option value="2014">2014</option>
+									<option value="2013">2013</option>
+									<option value="2012">2012</option>
+									<option value="2011">2011</option>
+									<option value="2010">2010</option>
+									<option value="2009">2009</option>
+									<option value="2008">2008</option>
+									<option value="2007">2007</option>
+									<option value="2006">2006</option>
+									<option value="2005">2005</option>
+								</select>
+							</div>
+              <div class="form-group">
+								<strong>Type: </strong>
+								<select name="type">
+									<option value="0">Text</option>
+									<option value="1">File</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="info">Count:</label>
+                <input type="number" id="info" name="info" value="">
+							</div>
+							<div id="question">
+							</div>
+							<div class="form-group">
+                <label for="fd_img">Url Image:</label>
+                <input type="text" class="form-control" id="fd_img" name="image" value="<eng data=image>">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+          </div>
+
+       </div>
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+
+	<script src="/assets/js/libs/jquery.min.js"></script>
+	<script src="/assets/js/libs/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	  $('select[name="type"]').change(function() {
+			let choose = parseInt($(this).val());
+			$('label[for="info"]').text(choose == 0? 'Count:' : 'File pdf:');
+			if(choose === 0)
+			{
+			  $('#info').attr('type', 'number').val(12);
+				showTextBox();
+			}
+			else
+			{
+			  $('#info').attr('type', 'text');
+				$('#question').empty();
+				$('#question').append('<strong>Answer file:</strong> <input type="text" name="answer" value="">');
+			}
+		});
+
+		$('#info').change(function() {
+			let choose = parseInt($('select[name="type"]').val());
+			if(choose === 1) return;
+			showTextBox();
+		});
+
+		let showTextBox = function() {
+			let count = parseInt($('#info').val());
+			if(count > 0 && count < 100)
+			{
+				let $q = $('#question');
+				$q.empty();
+
+				for(let i = 0; i < count; i++)
+				{
+					$q.append(`
+						<div class="form-group">
+							<strong>Question ${i + 1}:</strong>
+							<textarea class="form-control" name="question_${i}" rows="4"></textarea>
+							<span>Answer: </span>
+							<div style="margin: 6px 8px; display: inline-block;" class="answer">
+								<input type="hidden" name="question_${i}_n_answer" value="4">
+								A. <input type="radio" name="question_${i}_choose" value="0">
+								   <input type="text" name="question_${i}_answer_0" value="">
+								B. <input type="radio" name="question_${i}_choose" value="1">
+								   <input type="text" name="question_${i}_answer_1" value="">
+								C. <input type="radio" name="question_${i}_choose" value="2">
+								   <input type="text" name="question_${i}_answer_2" value="">
+								D. <input type="radio" name="question_${i}_choose" value="3">
+								   <input type="text" name="question_${i}_answer_3" value="">
+							</div>
+							<span class="add_answer">+</span
+						</div>
+						`);
+				}
+			}
+		}
+
+    $('select[name="type"]').change();
+	</script>
+</body>
+</html>

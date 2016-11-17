@@ -5,7 +5,7 @@ const querystring = require('querystring');
 
 router.get('/newslist', function(req, res) {
   let page = 1;
-  let limit = utils.config.show.newfeed;
+  let limit = utils.config.show.newsfeed;
   let options = {};
   try {
     if(String(req.url).startsWith('/newslist?'))
@@ -13,13 +13,13 @@ router.get('/newslist', function(req, res) {
   }catch(e){}
 
   let db = new Query(utils.config.dbname)
-  .query({}, 'newfeed')
+  .query({}, 'newsfeed')
   .exec('count')
   .handle((c) => {
     options.pages = Math.ceil(c / limit);
     options.curpage = page;
   })
-  .find({}, 'newfeed', {sort: {datecreate: -1}, skip: limit * (page - 1), limit})
+  .find({}, 'newsfeed', {sort: {datecreate: -1}, skip: limit * (page - 1), limit})
   .handle((rows) => {
     options.news = '';
 
@@ -30,7 +30,7 @@ router.get('/newslist', function(req, res) {
       options.news += `
         <div class="row" style="padding: 4px 2px; border-top: 1px solid #eee;">
           <div class="col-md-4">
-            <div class="img-news img-newfeed" style="width: 100%">
+            <div class="img-news img-newsfeed" style="width: 100%">
               <a href="${href}"><img src="${rows[i].image}"></a>
             </div>
          </div>

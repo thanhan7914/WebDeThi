@@ -141,9 +141,17 @@ module.exports = {
 
     return str;
   },
-  escapeHtml(a, c) {
+  escapeHtml: function(a, c) {
     if(!(c instanceof Array)) c = [];
     for(let i in a)
       if(a.hasOwnProperty(i) && c.indexOf(i.toString()) !== -1) a[i] = a[i].escapeHtml();
+  },
+  rhex: function(len) {
+    let par = '0123456789abcdef';
+    let hex = '';
+    for(let i = 0; i < len ; i++)
+      hex += par[Math.floor(Math.random() * 16)];
+
+    return hex;
   }
 };

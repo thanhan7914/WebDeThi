@@ -252,32 +252,32 @@ hr{
 	  height: 100%;
 	}
 
-.img-newfeed {
+.img-newsfeed {
 	width: 200px;
 	height: 134px;
 }
 
-.newfeed {
+.newsfeed {
 	border-top: 1px solid #eee;
-	max-height: 164px;
+	/*max-height: 164px;*/
 }
 
-.newfeed-left, .newfeed-right {
+.newsfeed-left, .newsfeed-right {
 	position: relative;
 	display: inline-block;
 	max-width: 320px;
 }
 
-.newfeed-left {
+.newsfeed-left {
 	margin: 6px;
 }
 
-.newfeed-right {
+.newsfeed-right {
 	vertical-align: top;
 	margin: 10px auto;
 }
 
-.newfeed-right > small {
+.newsfeed-right > small {
 	text-overflow: ellipsis;
 	word-wrap: break-word;
   overflow: hidden;

@@ -19,10 +19,10 @@ router.get('/', function(req, res) {
   }
 
   let db = new Query(utils.config.dbname)
-  .find({}, 'newfeed', {sort: {datecreate: -1}, limit: 3})
+  .find({}, 'newsfeed', {sort: {datecreate: -1}, limit: 3})
   .handle((rows) => {
     if(rows.length < 1) return;
-    options.newfeed = `
+    options.newsfeed = `
       <div class="col-md-6" style="max-height: 320px;">
         <div class="img-news">
           <a href="/readnews/${utils.toUrl(rows[0].title)}.${rows[0]._id}"><img src="${rows[0].image}" alt="${rows[0].title}"></a>
@@ -38,14 +38,14 @@ router.get('/', function(req, res) {
     {
       let href = `/readnews/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
 
-       options.newfeed += `
-       <div class="row newfeed">
-         <div class="newfeed-left">
-           <div class="newfeed-left img-news img-newfeed">
+       options.newsfeed += `
+       <div class="row newsfeed">
+         <div class="newsfeed-left">
+           <div class="newsfeed-left img-news img-newsfeed">
              <a href="${href}"><img src="${rows[i].image}"></a>
            </div>
         </div>
-         <div class="newfeed-right">
+         <div class="newsfeed-right">
              <a href="${href}"><p>${rows[i].title}</p></a>
              <small>${rows[i].description}</small>
          </div>
@@ -53,12 +53,19 @@ router.get('/', function(req, res) {
         `;
     }
 
-    options.newfeed += '</div>';
+    options.newsfeed += '</div>';
   })
   .close()
   .handle(() => {
     res.render('index', options);
   });
+});
+
+router.get('/logout', function(req, res) {
+  delete req.session.user;
+  delete req.session.hash;
+
+  res.redirect('/');
 });
 
 router.use(require('./login'));
