@@ -10,7 +10,7 @@
                     </span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand" style="color: #f1f1f1">FREE ACADEMY</a>
+                <!-- <a href="#" class="navbar-brand" style="color: #f1f1f1">FREE ACADEMY</a> -->
             </div>
 
             <div class="navbar-collapse collapse" id="menu">
