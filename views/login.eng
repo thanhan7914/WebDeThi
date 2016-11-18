@@ -18,36 +18,40 @@
 <body class="body-login">
 
 	<include filename=include/nav>
-
-    <div class="container box-login-middle">
-    	<div class="col-md-5 col-centered">
-    		<div class="login-box wrap">
-    			<div class="login-box">
-    				<h4 class="dangnhap" style="text-align: center;">ĐĂNG NHẬP</h4>
-    			</div>
-    			<div class="login-box title-box" style="text-align: center;">
-    				<label>TÀI KHOẢN</label>
-    			</div>
-    			<div class="login-box">
-    				<input class="login-box-input" type="text" name="">
-    			</div>
-    			<div class="login-box title-box">
-    				<label>MẬT KHẨU</label>
-    			</div>
-    			<div class="login-box">
-    				<input class="login-box-input"  type="password" name="">
-    			</div>
-    			<div class="login-box title-box">
-    				<a href="#"><small>Quên mật khẩu?</small></a>
-    			</div>
-    			<div class="login-box box-submit">
-    				<button type="submit" class="btn btn-info">ĐĂNG NHẬP</button>
-    			</div>
-    			</div>
-    		</div>
-    	</div>
-    </div>   
-	
+    
+    <div class="col-md-4 col-md-offset-4">
+        <div class="head">
+            <h4 style="text-align: center;">ĐĂNG NHẬP</h4>
+            <hr class="colorgraph">
+        </div>
+        <div class="login-box wrap">
+            <div class="col-md-12">
+                <label class="col-md-">Tài khoản</label>
+            </div>
+            <div class="col-md-12">
+                <input class="form-control" type="text" name="account">
+            </div>
+            <div class="col-md-12" style="margin-top: 10px;">
+                <label>Mật khẩu</label>
+            </div>
+            <div class="col-md-12">
+                <input class="form-control" type="password" name="pass">
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-6" style="color: #888;">
+                    <input type="checkbox" name="check-box"> Nhớ mật khẩu?
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="#"><p style="color: #888;">Quên mật khẩu?</p></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4">
+                    <button class="btn btn-primary" >ĐĂNG NHẬP</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

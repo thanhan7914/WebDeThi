@@ -170,45 +170,26 @@ hr{
 	background: url("/assets/images/photo_bg.jpg") no-repeat center center fixed;
 	background-size: cover;
 }
-
-.container>.col-centered{
-    float: none;
-    margin: 0 auto;
-}
-.login-box.title-box{
-	text-align: center !important;
-	color: #14928e;
-}
-.login-box-input{
-	margin-left: 130px !important;
-	line-height: 30px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-.login-box.wrap{
-	margin-top: 30px;
-	border: 1px solid #14928e;
-	border-radius: 5px;
-	padding-bottom: 40px;
-	background-color: #f1f1f1;
-}
-.login-box>.box-input{
-
-}
-.dangnhap{
-	background-color: #14928e;
-	padding-top: 10px;
-	margin-top: 0;
-	padding-bottom: 10px;
-	color: #ffffff;
-}
-.box-submit{
-	margin-left: 170px;
-}
-.box-login-middle{
+div.col-md-4.col-md-offset-4{
+	background: #f1f1f1;
 	margin-top: 100px;
+	border-radius: 5px;
+	padding-bottom: 10px;
 }
 
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+
+/*news-page*/
 .ipnews {
 	position: relative;
   top: -64px;
