@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Đăng nhập</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
@@ -17,26 +18,54 @@
 
 <body class="body-login">
 
-	<include filename=include/nav>
-    
-    <div class="col-md-4 col-md-offset-4">
+		<ul class="topnav" id="myTopnav">
+	    <li><a href="#">Trang chủ</a></li>
+	    <li><a href="#">Thi online</a></li>
+	    <li><a href="#">Tài liệu</a></li>
+	    <li><a href="#">Tin tức</a></li>
+	    <li><a href="#">Liên hệ</a></li>
+
+	    <li class="icon">
+	      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+	    </li>
+	  </ul>
+
+	  <script>
+	  function myFunction() {
+	      var x = document.getElementById("myTopnav");
+	      if (x.className === "topnav") {
+	          x.className += " responsive";
+	      } else {
+	          x.className = "topnav";
+	      }
+	  }
+	  </script>
+
+  <div class="container login-page">
+		<div class="col-md-4 col-md-offset-4">
         <div class="head">
             <h4 style="text-align: center;">ĐĂNG NHẬP</h4>
-            <hr class="colorgraph">
         </div>
+
         <div class="login-box wrap">
+
             <div class="col-md-12">
+								<hr class="colorgraph">
                 <label class="col-md-">Tài khoản</label>
             </div>
+
             <div class="col-md-12">
                 <input class="form-control" type="text" name="account">
             </div>
+
             <div class="col-md-12" style="margin-top: 10px;">
                 <label>Mật khẩu</label>
             </div>
+
             <div class="col-md-12">
                 <input class="form-control" type="password" name="pass">
             </div>
+
             <div class="row col-md-12">
                 <div class="col-md-6" style="color: #888;">
                     <input type="checkbox" name="check-box"> Nhớ mật khẩu?
@@ -45,14 +74,17 @@
                     <a href="#"><p style="color: #888;">Quên mật khẩu?</p></a>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-6 col-md-offset-4">
                     <button class="btn btn-primary" >ĐĂNG NHẬP</button>
                 </div>
             </div>
-        </div>
-    </div>
 
+        </div>
+
+    </div>
+  </div>
 </body>
 
 

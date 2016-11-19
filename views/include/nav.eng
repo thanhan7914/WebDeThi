@@ -1,40 +1,25 @@
+<div class="container menu">
+  <ul class="topnav" id="myTopnav">
+    <li><a href="#">Trang chủ</a></li>
+    <li><a href="#">Thi online</a></li>
+    <li><a href="#">Tài liệu</a></li>
+    <li><a href="#">Tin tức</a></li>
+    <li><a href="#">Liên hệ</a></li>
 
-<div id="header">
-    <nav class="nav">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                    <span class="sr-only">MENU</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar">
-                    </span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- <a href="#" class="navbar-brand" style="color: #f1f1f1">FREE ACADEMY</a> -->
-            </div>
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+    </li>
+  </ul>
 
-            <div class="navbar-collapse collapse" id="menu">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">TRANG CHỦ</a></li>
-                    <li><a href="#">THI ONLINE</a></li>
-                    <li><a href="#">TÀI LIỆU</a></li>
-                    <li><a href="/newslist">TIN TỨC</a></li>
-                    <li><a href="#">LIÊN HỆ</a></li>
-                    <!-- <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">TÀI KHOẢN<span class="caret"></span></a>
-                             <ul class="dropdown-menu">
-                                <li><a href="#">Thông tin</a></li>
-                                <li><a href="#">Thoát</a></li>
-                            </ul>
-                    </li> -->
-                </ul>
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+  </script>
 
-                <form class="navbar-form navbar-right" method="post" >
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm..">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </nav>
 </div>

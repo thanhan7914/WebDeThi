@@ -1,37 +1,40 @@
+<div class="container">
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h4 style="color: #14928e"><strong>Đăng ký nhận tài liệu miễn phí</strong></h4>
-            </div>
-            <div class="col-md-4">
-                <form class="navbar-form navbar-left" role="email">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <button type="submit" class="btn btn-info">Đăng ký</button>
-                </form>
-             </div>
-        </div>
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <h4 style="color: #14928e"><strong>Đăng ký nhận tài liệu miễn phí</strong></h4>
+              </div>
+              <div class="col-md-4">
+                  <form class="navbar-form navbar-left" role="email">
+                      <div class="form-group">
+                          <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                      <button type="submit" class="btn btn-info">Đăng ký</button>
+                  </form>
+               </div>
+          </div>
 
-        <div class="row">
-            <div class="Copyright">
-                <div class="col-md-4">
-                    <p style="color:#14928e">&copy Copyright: FREE ACADEMY COMPANY</p>
-                    <a href="#">RSS</a> |
-                    <a href="#">HOME</a> |
-                    <a href="#">CONTACT</a>
-                </div>
-            </div>
+          <div class="row">
+              <div class="Copyright">
+                  <div class="col-md-4">
+                      <p style="color:#14928e">&copy Copyright: FREE ACADEMY COMPANY</p>
+                      <a href="#">RSS</a> |
+                      <a href="#">HOME</a> |
+                      <a href="#">CONTACT</a>
+                  </div>
+              </div>
 
-            <div class="col-md-4">
-                <div class="contact">
-                        <a href="#"><img src="/assets/images/facebook.png"></a>
-                        <a href="#"><img src="/assets/images/google-plus.png"></a>
-                        <a href="#"><img src="/assets/images/twitter.png"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+              <div class="col-md-4">
+                  <div class="contact">
+                          <a href="#"><img src="/assets/images/facebook.png"></a>
+                          <a href="#"><img src="/assets/images/google-plus.png"></a>
+                          <a href="#"><img src="/assets/images/twitter.png"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+</div>

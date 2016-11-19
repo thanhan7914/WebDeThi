@@ -24,8 +24,8 @@
     <include filename=include/nav>
 
 
-    <div class="container">
-        <div class="col-md-8">
+    <div class="container content">
+        <div class="col-md-8 Carousel">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                  <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -54,13 +54,13 @@
             </div>
         </div>
 
-        <div class="col-md-4 gioithieu">
+        <div class="col-md-4 introduction">
              <div id="introduce">
                 <div class="row">
                     <h4 class="title-header" style="text-align: center;">Giới Thiệu</h4>
                 </div>
                 <div class="row">
-                    <p style="text-align: left;" class="introduce-content">FREE ACADEMY là trang học và luyện thi trực tuyến hoàn toàn miễn phí cho các bạn ôn thi đại học hoặc tốt nghiệp trung học phổ thông.
+                    <p style="text-align: left;font-size:12;" class="introduce-content">FREE ACADEMY là trang học và luyện thi trực tuyến hoàn toàn miễn phí cho các bạn ôn thi đại học hoặc tốt nghiệp trung học phổ thông.
                     Với kho tài liệu lớn gồm các sách, bài giảng cho các môn cùng các bộ thi trắc nghiệm và tự luận được cập nhật liên tục.
                     <br>Chúc các bạn thành công trên con đường của mình!</p>
                 </div>
@@ -70,9 +70,9 @@
 
     <div class="container news-content">
         <div class="row">
-            <div class="col-md-12">
+            <!-- <div class="col-md-12"> -->
                 <h4><a href="/newslist" style="text-decoration: none;color: #14928e;"><img src="assets/images/newspaper.png">  TIN TỨC</a></h4>
-            </div>
+            <!-- </div> -->
         </div>
             <eng data=newsfeed>
         </div>
@@ -189,12 +189,12 @@
 
 
     <div class="container">
-        <div class="danhmuc-header">
+        <div class="category-header">
                 <h4 style="color: #14928e;"><img src="assets/images/list.png"> DANH MỤC</h4>
         </div>
-        <div class="danhmuc">
+        <div class="category">
             <div class="row">
-                <div class="dethi">
+                <div class="exam">
                      <div class="col-md-3">
                         <div class="menu-full-item">
                             <h4 class="menu-item-title">
