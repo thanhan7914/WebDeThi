@@ -116,5 +116,6 @@ router.use(require('./exlist'));
 router.use(require('./newslist'));
 router.use(require('./ebook'));
 router.use(require('./exam'));
+router.use(require('./contest'));
 
 module.exports = router;
