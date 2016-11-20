@@ -36,12 +36,13 @@
 
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="info">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <eng data=username> </a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>  data=username> </a>
     </div>
 		<ul class="nav menu">
 			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
 			<li class="active"><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
+			<li><a href="/dashboard/ebook"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Document</a></li>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -66,7 +67,7 @@
           <div class="panel panel-default">
             <form class="newposts" method="post" action="question?newposts">
               <input type="hidden" name="method" value="<eng data=method>">
-              <input type="hidden" name="examid" value="<eng data=examid>">
+              <input type="hidden" name="examid" value="<eng data=post_id>">
               <input type="hidden" name="hash" value="<eng data=hash>">
               <div class="form-group">
                 <label for="title">Title:</label>
@@ -192,6 +193,8 @@
 				$('#info').attr('type', 'number').val(5);
 				showTextBox();
 				$('#cttip').show();
+				$('#question').find('input[name="answer"]').prev().remove();
+				$('#question').find('input[name="answer"]').remove();
 			}
 			else
 			{

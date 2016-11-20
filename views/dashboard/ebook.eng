@@ -6,8 +6,10 @@
 <title>Free Academy - Dashboard</title>
 
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="/assets/css/newsfeed.css" rel="stylesheet">
+<link href="/assets/css/datepicker3.css" rel="stylesheet">
 <link href="/assets/css/dashboard.css" rel="stylesheet">
+<link href="/assets/css/newsfeed.css" rel="stylesheet">
+<link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
 <link href="/assets/css/msc-style.css" rel="stylesheet" type="text/css">
 
 <!--Icons-->
@@ -42,8 +44,8 @@
 		<ul class="nav menu">
 			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
-			<li class="active"><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
-			<li><a href="/dashboard/ebook"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Document</a></li>
+			<li><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
+			<li class="active"><a href="/dashboard/ebook"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Document</a></li>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -58,50 +60,50 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Question (<eng data=count_posts>)</h1>
+				<h1 class="page-header">Newsfeed (<eng data=count_posts>)</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
-		    <!-- hien thi tin tuc-->
-		    <div class="col-md-8">
-		      <div class="row">
-		        <div class="panel panel-default">
-		          <eng data=posts>
-		        </div>
-		      </div>
-		      <div class="row" id="pagination">
-		        <ul class="pagination">
-		        </ul>
-		      </div>
-		   </div>
-		   <div class="col-md-4">
+        <!-- hien thi tin tuc-->
+        <div class="col-md-8">
+					<div class="row">
+						<div class="panel panel-default">
+							<eng data=posts>
+						</div>
+					</div>
+					<div class="row" id="pagination">
+						<ul class="pagination">
+						</ul>
+					</div>
+       </div>
+       <div class="col-md-4">
 
-		     <div class="panel panel-primary">
-		       <div class="panel-heading">Tools</div>
-		       <div class="panel-body">
-		         <ul>
-		           <li id="addnew" class="btn-newsfeed">Add new</li>
-		           <li id="chooseall" class="btn-newsfeed">Choose all</li>
-		           <li id="dischoose" class="btn-newsfeed">Dischoose all</li>
-		           <li id="delete" class="btn-newsfeed" data-target="">Delete rows</li>
-		         </ul>
-		       </div>
-		     </div>
-		  </div>
+         <div class="panel panel-primary">
+           <div class="panel-heading">Tools</div>
+           <div class="panel-body">
+             <ul>
+               <li id="addnew" class="btn-newsfeed">Add new</li>
+               <li id="chooseall" class="btn-newsfeed">Choose all</li>
+               <li id="dischoose" class="btn-newsfeed">Dischoose all</li>
+               <li id="delete" class="btn-newsfeed" data-target="">Delete rows</li>
+             </ul>
+           </div>
+         </div>
+			</div>
 		</div><!--/.row-->
-		</div>	<!--/.main-->
+	</div>	<!--/.main-->
 
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
 	<script src="/assets/js/msc-script.js"></script>
 	<script src="/assets/js/pagination.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
+  <script type="text/javascript">
+    $(document).ready(function() {
 			let hash = '<eng data=hash>';
-			$('#addnew').click(function() {
-				location.href = 'question?newposts';
-			});
+      $('#addnew').click(function() {
+        location.href = 'ebook?newposts';
+      });
 
 			$('a[href^="?method\=delete"]').click(function(e) {
 				let $this = $(this);
@@ -130,8 +132,8 @@
 					.replace(/^,]|,$/, '');
 				}
 
-        if(id.startsWith(',')) id = id.substring(1);
 				if(id.endsWith(',')) id = id.substring(0, id.length - 1);
+				if(id.startsWith(',')) id = id.substring(1);
 				target.attr('data-target', id);
 			});
 
@@ -139,14 +141,14 @@
 				let idx = String($(this).attr('data-target')).trim();
 				if(idx === '') return;
 
-				let url = '/dashboard/question?method=delete&id=' + idx + '&hash=' + hash;
+				let url = '/dashboard/ebook?method=delete&id=' + idx + '&hash=' + hash;
 				mscConfirm("Delete selected?",function(){
 					location.href = url;
 				});
 			});
 
 			$('#chooseall, #dischoose').click(function() {
-				$('input[type="checkbox"]').click();
+				$('input[type="checkbox"]').click();//.prop("checked", true);
 			});
 
 			let pages = <eng data=pages>;
@@ -157,7 +159,7 @@
 			(function() {
 
 			});
-		});
-	</script>
+    });
+  </script>
 </body>
 </html>

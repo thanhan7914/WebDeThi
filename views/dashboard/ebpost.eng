@@ -40,9 +40,9 @@
     </div>
 		<ul class="nav menu">
 			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li class="active"><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
+			<li><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
 			<li><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
-			<li><a href="/dashboard/ebook"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Document</a></li>
+			<li class="active"><a href="/dashboard/ebook"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Document</a></li>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -57,15 +57,15 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header"><a href="/dashboard/newsfeed">Newsfeed</a> > Posts</h1>
+				<h1 class="page-header"><a href="/dashboard/ebook">Document</a> > Posts</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
         <!-- hien thi tin tuc-->
         <div class="col-md-12">
+				<form class="newposts" method="post" action="ebook?newposts">
           <div class="panel panel-default">
-            <form class="newposts" method="post" action="newsfeed?newposts">
               <input type="hidden" name="method" value="<eng data=method>">
               <input type="hidden" name="post_id" value="<eng data=post_id>">
               <input type="hidden" name="hash" value="<eng data=hash>">
@@ -74,8 +74,8 @@
                 <input type="text" class="form-control" id="fd_title" name="title" value="<eng data=title>">
               </div>
               <div class="form-group">
-                <label for="fd_content">Content:</label>
-                <textarea class="form-control" rows="15" name="content" id="fd_content"><eng data=content></textarea>
+                <label for="fd_content">PDF file url:</label>
+                <input type="text" class="form-control" id="fd_content" name="content" value="<eng data=content>">
               </div>
 							<div class="form-group">
 								<label for="fd_des">Description:</label>

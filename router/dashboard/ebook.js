@@ -3,9 +3,9 @@ const Query = require('mongo-promise');
 const ObjectID = require('mongodb').ObjectID;
 const utils = require('../../utils');
 
-class Newsfeed extends Views {
+class Docs extends Views {
   constructor() {
-    super('newsfeed', 'dashboard/newsfeed', '/?newposts', utils.config.dashboard.newsfeed);
+    super('ebook', 'dashboard/ebook', '/?newposts', utils.config.dashboard.ebook);
   }
 
   wrapPosts(docs) {
@@ -14,7 +14,7 @@ class Newsfeed extends Views {
 
     for(let i = 0; i < len; i++)
     {
-      let href = `/readnews/${utils.toUrl(docs[i].title)}.${docs[i]._id}`;
+      let href = `/ebook/${utils.toUrl(docs[i].title)}.${docs[i]._id}`;
 
       content += `
           <div class="news">
@@ -29,7 +29,7 @@ class Newsfeed extends Views {
   }
 
   renderNewPost(req, res, options) {
-    res.render('dashboard/newposts', options || {
+    res.render('dashboard/ebpost', options || {
       method: 'addnew',
       title: '',
       content: '',
@@ -53,32 +53,32 @@ class Newsfeed extends Views {
     if(req.url === '/?newposts')
     {
       if(typeof POST['method'] === 'undefined' && POST['hash'] !== req.session.hash)
-        return res.redirect('/dashboard/newsfeed');
+        return res.redirect('/dashboard/ebook');
 
       if(POST['method'] === 'addnew' || POST['method'] === 'edit')
       {
         if(!utils.hasattr(POST, ['title', 'content', 'description', 'image']))
-          return res.redirect('/dashboard/newsfeed');
+          return res.redirect('/dashboard/ebook');
 
         let row = {datecreate: Date.now(), dateupdate: Date.now(), author: req.session.user.username};
         utils.clonewith(POST, row, ['title', 'content', 'description', 'image']);
 
         let db = new Query(utils.config.dbname);
         if(POST['method'] === 'addnew')
-          db.insert(row, 'newsfeed');
+          db.insert(row, 'ebook');
         else if(POST['method'] === 'edit' && POST['post_id'].length === 24)
         {
-          db.find({_id: new ObjectID(POST['post_id'])}, 'newsfeed')
+          db.find({_id: new ObjectID(POST['post_id'])}, 'ebook')
           .handle((docs) => {
             if(docs.length === 0) throw new Error('Not found');
 
             row.datecreate = docs[0].datecreate;
           })
-          .update({_id: new ObjectID(POST['post_id'])}, row, 'newsfeed');
+          .update({_id: new ObjectID(POST['post_id'])}, row, 'ebook');
         }
 
         db.close(() => {
-          res.redirect('/dashboard/newsfeed');
+          res.redirect('/dashboard/ebook');
         }, (error) => {
           console.log(error);
           res.redirect('/404');
@@ -86,9 +86,9 @@ class Newsfeed extends Views {
       }
     }
     else
-      res.redirect('/dashboard/newsfeed');
+      res.redirect('/dashboard/ebook');
   }
 }
 
-const router = (new Newsfeed()).Router;
+const router = (new Docs()).Router;
 module.exports = router;

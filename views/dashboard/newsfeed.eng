@@ -45,6 +45,7 @@
 			<li><a href="/dashboard"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li class="active"><a href="/dashboard/newsfeed"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Newsfeed</a></li>
 			<li><a href="/dashboard/question"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Question</a></li>
+			<li><a href="/dashboard/ebook"><span class="glyphicon glyphicon-question-sign"><use xlink:href="#stroked-question-sign"></use></svg> Document</a></li>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -59,7 +60,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">newsfeed (<eng data=count_news_feed>)</h1>
+				<h1 class="page-header">Newsfeed (<eng data=count_posts>)</h1>
 			</div>
 		</div><!--/.row-->
 
@@ -68,7 +69,7 @@
         <div class="col-md-8">
 					<div class="row">
 						<div class="panel panel-default">
-							<eng data=news>
+							<eng data=posts>
 						</div>
 					</div>
 					<div class="row" id="pagination">
@@ -131,6 +132,8 @@
 					.replace(/^,]|,$/, '');
 				}
 
+				if(id.endsWith(',')) id = id.substring(0, id.length - 1);
+				if(id.startsWith(',')) id = id.substring(1);
 				target.attr('data-target', id);
 			});
 

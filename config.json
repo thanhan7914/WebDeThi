@@ -5,12 +5,16 @@
       "limit": 5
     },
     "exam": {
-      "limit": 10
+      "limit": 5
+    },
+    "ebook": {
+      "limit": 5
     }
   },
   "show": {
     "newsfeed": 5,
-    "exam": 10
+    "exam": 5,
+    "ebook": 5
   },
   "exam": {
     "subject": ["Toan Hoc", "Vat Ly", "Hoa Hoc", "Sinh Hoc", "Dia Ly"],

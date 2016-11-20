@@ -19,4 +19,5 @@ router.get('/', function(req, res) {
 
 router.use('/newsfeed', require('./newsfeed'));
 router.use('/question', require('./question'));
+router.use('/ebook', require('./ebook'));
 module.exports = router;
