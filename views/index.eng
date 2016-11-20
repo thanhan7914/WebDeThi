@@ -40,12 +40,14 @@
      <div class="container">
        <div class="row">
             <div class="col-md-12">
-                <h4><a href="#" style="color: #14928e;text-decoration: none;"><img src="assets/images/open-book.png"> TÀI LIỆU</a></h4>
+                <h4><a href="/ebook" style="color: #14928e;text-decoration: none;"><img src="assets/images/open-book.png"> TÀI LIỆU</a></h4>
                 <hr>
             </div>
         </div>
-
+        <eng data=ebook>
+<!--
         <div class="row">
+          <eng data=ebook>
             <div class="col-md-3">
                 <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_116304587.png"></a></div>
                 <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
@@ -85,7 +87,7 @@
                 <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
 
             </div>
-        </div>
+        </div> -->
 
     </div>
 
@@ -95,11 +97,12 @@
     <div class="container">
         <div class="row dethi-title">
             <div class="col-md-12">
-                <h4><a href="#" style="color: #14928e;text-decoration: none;"><img src="assets/images/exam.png"> ĐỀ THI</a></h4>
+                <h4><a href="/exam" style="color: #14928e;text-decoration: none;"><img src="assets/images/exam.png"> ĐỀ THI</a></h4>
                 <hr>
             </div>
         </div>
-
+        <eng data=examination>
+<!--
         <div class="row">
             <div class="col-md-3">
                 <div class="item1"><a href="#"><img class="img-responsive" src="assets/images/thumb11_116304587.png"></a></div>
@@ -141,7 +144,7 @@
                 <div class="item1-title"><p><a href="#">Học tiếng anh chuyên ngành theo chuẩn quốc tế</a></p></div>
 
             </div>
-        </div>
+        </div> -->
 
 
     </div>

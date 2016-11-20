@@ -55,6 +55,48 @@ router.get('/', function(req, res) {
 
     options.newsfeed += '</div>';
   })
+  .find({}, 'ebook', {sort: {datecreate: -1}, limit: 8})
+  .handle((rows) => {
+    if(rows.length < 1) return;
+    options.ebook = '<div class="row">';
+    let len = rows.length;
+    for(let i = 0; i < len; i++)
+    {
+      let href = `/ebook/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
+      if(i % 4 === 0 && i > 0)
+        options.ebook += '</div><div class="row">';
+
+      options.ebook += `
+      <div class="col-md-3">
+          <div class="item1"><a href="${href}"><img class="img-responsive" src="${rows[i].image || 'assets/images/thumb11_116304587.png'}"></a></div>
+          <div class="item1-title"><p><a href="${href}">${rows[i].title}</a></p></div>
+       </div>
+      `;
+    }
+
+    options.ebook += '</div>';
+  })
+  .find({}, 'exam', {sort: {datecreate: -1}, limit: 8})
+  .handle((rows) => {
+    if(rows.length < 1) return;
+    options.examination = '<div class="row">';
+    let len = rows.length;
+    for(let i = 0; i < len; i++)
+    {
+      let href = `/exam/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
+      if(i % 4 === 0 && i > 0)
+        options.examination += '</div><div class="row">';
+
+      options.examination += `
+      <div class="col-md-3">
+          <div class="item1"><a href="${href}"><img class="img-responsive" src="${rows[i].image || 'assets/images/thumb11_116304587.png'}"></a></div>
+          <div class="item1-title"><p><a href="${href}">${rows[i].title}</a></p></div>
+       </div>
+      `;
+    }
+
+    options.examination += '</div>';
+  })
   .close()
   .handle(() => {
     res.render('index', options);
@@ -72,5 +114,7 @@ router.use(require('./login'));
 router.use(require('./readnews'));
 router.use(require('./exlist'));
 router.use(require('./newslist'));
+router.use(require('./ebook'));
+router.use(require('./exam'));
 
 module.exports = router;

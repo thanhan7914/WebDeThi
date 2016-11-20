@@ -1,9 +1,9 @@
 <div class="container">
   <ul class="topnav" id="myTopnav">
-    <li><a href="#">Trang chủ</a></li>
+    <li><a href="/">Trang chủ</a></li>
     <li><a href="#">Thi online</a></li>
-    <li><a href="#">Tài liệu</a></li>
-    <li><a href="#">Tin tức</a></li>
+    <li><a href="/ebook">Tài liệu</a></li>
+    <li><a href="/newslist">Tin tức</a></li>
     <li><a href="#">Liên hệ</a></li>
 
     <li class="icon">
