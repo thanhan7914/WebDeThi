@@ -30,6 +30,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4><a href="/newslist" style="text-decoration: none;color: #14928e;"><img src="assets/images/newspaper.png">  TIN TỨC</a></h4>
+                <hr>
             </div>
         </div>
             <eng data=newsfeed>
