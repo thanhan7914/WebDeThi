@@ -30,7 +30,8 @@
         </div>
         <div class="col-md-2 col-md-offset-2 clock text-left">
           <div id="ctl15_div_time" class="time-remain">
-            <span class="sp-text">Thời gian còn lại</span> <span class="sp-time" id="aTime" class="timeCount">
+            <span class="sp-text">Thời gian còn lại</span>
+            <span class="sp-time" id="aTime" class="timeCount">
 
               <script type="text/javascript">
                 timeDisplay('aTime',0,1,29,59,5,'id-bai-thi');
