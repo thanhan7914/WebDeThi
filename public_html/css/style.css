@@ -12,24 +12,29 @@ body{
 .header{
 	margin-top: 10px;
 }
-
-form input[type="submit"]{
+/*form.form-inline{
+	border: 1px solid #c6c6c6;
+}*/
+form input.b[type="submit"]{
 	background: url(../images/search-icon.png) no-repeat center center;
 	opacity: 0.7;
 	border: 1px solid #c6c6c6 !important;
 	width: 45px !important;
-
+	/*border: none !important;*/
 }
-form input[type="text"]{
+form input.a[type="text"]{
 	border:1px solid #c6c6c6 !important;
+	/*border: none !important;*/
 }
 form input[type="password"]{
 	border:1px solid #c6c6c6 !important;
 }
 .form-control{
-	border: none !important;
+	/*border: none !important;*/
 	border-radius: 0 !important;
 	box-shadow: none !important;
+	/*border: 1px solid #c6c6c6 !important;*/
+
 }
 
 #log-in>a{
@@ -354,4 +359,78 @@ div.title-slider{
 .link-exam{
 	border-bottom: 1px solid #f1f1f1;
 	min-height: 40px;
+}
+/*contest-page*/
+.box-exam-title{
+	margin-top: 20px;
+}
+.box-exam-title h4{
+	margin-left: 10px;
+}
+.box-exam-content{
+	border: 1px solid #c6c6c6;
+
+}
+div.box-title{
+	height: 30px;
+	background: #14928e;
+}
+.box-title p{
+	line-height: 30px;
+	margin-left: 10px;
+}
+.stt-left span.stt-ch {
+    background: url(../images/number-questions.png) no-repeat scroll left top;
+    color: #FFFFFF;
+    display: inline;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    height: 41px;
+    line-height: 41px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 41px;
+}
+.col-md-11.cont-left.nd-ch{
+}
+.da span.rd{
+	padding: 5px;
+}
+.da .rd label{
+	cursor: pointer;
+	color: #565656;
+	font-weight: 100;
+}
+.cont-left .nd-ch p{
+	font-weight: 600;
+}
+div.row.box-question{
+	border: 1px solid #c6c6c6;
+	margin-left: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: linear-gradient(#ffffff,#f1f1f1);
+}
+
+/*clock count-down*/
+.time-remain {
+    font-weight: bold;
+    position: static;
+		margin-left: 10px;
+    /*right: 10px;*/
+    /*top: 50%;*/
+    width: 120px;
+		line-height: 10px;
+}
+.time-remain span.sp-time {
+    background: url(../images/gd_36.png) no-repeat scroll left top transparent;
+    color: #00918d;
+    float: left;
+    font-size: 18px;
+    height: 23px;
+    line-height: 24px;
+    margin-top: 2px;
+    padding-left: 30px;
 }
