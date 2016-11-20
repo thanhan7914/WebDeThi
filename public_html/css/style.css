@@ -39,7 +39,7 @@ form input[type="password"]{
 	background:  #34495e !important;
 }
 /*nav*/
-.menu{
+.menus{
 	margin-top: 10px;
 }
 ul.topnav {
@@ -177,12 +177,6 @@ div.container.news-content{
 }
 hr{
  border-color: #14928e !important;
-}
-.table>tr>td{
-	padding-right:10px;
-}
-.table{
-	margin-top: 0px;
 }
 /*confirm*/
 .cd-popup {
