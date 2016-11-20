@@ -402,6 +402,7 @@ div.box-title{
 	cursor: pointer;
 	color: #565656;
 	font-weight: 100;
+	line-height: 30px;
 }
 .cont-left .nd-ch p{
 	font-weight: 600;
