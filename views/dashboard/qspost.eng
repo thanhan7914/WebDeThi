@@ -246,6 +246,14 @@
 
     if($('#hinfo').text() === '')
 		  $('select[name="type"]').change();
+		else
+		{
+			let hinfo = JSON.parse($('#hinfo').text());
+			$('select[name="level"]').val(hinfo.level);
+			$('select[name="subject"]').val(hinfo.subject);
+			$('select[name="year"]').val(hinfo.year);
+			$('select[name="type"]').val(hinfo.type);
+		}
 	</script>
 </body>
 </html>

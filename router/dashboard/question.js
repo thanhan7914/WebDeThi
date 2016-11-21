@@ -56,10 +56,14 @@ class Question extends Views {
       docs.forEach((doc, i) => {
         let choice = '';
         for(let j = 0; j < doc.choice.length; j++)
+        {
+          let choose = Number(doc.answer) === j ? 'checked' : '';
+
           choice += `
-            <span>${letter[j]}.</span> <input type="radio" name="question_${i}_choose" value="0">
-            <input type="text" name="question_${i}_answer_${j}" value="${doc.choice[j]}" ${Number(doc.answer) === j?'checked':''}>
+            <span>${letter[j]}.</span> <input type="radio" name="question_${i}_choose" value="${j}" ${choose}>
+            <input type="text" name="question_${i}_answer_${j}" value="${doc.choice[j]}">
           `;
+        }
 
         options.question +=`
         <div class="form-group">
@@ -114,7 +118,6 @@ class Question extends Views {
       };
 
       let questions = [];
-      let question_id = [];
 
       if(exam.type === 1)
       {
@@ -127,7 +130,7 @@ class Question extends Views {
         exam.count = Number(POST['info']);
       }
 
-      let db = new Query(utils.config.dbname);
+      let db = new Query(utils.config.dbname, true);
       if(mode === 2)
         db.update({_id: new ObjectID(POST['examid'])}, exam, 'exam');
       else
@@ -135,8 +138,10 @@ class Question extends Views {
 
       if(exam.type === 0)
       {
+        let exid;
+
         db.handle((result) => {
-          let exid = new ObjectID(mode === 2? POST['examid'] : result.ops[0]._id);
+          exid = new ObjectID(mode === 2? POST['examid'] : result.ops[0]._id);
 
           for(let i = 0; i < exam.count; i++)
           {
@@ -144,34 +149,27 @@ class Question extends Views {
             let n_answer = Number(POST[prefix + '_n_answer']);
             let choice = [];
             for(let j = 0; j < n_answer; j++)
-              choice.push(POST[prefix + '_answer_' + j])
+              choice.push(POST[prefix + '_answer_' + j]);
 
-            if(mode === 2 && String(POST[prefix + '_id']).length === 24)
-              question_id.push(new ObjectID(POST[prefix + '_id']));
-
-            questions.push({
+            let qrow = {
               exam_id: exid,
               content: POST[prefix],
               choice,
-              answer: POST[prefix + '_choose']
-            });
+              answer: Number(POST[prefix + '_choose'])
+            };
+
+            questions.push(qrow);
           }
         });
 
-        if(mode === 1)
-        {
-          db.insert([], 'question', function() {
-            return questions;
+        if(mode === 2)
+          db.remove({}, 'question', () => {
+            return [{exam_id: exid}];
           });
-        }
-        else if(mode === 2)
-        {
-          for(let j = 0 ; j <  exam.count; j++)
-            db.update({idx: j}, {},'question', (b, a) => {
-              let _id = question_id[a.idx];
-              return [{_id}, questions[a.idx]];
-            });
-        }
+
+        db.insert([], 'question', function() {
+          return [questions];
+        });
       }
 
 
