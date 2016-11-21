@@ -74,6 +74,23 @@
                 <input type="text" class="form-control" id="fd_title" name="title" value="<eng data=title>">
               </div>
               <div class="form-group">
+								<span>Category: </span>
+								<select name="level">
+									<option value="0">Tốt nghiệp THPT</option>
+									<option value="1">Đại học</option>
+								</select>
+								<select name="subject">
+									<option value="0">Toán</option>
+									<option value="1">Vật lý</option>
+									<option value="2">Hóa Học</option>
+									<option value="3">Sinh học</option>
+									<option value="4">Tiếng Anh</option>
+									<option value="5">Ngữ Văn</option>
+									<option value="6">Lịch Sử</option>
+									<option value="7">Địa lý</option>
+								</select>
+							</div>
+              <div class="form-group">
                 <label for="fd_content">PDF file url:</label>
                 <input type="text" class="form-control" id="fd_content" name="content" value="<eng data=content>">
               </div>

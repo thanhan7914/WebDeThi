@@ -3,7 +3,7 @@ const Query = require('mongo-promise');
 const ObjectID = require('mongodb').ObjectID;
 const utils = require('../../utils');
 
-class Docs extends Views {
+class Ebook extends Views {
   constructor() {
     super('ebook', 'dashboard/ebook', '/?newposts', utils.config.dashboard.ebook);
   }
@@ -42,8 +42,8 @@ class Docs extends Views {
   }
 
   editPost(options, row) {
-    utils.clonewith(row, options, ['title', 'description', 'content', 'image']);
-    utils.escapeHtml(options, ['title', 'description', 'content', 'image']);
+    utils.clonewith(row, options, ['title', 'description', 'content', 'image', 'subject', 'level']);
+    utils.escapeHtml(options, ['title', 'description', 'content', 'image', 'subject', 'level']);
     return options;
   }
 
@@ -57,11 +57,13 @@ class Docs extends Views {
 
       if(POST['method'] === 'addnew' || POST['method'] === 'edit')
       {
-        if(!utils.hasattr(POST, ['title', 'content', 'description', 'image']))
+        if(!utils.hasattr(POST, ['title', 'content', 'description', 'image', 'subject', 'level']))
           return res.redirect('/dashboard/ebook');
 
         let row = {datecreate: Date.now(), dateupdate: Date.now(), author: req.session.user.username};
-        utils.clonewith(POST, row, ['title', 'content', 'description', 'image']);
+        utils.clonewith(POST, row, ['title', 'content', 'description', 'image', 'subject', 'level']);
+        utils.subject = Number(utils.subject);
+        utils.level = Number(utils.level);
 
         let db = new Query(utils.config.dbname);
         if(POST['method'] === 'addnew')
@@ -90,5 +92,5 @@ class Docs extends Views {
   }
 }
 
-const router = (new Docs()).Router;
+const router = (new Ebook()).Router;
 module.exports = router;

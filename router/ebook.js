@@ -24,4 +24,8 @@ router.get('/ebook/([a-zA-Z0-9_\-]+)\.([a-z0-9]{24})', function(req, res) {
   });
 });
 
+router.get('/ebook', function(req, res) {
+  res.render('ebooklist');
+});
+
 module.exports = router;

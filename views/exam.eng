@@ -22,8 +22,22 @@
       </div>
       <div class=" col-md-12 sp-confirm-body">
         <div class="row">
+<<<<<<< HEAD
           <div class="col-md-6 sp-confirm-left">
             <h5 class="_name-exam" style="text-align:center;font-size:16px;">Tên đề thi bỏ ở đây Lorem ipsum dolor sit amet,</h5>
+=======
+          <div class="col-md-8">
+            <div class="">
+              <h2><eng data=title></h2>
+              <p><small><eng data=datecreate></small></p>
+            </div>
+            <div class="">
+              <div class="news-content">
+                <eng data=content>
+                <!-- <a class="media" href="<eng data=content>">PDF File</a> -->
+              </div>
+            </div>
+>>>>>>> 73cf2dfe96bc66d56a926f1b523b6819cc96def7
           </div>
           <div class="col-md-6 sp-confirm-right">
             <h5 class="_time-exam" style="text-align:center;font-size:16px;">Thời gian: 90 phút</h5>
@@ -80,6 +94,13 @@
     <script src="/assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/jquery.media.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/jquery.metadata.js"></script>
     <script src="/assets/js/app.js"></script>
+    <script type="text/javascript">
+      console.log(document.width)
+      $('a.media').media({width: $($('.news-content')[0]).width(), height: screen.height - 160});
+    </script>
+
   </body>
 </html>
