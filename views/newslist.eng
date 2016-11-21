@@ -10,12 +10,7 @@
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
-<<<<<<< HEAD
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-=======
-
-
->>>>>>> 3132eff29437a38f9a86908a0dd6008e53e75c11
   </head>
   <body>
     <include filename=include/header>
@@ -23,7 +18,7 @@
 
     <div class="container news-box-container">
 
-<!--main-news-list  -->
+    <!--main-news-list  -->
       <div class=" col-md-7">
         <div class="news-header">
           <div class="news-header-title">
@@ -49,11 +44,8 @@
           <!-- <div class=" row news-row">
               <div class="col-md-4">
                 <div class="news-row-img">
-<<<<<<< HEAD
                   <a href="#"><img src="/assets/images/news2.png" alt="image" /></a>
-=======
                   <a href="#"><img class="img-responsive" src="/assets/images/news2.png" alt="vcc" /></a>
->>>>>>> 3132eff29437a38f9a86908a0dd6008e53e75c11
                 </div>
               </div>
               <div class="col-md-8">
@@ -73,11 +65,8 @@
           <div class=" row news-row">
               <div class="col-md-4">
                 <div class="news-row-img">
-<<<<<<< HEAD
                   <a href="#"><img src="/assets/images/news2.png" alt="image" /></a>
-=======
                   <a href="#"><img class="img-responsive" src="/assets/images/news2.png" alt="vcc" /></a>
->>>>>>> 3132eff29437a38f9a86908a0dd6008e53e75c11
                 </div>
               </div>
               <div class="col-md-8">
@@ -145,23 +134,6 @@
           </div>
         </div>
 
-        <div class="row _news-row-slider _fanpage">
-            <div class="col-md-12 fanpage">
-                <div class="fb-page" data-href="https://www.facebook.com/freeacademy.vn"
-                  data-tabs="false"
-                  data-width="410px"
-                  data-height="400px"
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true">
-                  <blockquote cite="https://www.facebook.com/freeacademy.vn" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/freeacademy.vn">Free Academy</a>
-                  </blockquote>
-                </div>
-            </div>
-        </div>
-
         <div class="row _news-row-slider">
           <div class=" col-md-12 type-news">
             <h4 style="color:#14928e;">TIN TỨC MỚI NHẤT </h4>
@@ -202,47 +174,8 @@
               </a>
             </div>
           </div>
-<<<<<<< HEAD
         </div>-->
-=======
-        </div>
 
-        <div class="row _news-row-slider">
-          <div class="col-md-4">
-            <div class="_news-row-slider-img">
-              <a href="#newslist">
-                <img src="/assets/images/news3.png" alt="" />
-              </a>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="_news-row-slider-title">
-              <a href="#newslist">
-                <p>5 trường ĐH đào tạo công nghệ tốt nhất nước Mỹ</p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row _news-row-slider">
-          <div class="col-md-4">
-            <div class="_news-row-slider-img">
-              <a href="#newslist">
-                <img src="/assets/images/news3.png" alt="" />
-              </a>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="_news-row-slider-title">
-              <a href="#newslist">
-                <p>5 trường ĐH đào tạo công nghệ tốt nhất nước Mỹ</p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-
->>>>>>> 3132eff29437a38f9a86908a0dd6008e53e75c11
       </div>
 
     </div>
@@ -255,6 +188,7 @@
     <script src="/assets/js/libs/bootstrap.min.js"></script>
     <!-- <script src="/assets/js/app.js"></script> -->
     <script type="text/javascript" src="/assets/js/pagination.js"></script>
+    <div id="fb-root"></div>
     <script type="text/javascript">
       $(document).ready(function() {
         var pages = <eng data=pages>;
@@ -262,19 +196,13 @@
 
         (new $Pagination($('.pagination'), pages, curpage)).init();
       });
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     </script>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-      fjs.parentNode.insertBefore(js, fjs);
-<<<<<<< HEAD
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-=======
-    }(document, 'script', 'facebook-jssdk'));</script>
->>>>>>> 3132eff29437a38f9a86908a0dd6008e53e75c11
   </body>
 </html>

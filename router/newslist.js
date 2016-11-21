@@ -26,6 +26,7 @@ router.get('/newslist', function(req, res) {
     for(let i = 0; i < rows.length; i++)
     {
       let href = `/readnews/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
+
       if(i === 0)
       {
         options.topnews = `
@@ -37,7 +38,7 @@ router.get('/newslist', function(req, res) {
           </div>
 
           <div class="images-news-title">
-            <h4><a href="readnews">${rows[i].title}</a></h4>
+            <h4><a href="${href}">${rows[i].title}</a></h4>
           </div>
 
           <div class="images-new-describle">
@@ -58,7 +59,7 @@ router.get('/newslist', function(req, res) {
             <div class="col-md-8">
               <div class="news-row-box">
                 <div class="news-row-title">
-                  <a href="#"><h4>${rows[i].title}</h4></a>
+                  <a href="${href}"><h4>${rows[i].title}</h4></a>
                 </div>
                 <div class="news-row-content">
                   <p style="color:#888">
@@ -77,18 +78,20 @@ router.get('/newslist', function(req, res) {
     options.newest = '';
 
     rows.forEach((row, id) => {
+      let href = `/readnews/${utils.toUrl(row.title)}.${row._id}`;
+
       options.newest += `
       <div class="row _news-row-slider">
         <div class="col-md-4">
           <div class="_news-row-slider-img">
-            <a href="#newslist">
+            <a href="${href}">
               <img src="${row.image}" alt="${row.title}" width="138" />
             </a>
           </div>
         </div>
         <div class="col-md-8">
           <div class="_news-row-slider-title">
-            <a href="#newslist">
+            <a href="${href}">
               <p>${row.title}</p>
             </a>
           </div>
