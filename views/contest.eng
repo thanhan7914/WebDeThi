@@ -26,7 +26,7 @@
 
       <div class=" row box-exam-title">
         <div class=" col-md-8 name-exam">
-          <h4 style="color:#00918d;">Tên đề thi tại đây</h4>
+          <h4 style="color:#00918d;"><a href="#score"><eng data=title></a></h4>
         </div>
         <div class="col-md-2 col-md-offset-2 clock text-left">
           <div id="ctl15_div_time" class="time-remain">
@@ -47,173 +47,30 @@
           <p style="color:#ffffff;"><strong>ĐỀ BÀI</strong></p>
         </div>
 
-        <div class="row col-md-12 box-question">
-          <div class="col-md-1 nex-right">
-            <div class="stt-left">
-              <span class="stt-ch">1</span><!-- câu số mấy tại đây-->
-            </div>
-          </div>
-          <div class="col-md-11 cont-left">
-            <div class="nd-ch">
-              <p>
-                Một ngày đẹp trời An gặp Phúc.Hỏi sẽ xảy ra chuyện gì?
-              </p>
-              <hr>
-            </div>
-            <div class="nd-da">
-              <div class="row">
-                <div class="col-md-3">
-                  <p style="color:#565656">
-                    Chọn câu trả lời đúng!
-                  </p>
-                </div>
-                <div class="col-md-9">
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">A: An và Phúc sẽ đập nhau</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">B: An và Phúc sẽ thông nhau</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">C: An sẽ gọi đt cho Đạt hoặc cu Ti ra làm hội</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">D: Sét đánh! An và Phúc hạnh phích bên nhau đến cuối đời</label>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <eng data=questions>
+        <div style="text-align: center; margin: 12px 8px;">
+          <button id="score" class="start-doing btn btn-info" type="submit" id="button-start">NỘP BÀI</button>
         </div>
-
-        <div class="row col-md-12 box-question">
-          <div class="col-md-1 nex-right">
-            <div class="stt-left">
-              <span class="stt-ch">1</span><!-- câu số mấy tại đây-->
-            </div>
-          </div>
-          <div class="col-md-11 cont-left">
-            <div class="nd-ch">
-              <p>
-                Một ngày đẹp trời An gặp Phúc.Hỏi sẽ xảy ra chuyện gì?
-              </p>
-              <hr>
-            </div>
-            <div class="nd-da">
-              <div class="row">
-                <div class="col-md-3">
-                  <p style="color:#565656">
-                    Chọn câu trả lời đúng!
-                  </p>
-                </div>
-                <div class="col-md-9">
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">A: An và Phúc sẽ đập nhau</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">B: An và Phúc sẽ thông nhau</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">C: An sẽ gọi đt cho Đạt hoặc cu Ti ra làm hội</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">D: Sét đánh! An và Phúc hạnh phích bên nhau đến cuối đời</label>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row col-md-12 box-question">
-          <div class="col-md-1 nex-right">
-            <div class="stt-left">
-              <span class="stt-ch">1</span><!-- câu số mấy tại đây-->
-            </div>
-          </div>
-          <div class="col-md-11 cont-left">
-            <div class="nd-ch">
-              <p>
-                Một ngày đẹp trời An gặp Phúc.Hỏi sẽ xảy ra chuyện gì?
-              </p>
-              <hr>
-            </div>
-            <div class="nd-da">
-              <div class="row">
-                <div class="col-md-3">
-                  <p style="color:#565656">
-                    Chọn câu trả lời đúng!
-                  </p>
-                </div>
-                <div class="col-md-9">
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">A: An và Phúc sẽ đập nhau</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">B: An và Phúc sẽ thông nhau</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">C: An sẽ gọi đt cho Đạt hoặc cu Ti ra làm hội</label>
-                    </span>
-                  </div>
-
-                  <div class="da">
-                    <span class="rd">
-                      <input type="radio" name="a" value="a">
-                      <label for="d">D: Sét đánh! An và Phúc hạnh phích bên nhau đến cuối đời</label>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
 
       </div>
-
-
     </div>
     <include filename=include/footer>
+    <form id="score" style="display: none" method="post" action="/score">
+      <input type="hidden" name="id" value="<eng data=id>">
+      <input type="hidden" name="answer" id="answer" value="">
+    </form>
+    <script type="text/javascript">
+      $('#score').click(function(){
+        let url = location.href;
+        let id = url.substring(url.length - 24, url.length);
+        console.log(id);
+        let r = confirm("Bạn có chắc chắn muốn nộp bài thi?");
+        if(r === true)
+        {
+          $('#answer').val('dap an');
+          $('form[id="score"]').submit();
+        }
+      });
+    </script>
   </body>
 </html>
