@@ -69,6 +69,7 @@
               <input type="hidden" name="method" value="<eng data=method>">
               <input type="hidden" name="examid" value="<eng data=post_id>">
               <input type="hidden" name="hash" value="<eng data=hash>">
+							<span style="display: none" id="hinfo"><eng data=hinfo></span>
               <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" id="title" name="title" value="<eng data=title>">
@@ -113,13 +114,14 @@
 							</div>
 							<div class="form-group">
 								<label for="info">Count:</label>
-                <input type="number" id="info" name="info" value="">
+                <input type="number" id="info" name="info" value="<eng data=info>">
 								<div class="tools" id="cttip" style="display: inline-block;">
 									<span target="add" style="color: blue; cursor: pointer">+</span>
 									<span target="sub" style="color: blue; cursor: pointer">-</span>
 								</div>
 							</div>
 							<div id="question">
+								<eng data=question>
 							</div>
 							<div class="form-group">
                 <label for="fd_img">Url Image:</label>
@@ -167,6 +169,7 @@
 							<textarea class="form-control" name="question_${i}" rows="4"></textarea>
 							<span>Answer: </span>
 							<div style="margin: 6px 8px; display: inline-block;" class="answer">
+								<input type="hidden" name="question_${i}_id" value="0">
 								<input type="hidden" name="question_${i}_n_answer" value="4">
 								<span>A.</span> <input type="radio" name="question_${i}_choose" value="0">
 								   <input type="text" name="question_${i}_answer_0" value="">
@@ -190,7 +193,7 @@
 			$('label[for="info"]').text(choose == 0? 'Count:' : 'File pdf:');
 			if(choose === 0)
 			{
-				$('#info').attr('type', 'number').val(5);
+				$('#info').attr('type', 'number').val(1);
 				showTextBox();
 				$('#cttip').show();
 				$('#question').find('input[name="answer"]').prev().remove();
@@ -241,7 +244,8 @@
 			pretag.last().remove();
 		});
 
-    $('select[name="type"]').change();
+    if($('#hinfo').text() === '')
+		  $('select[name="type"]').change();
 	</script>
 </body>
 </html>

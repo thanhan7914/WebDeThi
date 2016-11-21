@@ -48,14 +48,14 @@
         </div>
 
         <div class="login-box wrap">
-
+					<form method="post" action="/login">
             <div class="col-md-12">
 								<hr class="colorgraph">
                 <label class="account" style="color:#ffffff;">Tài khoản</label>
             </div>
 
             <div class="col-md-12">
-                <input class="form-control" type="text" name="account" placeholder="Name...">
+                <input class="form-control" type="text" name="username" placeholder="Name...">
             </div>
 
             <div class="col-md-12" style="margin-top: 10px;">
@@ -63,7 +63,7 @@
             </div>
 
             <div class="col-md-12">
-                <input class="form-control" type="password" name="pass" placeholder="Password...">
+                <input class="form-control" type="password" name="password" placeholder="Password...">
             </div>
 
             <div class="row col-md-12">
@@ -80,7 +80,7 @@
                     <button class="btn btn-primary" >ĐĂNG NHẬP</button>
                 </div>
             </div>
-
+					</form>
         </div>
 
     </div>
