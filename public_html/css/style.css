@@ -498,3 +498,6 @@ div.row.box-question{
  ._news-row-slider{
 	 margin-top: 20px;
  }
+div.row._news-row-slider._fanpage{
+	margin-top: 55px;
+}
