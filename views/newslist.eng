@@ -10,7 +10,7 @@
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/pagination.css" rel="stylesheet" type="text/css">
-
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
     <include filename=include/header>
@@ -23,23 +23,9 @@
             <h4 style="color:#14928e;"><img src="assets/images/newspaper.png" alt="tin tuc" /> TIN TỨC GIÁO DỤC</h4>
           </div>
 
-          <div class="news-body-main">
-            <div class="images-news">
-              <a href="readnews">
-                <img class="img-responsive" src="/assets/images/news1.png" alt="vcc" />
-              </a>
-            </div>
+          <eng data=topnews>
 
-            <div class="images-news-title">
-              <h4><a href="readnews">85 cụm thi đại học công bố điểm thi THPT quốc gia 2016</a></h4>
-            </div>
-
-            <div class="images-new-describle">
-              <small style="color:#888">Từ 0h ngày 19/7, nhiều trường đại học lớn như Đại học Bách khoa Hà Nội, Đại học Kinh tế Quốc dân, Đại học Thái Nguyên... đã công bố điểm thi THPT quốc gia 2016.</small>
-            </div>
-          </div>
-
-          <div class="news-suggestion">
+          <!-- <div class="news-suggestion">
             <div class="news-1">
               <li class="_news">
                 <a href="#"><small>Cách khai phiếu đăng ký xét tuyển đại học năm 2016</small></a>
@@ -50,12 +36,13 @@
                   <a href="#"><small>Cách khai phiếu đăng ký xét tuyển đại học năm 2016</small></a>
                 </li>
               </div>
-          </div>
+          </div> -->
+        <eng data=news>
 
-          <div class=" row news-row">
+          <!-- <div class=" row news-row">
               <div class="col-md-4">
                 <div class="news-row-img">
-                  <a href="#"><img src="/assets/images/news2.png" alt="vcc" /></a>
+                  <a href="#"><img src="/assets/images/news2.png" alt="image" /></a>
                 </div>
               </div>
               <div class="col-md-8">
@@ -75,7 +62,7 @@
           <div class=" row news-row">
               <div class="col-md-4">
                 <div class="news-row-img">
-                  <a href="#"><img src="/assets/images/news2.png" alt="vcc" /></a>
+                  <a href="#"><img src="/assets/images/news2.png" alt="image" /></a>
                 </div>
               </div>
               <div class="col-md-8">
@@ -95,7 +82,7 @@
           <div class=" row news-row">
               <div class="col-md-4">
                 <div class="news-row-img">
-                  <a href="#"><img src="/assets/images/news2.png" alt="vcc" /></a>
+                  <a href="#"><img src="/assets/images/news2.png" alt="image" /></a>
                 </div>
               </div>
 
@@ -112,14 +99,35 @@
                 </div>
               </div>
 
-          </div>
+          </div> -->
 
 
 
         </div>
+        <div class="row" id="pagination">
+          <ul class="pagination">
+          </ul>
+        </div>
+
       </div>
 
       <div class="col-md-5">
+        <div class="row col-md-offset-1 slider-left">
+          <div class="row fanpage">
+              <div class="fb-page" data-href="https://www.facebook.com/freeacademy.vn"
+                data-tabs="false"
+                data-width="378px"
+                data-height="400px"
+                data-small-header="false"
+                data-adapt-container-width="true"
+                data-hide-cover="false"
+                data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/freeacademy.vn" class="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/freeacademy.vn">Free Academy</a>
+                </blockquote>
+              </div>
+          </div>
+        </div>
 
         <div class="row _news-row-slider">
           <div class=" col-md-12 type-news">
@@ -127,6 +135,8 @@
           </div>
         </div>
 
+        <eng data=newest>
+<!--
         <div class="row _news-row-slider">
           <div class="col-md-4">
             <div class="_news-row-slider-img">
@@ -159,7 +169,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
 
@@ -169,7 +179,7 @@
     <script src="/assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/libs/bootstrap.min.js"></script>
-    <script src="/assets/js/app.js"></script>
+    <!-- <script src="/assets/js/app.js"></script> -->
     <script type="text/javascript" src="/assets/js/pagination.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
@@ -178,6 +188,15 @@
 
         (new $Pagination($('.pagination'), pages, curpage)).init();
       });
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     </script>
   </body>
 </html>
