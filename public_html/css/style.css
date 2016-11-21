@@ -472,3 +472,29 @@ div.row.box-question{
 	margin-top: 5px;
 	text-align: center;
 }
+/*newslist*/
+.news-box-container{
+	margin-top: 20px;
+}
+.news-suggestion .news-1 ._news{
+	background: url(../images/gd_05.png) no-repeat left;
+	list-style-type: none;
+}
+.news-suggestion .news-1 ._news a{
+	margin-left: 10px;
+}
+ .news-row{
+	 margin-top: 20px;
+	 margin-bottom: 20px;
+ }
+ .news-row-img{
+	 height: 120px;
+	 overflow: hidden;
+ }
+ .news-row-box{
+	 height: 100px;
+	 overflow: hidden;
+ }
+ ._news-row-slider{
+	 margin-top: 20px;
+ }
