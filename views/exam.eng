@@ -24,13 +24,10 @@
               <p><small><eng data=datecreate></small></p>
             </div>
             <div class="">
-              <p><b><eng data=description></b></p>
               <div class="news-content">
                 <eng data=content>
+                <!-- <a class="media" href="<eng data=content>">PDF File</a> -->
               </div>
-              <p style="text-align: right; margin: 8px">
-                <i>Đăng bởi <strong><eng data=author></strong></i>
-              </p>
             </div>
           </div>
           <div class="col-md-4">
@@ -47,6 +44,13 @@
     <script src="/assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/jquery.media.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/jquery.metadata.js"></script>
     <script src="/assets/js/app.js"></script>
+    <script type="text/javascript">
+      console.log(document.width)
+      $('a.media').media({width: $($('.news-content')[0]).width(), height: screen.height - 160});
+    </script>
+
   </body>
 </html>
