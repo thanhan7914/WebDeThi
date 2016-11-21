@@ -132,10 +132,14 @@ ul li{
 h4{
 	line-height: 1.5;
 }
+
 footer{
 	margin-top: 20px;
 	height: 200px;
 	background-color:#f1f1f1;
+}
+.footer{
+	margin-top: 75px;
 }
 .contact{
 	margin-left: 15px;
@@ -437,4 +441,34 @@ div.row.box-question{
     line-height: 24px;
     margin-top: 2px;
     padding-left: 30px;
+}
+/*exam-page*/
+.sp-confirm-header{
+	padding: none !important;
+	border: 1px solid #c6c6c6;
+	margin-top: 20px;
+}
+.sp-confirm-header h4.sp-confirm-title{
+	line-height:20px;
+	color: #14928e;
+	height: 20px;
+}
+.sp-confirm-left{
+	border: 1px solid #c6c6c6;
+	/*border-top: none;*/
+	padding-left: 0 !important;
+	height: 130px;
+}
+.sp-confirm-right{
+	border: 1px solid #c6c6c6;
+	/*border-top: none;*/
+	/*border-left: none;*/
+	height:130px;
+}
+.sp-confirm-right h5{
+	line-height: 100px;
+}
+.sp-confirm-footer{
+	margin-top: 5px;
+	text-align: center;
 }
