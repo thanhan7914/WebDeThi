@@ -40,10 +40,52 @@ class Question extends Views {
   }
 
   editPost(options, row) {
-//    utils.clonewith(row, options, ['title', 'description', 'content', 'image']);
-  //  utils.escapeHtml(options, ['title', 'description', 'content', 'image']);
-    options.title = 'Game';
-    return options;
+    utils.clonewith(row, options, ['title', 'image']);
+    utils.escapeHtml(options, ['title', 'image']);
+    let hinfo = {};
+    utils.clonewith(row, hinfo, ['subject', 'level', 'type', 'year', 'answer_file']);
+    options.hinfo = JSON.stringify(hinfo);
+    options.info = row.type === 0?row.count:row.question_file;
+    options.question = '';
+
+    let db = new Query(utils.config.dbname)
+    .find({exam_id: new ObjectID(row._id)}, 'question')
+    .handle((docs) => {
+      let letter = 'ABCDEFGHIJKLM';
+
+      docs.forEach((doc, i) => {
+        let choice = '';
+        for(let j = 0; j < doc.choice.length; j++)
+        {
+          let choose = Number(doc.answer) === j ? 'checked' : '';
+
+          choice += `
+            <span>${letter[j]}.</span> <input type="radio" name="question_${i}_choose" value="${j}" ${choose}>
+            <input type="text" name="question_${i}_answer_${j}" value="${doc.choice[j]}">
+          `;
+        }
+
+        options.question +=`
+        <div class="form-group">
+          <strong>Question ${i + 1}:</strong>
+          <textarea class="form-control" name="question_${i}" rows="4">${doc.content}</textarea>
+          <span>Answer: </span>
+          <div style="margin: 6px 8px; display: inline-block;" class="answer">
+            <input type="hidden" name="question_${i}_id" value="${doc._id}">
+            <input type="hidden" name="question_${i}_n_answer" value="${doc.choice.length}">
+            ${choice}
+          </div>
+          <span class="add_answer">+</span>
+          <span class="remove_answer">-</span>
+        </div>
+        `;
+      });
+    });
+
+    return db.line.then(() => {
+      db.close();
+      return Promise.resolve(true);
+    });
   }
 
   delHandle(db, idx) {
@@ -52,15 +94,21 @@ class Question extends Views {
 
   postHandle(req, res) {
     let POST = req.body;
+    let mode = 0;
 
     if(POST['hash'] !== req.session.hash)
       return res.redirect('/404');
 
-    if(POST['method'] === 'addnew')
+    if(POST['method'] === 'edit' && String(POST['examid']).length === 24)
+      mode = 2;
+    else if(POST['method'] == 'addnew')
+      mode = 1;
+
+    if(mode > 0)
     {
       let exam = {
         title: POST['title'],
-        subject: Number(POST['level']),
+        subject: Number(POST['subject']),
         level: Number(POST['level']),
         type: Number(POST['type']),
         year: Number(POST['year']),
@@ -82,31 +130,45 @@ class Question extends Views {
         exam.count = Number(POST['info']);
       }
 
-      let db = new Query(utils.config.dbname);
-      db.insert(exam, 'exam');
+      let db = new Query(utils.config.dbname, true);
+      if(mode === 2)
+        db.update({_id: new ObjectID(POST['examid'])}, exam, 'exam');
+      else
+        db.insert(exam, 'exam');
 
       if(exam.type === 0)
       {
+        let exid;
+
         db.handle((result) => {
+          exid = new ObjectID(mode === 2? POST['examid'] : result.ops[0]._id);
+
           for(let i = 0; i < exam.count; i++)
           {
             let prefix = 'question_' + i;
             let n_answer = Number(POST[prefix + '_n_answer']);
             let choice = [];
             for(let j = 0; j < n_answer; j++)
-              choice.push(POST[prefix + '_answer_' + j])
+              choice.push(POST[prefix + '_answer_' + j]);
 
-            questions.push({
-              exam_id: result.ops[0]._id,
+            let qrow = {
+              exam_id: exid,
               content: POST[prefix],
               choice,
-              answer: POST[prefix + '_choose']
-            });
+              answer: Number(POST[prefix + '_choose'])
+            };
+
+            questions.push(qrow);
           }
         });
 
+        if(mode === 2)
+          db.remove({}, 'question', () => {
+            return [{exam_id: exid}];
+          });
+
         db.insert([], 'question', function() {
-          return questions;
+          return [questions];
         });
       }
 
@@ -114,7 +176,7 @@ class Question extends Views {
       return db.close(() => {
         res.redirect('/dashboard/question');
       }, (error) => {
-        res.redirect('/dashboard/question');
+        res.end(error);
       });
     }
 

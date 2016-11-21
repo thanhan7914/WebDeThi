@@ -17,16 +17,14 @@ router.get('/exam/([a-zA-Z0-9_\-]+)\.([a-z0-9]{24})', function(req, res) {
 
     if(rows[0].type === 1)
     {
-      options.content = '<a class="media" href="' + rows[0].question_file + '">PDF File</a>';
+      options.hedtit = "ĐỀ THI";
+      options.content = '<a class="media" id="m-show" href="' + rows[0].question_file + '">PDF File</a>';
     }
     else {
-      options.title = 'Thi Online';
       //render
+      options.hedtit = "XÁC NHẬN LÀM BÀI THI";
       options.content = `
-      <div class="row">${rows[0].title}</div>
-      <div class="rows" style="text-align: center">
-        <a href="/contest?id=${rows[0]._id}">Bat dau lam bai</a>
-      </div>
+        <button id="contest" data-id="${rows[0]._id}" class="start-doing btn btn-info" type="submit" id="button-start">BẮT ĐẦU LÀM BÀI</button>
       `;
     }
   })

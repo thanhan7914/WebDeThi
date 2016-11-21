@@ -63,11 +63,11 @@ class Views {
       };
 
       let db = new Query(utils.config.dbname)
-      .find({_id: new ObjectID(id)}, self.collection)
-      .handle((rows) => {
+      .find({_id: new ObjectID(id)}, self.collection);
+      db.line = db.line.then((rows) => {
         if(rows.length === 0) throw new Error('Not found');
 
-        options = self.editPost(options, rows[0]);
+        return self.editPost(options, rows[0]);
       });
 
       return db.close(() => {

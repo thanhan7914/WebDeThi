@@ -10,9 +10,9 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-1">
             <div class="search">
-              <form class="form-inline" action="" method="post">
-                <input class="form-control a" type="text" name="#" value="" placeholder="Tìm kiếm...">
-                <input class="form-control b" type="submit" name="#" value="">
+              <form class="form-inline">
+                <input class="form-control a" type="text" name="" value="" placeholder="Tìm kiếm...">
+                <input class="form-control b" type="submit" name="" value="">
               </form>
             </div>
           </div>

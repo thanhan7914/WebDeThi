@@ -34,6 +34,7 @@ router.post('/login', function(req, res) {
     res.redirect('dashboard');
   })
   .except((error) => {
+    console.log(error);
     res.render('login');
   })
   .close();
