@@ -117,11 +117,11 @@
 
 <!--news-slider-left -->
       <div class="col-md-5">
-        <div class="row col-md-offset-1 slider-left">
-          <div class="row fanpage">
+        <div class="row _news-row-slider">
+          <div class="col-md-12 _fanpage">
               <div class="fb-page" data-href="https://www.facebook.com/freeacademy.vn"
                 data-tabs="false"
-                data-width="378px"
+                data-width="415px"
                 data-height="400px"
                 data-small-header="false"
                 data-adapt-container-width="true"
