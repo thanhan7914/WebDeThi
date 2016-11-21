@@ -5,10 +5,15 @@ const utils = require('../utils');
 
 router.get('/exam/([a-zA-Z0-9_\-]+)\.([a-z0-9]{24})', function(req, res) {
   let id = req.url.substring(req.url.lastIndexOf('.') + 1);
+  try{
+    id = new ObjectID(id);
+  }catch(e){
+    id = new ObjectID();
+  }
   let options = {};
 
   let db = new Query(utils.config.dbname)
-  .find({_id: new ObjectID(id)}, 'exam')
+  .find({_id: id}, 'exam')
   .handle((rows) => {
     if(rows.length !== 1) throw new Error('Not Found.');
 
@@ -31,7 +36,7 @@ router.get('/exam/([a-zA-Z0-9_\-]+)\.([a-z0-9]{24})', function(req, res) {
   .close(() => {
     res.render('exam', options);
   }, (error) => {
-    res.end(error);
+    res.redirect('/404');
   });
 });
 

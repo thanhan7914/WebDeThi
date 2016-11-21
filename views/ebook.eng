@@ -18,26 +18,19 @@
     <div class="container">
       <div class="container">
         <div class="row">
-          <div class="col-md-8">
-            <div class="">
-              <h2><eng data=title></h2>
-              <p><small><eng data=datecreate></small></p>
-              <p><small><eng data=category></small></p>
-            </div>
-            <div class="">
-              <p><b><eng data=description></b></p>
-              <div class="news-content">
-                <a class="media" href="<eng data=content>">PDF File</a>
-              </div>
-              <p style="text-align: right; margin: 8px">
-                <i>Đăng bởi <strong><eng data=author></strong></i>
-              </p>
-            </div>
+          <div class="">
+            <h2><eng data=title></h2>
+            <p><small><eng data=datecreate></small></p>
+            <p><small><eng data=category></small></p>
           </div>
-          <div class="col-md-4">
-            <div class="">
-              <eng data=relative_news>
+          <div class="">
+            <p><b><eng data=description></b></p>
+            <div class="news-content">
+              <a class="media" href="<eng data=content>">PDF File</a>
             </div>
+            <p style="text-align: right; margin: 8px">
+              <i>Đăng bởi <strong><eng data=author></strong></i>
+            </p>
           </div>
         </div>
       </div>
