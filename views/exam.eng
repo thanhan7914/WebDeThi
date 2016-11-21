@@ -22,11 +22,10 @@
       </div>
       <div class=" col-md-12 sp-confirm-body">
         <div class="row">
-<<<<<<< HEAD
+
           <div class="col-md-6 sp-confirm-left">
             <h5 class="_name-exam" style="text-align:center;font-size:16px;">Tên đề thi bỏ ở đây Lorem ipsum dolor sit amet,</h5>
-=======
-          <div class="col-md-8">
+          <!-- <div class="col-md-8">
             <div class="">
               <h2><eng data=title></h2>
               <p><small><eng data=datecreate></small></p>
@@ -34,10 +33,9 @@
             <div class="">
               <div class="news-content">
                 <eng data=content>
-                <!-- <a class="media" href="<eng data=content>">PDF File</a> -->
+                <a class="media" href="<eng data=content>">PDF File</a>
               </div>
-            </div>
->>>>>>> 73cf2dfe96bc66d56a926f1b523b6819cc96def7
+            </div> -->
           </div>
           <div class="col-md-6 sp-confirm-right">
             <h5 class="_time-exam" style="text-align:center;font-size:16px;">Thời gian: 90 phút</h5>
