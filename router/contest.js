@@ -29,8 +29,8 @@ router.get('/contest', function(req, res) {
         choice += `
           <div class="da">
             <span class="rd">
-              <input type="radio" name="a" value="a">
-              <label for="d">${letter[i]}. ${row.choice[i]}</label>
+              <input type="radio" id="question_${idx}_pos_${i}" name="question_${idx}" value="${i}">
+              <label for="question_${idx}_pos_${i}">${letter[i]}. ${row.choice[i]}</label>
             </span>
           </div>
         `;

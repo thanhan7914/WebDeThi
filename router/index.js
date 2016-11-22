@@ -84,13 +84,16 @@ router.get('/', function(req, res) {
     for(let i = 0; i < len; i++)
     {
       let href = `/exam/${utils.toUrl(rows[i].title)}.${rows[i]._id}`;
+      let title = rows[i].title;
+      if(title.length > 62) title = title.substring(0, 62) + '...';
+
       if(i % 4 === 0 && i > 0)
         options.examination += '</div><div class="row">';
 
       options.examination += `
       <div class="col-md-3">
           <div class="item1"><a href="${href}"><img class="img-responsive" src="${rows[i].image || 'assets/images/thumb11_116304587.png'}"></a></div>
-          <div class="item1-title"><p><a href="${href}">${rows[i].title}</a></p></div>
+          <div class="item1-title"><p><a href="${href}">${title}</a></p></div>
        </div>
       `;
     }
