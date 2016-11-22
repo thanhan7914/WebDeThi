@@ -2,8 +2,11 @@ const Query = require('mongo-promise');
 const utils = require('../utils');
 const fs = require('fs');
 
-let db = new Query('Academy')
-.find({}, 'newsfeed')
+let collection = 'question';
+let file = '/qs_data.json';
+
+let db = new Query(utils.config.dbname)
+.find({}, collection)
 .close((data) => {
   let rows = [];
   data.forEach((doc) => {
@@ -12,7 +15,7 @@ let db = new Query('Academy')
     rows.push(row);
   });
 
-  fs.writeFile(__dirname + '/nf_data.json', JSON.stringify(rows), (err) => {
+  fs.writeFile(__dirname + file, JSON.stringify(rows), (err) => {
     if (err) throw err;
     console.log('It\'s saved!');
   });

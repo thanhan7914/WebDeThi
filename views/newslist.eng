@@ -19,7 +19,7 @@
     <div class="container news-box-container">
 
     <!--main-news-list  -->
-      <div class=" col-md-7">
+      <div class="col-md-7">
         <div class="news-header">
           <div class="news-header-title">
             <h4 style="color:#14928e;"><img src="assets/images/newspaper.png" alt="tin tuc" /> TIN TỨC GIÁO DỤC</h4>
