@@ -14,7 +14,24 @@ router.get('/', function(req, res) {
   let options = {};
   options.username = req.session.user.username;
 
-  res.render('dashboard/index', options);
+  let db = new Query(utils.config.dbname)
+  .query({}, 'newsfeed').exec('count')
+  .handle((c) => {
+    options.count_newsfeed = c;
+  })
+  .query({}, 'question').exec('count')
+  .handle((c) => {
+    options.count_question = c;
+  })
+  .query({}, 'ebook').exec('count')
+  .handle((c) => {
+    options.count_ebook = c;
+  })
+  .close(() => {
+    res.render('dashboard/index', options);
+  }, (error) => {
+    res.render('/404');
+  });
 });
 
 router.use('/newsfeed', require('./newsfeed'));

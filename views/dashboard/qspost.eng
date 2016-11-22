@@ -226,7 +226,7 @@
 			if(url.endsWith('/')) url = url.substring(0, url.length - 1);
 			let local = url.substring(url.lastIndexOf('/') + 1).toLowerCase();
 			['dashboard', 'newsfeed', 'question', 'ebook'].forEach((elem, idx) => {
-				if(elem === local)
+				if(local.startsWith(elem))
 				{
 					$('.nav.menu').find('li').removeClass('active');
 					$('.nav.menu').find('li').eq(idx).addClass('active');

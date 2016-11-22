@@ -31,11 +31,11 @@
 			<div class="col-xs-12 col-md-6 col-lg-3">
 				<div class="panel panel-blue panel-widget ">
 					<div class="row no-padding">
-						<div class="col-sm-3 col-lg-5 widget-left">
+						<div class="col-sm-3 col-lg-5 widget-left" style="background:#34495e">
 							<img src="/assets/images/icons/newsfeed.svg" height="56px">
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">10</div>
+							<div class="large"><eng data=count_newsfeed></div>
 							<div class="text-muted">Newsfeed</div>
 						</div>
 					</div>
@@ -48,7 +48,7 @@
 							<img src="/assets/images/icons/question.svg" height="56px">
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">52</div>
+							<div class="large"><eng data=count_question></div>
 							<div class="text-muted">Questions</div>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
               <img src="/assets/images/icons/file.svg" height="56px">
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">24</div>
+							<div class="large"><eng data=count_ebook></div>
 							<div class="text-muted">Documents</div>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 			if(url.endsWith('/')) url = url.substring(0, url.length - 1);
 			let local = url.substring(url.lastIndexOf('/') + 1).toLowerCase();
 			['dashboard', 'newsfeed', 'question', 'ebook'].forEach((elem, idx) => {
-				if(elem === local)
+				if(local.startsWith(elem))
 				{
 					$('.nav.menu').find('li').removeClass('active');
 					$('.nav.menu').find('li').eq(idx).addClass('active');
