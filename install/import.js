@@ -2,8 +2,8 @@ const Query = require('mongo-promise');
 const utils = require('../utils');
 const fs = require('fs');
 
-let collection = 'exam';
-let file = '/exam_data.json';
+let collection = 'newsfeed';
+let file = '/nf_data.json';
 
 fs.readFile(__dirname + file, (err, data) => {
   if (err) throw err;

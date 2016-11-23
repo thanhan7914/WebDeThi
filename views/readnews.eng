@@ -36,8 +36,8 @@
           <!-- </div> -->
         </div>
         <div class="col-md-4">
-          <div class="row col-md-offset-1 slider-left">
-            <div class="row fanpage">
+          <div class="row slider-left">
+            <div class="col-md-12 fanpage">
                 <div class="fb-page" data-href="https://www.facebook.com/freeacademy.vn"
                   data-tabs="false"
                   data-width="342px"

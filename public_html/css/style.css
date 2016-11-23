@@ -465,9 +465,9 @@ div.row.box-question{
 	/*border-left: none;*/
 	height:130px;
 }
-.sp-confirm-right h5{
+/*.sp-confirm-right h5{
 	line-height: 100px;
-}
+}*/
 .sp-confirm-footer{
 	margin-top: 5px;
 	text-align: center;
@@ -497,4 +497,7 @@ div.row.box-question{
  }
  ._news-row-slider{
 	 margin-top: 20px;
+ }
+ ._fanpage{
+	 margin-top: 32px;
  }
