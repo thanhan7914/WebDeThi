@@ -2,8 +2,8 @@ const Query = require('mongo-promise');
 const utils = require('../utils');
 const fs = require('fs');
 
-let collection = 'question';
-let file = '/qs_data.json';
+let collection = 'exam';
+let file = '/exam_data.json';
 
 let db = new Query(utils.config.dbname)
 .find({}, collection)
@@ -11,8 +11,8 @@ let db = new Query(utils.config.dbname)
   let rows = [];
   data.forEach((doc) => {
     let row = {};
-    utils.clonewithout(doc, row, ['_id']);
-    rows.push(row);
+//    utils.clonewithout(doc, row, ['_id']);
+    rows.push(doc);
   });
 
   fs.writeFile(__dirname + file, JSON.stringify(rows), (err) => {
