@@ -1,1 +1,149 @@
-hello world
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Liên hệ</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <include filename=include/header>
+    <include filename=include/nav>
+
+    <div class="container contact-container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="header-contact">
+            <h4 class="header-contact-title"> GÓP Ý CHO CHÚNG TÔI TẠI ĐÂY</h4>
+          </div>
+
+          <div class="report">
+
+            <div class="row rw-head">
+             <div class="col-md-4">
+               <p style="text-align:center;">Tiêu đề</p>
+             </div>
+             <div class="col-md-8">
+               <input type="text" name="tit" value="" style="width:95%">
+             </div>
+           </div>
+
+           <div class="row rw">
+              <div class="col-md-4">
+                <p style="text-align:center;">Nội dung</p>
+              </div>
+              <div class="col-md-8">
+                <textarea class="cot-1" name="vc" rows="8" cols="37" placeholder="Mô tả nội dung đóng góp ý kiến tại đây..."></textarea>
+              </div>
+            </div>
+
+            <div class="row rw">
+             <div class="col-md-4">
+               <p style="text-align:center;">Họ tên</p>
+             </div>
+             <div class="col-md-8">
+               <input type="text" name="tit" value="" style="width:95%">
+             </div>
+           </div>
+
+           <div class="row rw">
+             <div class="col-md-4">
+               <p style="text-align:center;">Địa chỉ email</p>
+             </div>
+             <div class="col-md-8">
+               <input type="email" name="tit" value="" style="width:95%">
+             </div>
+           </div>
+
+           <div class="row rw rw-bot">
+             <div class="col-md-4">
+               <p style="text-align:center;">Số điện thoại</p>
+             </div>
+             <div class="col-md-8">
+               <input type="email" name="tit" value="" style="width:95%">
+             </div>
+           </div>
+
+          </div>
+
+          <div class="btn-rp">
+           <button class="btn btn-primary" type="button" style="width:100%" name="button">Gửi phản hồi</button>
+         </div>
+
+        </div>
+
+        <div class="col-md-7">
+          <div class="group-name">
+           <h4 class="name-title">NHÓM 14</h4>
+          </div>
+
+          <table class="table table-bordered tb-info">
+            <tr class="active">
+              <th>STT</th>
+              <th>Họ tên</th>
+              <th>Lớp</th>
+              <th>MSSV</th>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td>Phan Thanh An</td>
+              <td>13T1</td>
+              <td>102130002</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Nguyễn Văn Giáp</td>
+              <td>13T1</td>
+              <td>102130010</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Huỳnh Hoàng Phúc</td>
+              <td>13T1</td>
+              <td>102130033</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Trương Trường Đạt</td>
+              <td>13T3</td>
+              <td>102130103</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Nguyễn Thanh Hảo</td>
+              <td>13T3</td>
+              <td>102130085</td>
+            </tr>
+          </table>
+
+          <div class="group-address">
+            <div class="ad-title">
+              <h4 class="name-title">ĐỊA CHỈ</h4>
+            </div>
+            <div class="ad-contents">
+              <p>KHOA CÔNG NGHỆ THÔNG TIN-TRƯỜNG ĐẠI HỌC BÁCH KHOA ĐÀ NẴNG</p>
+            </div>
+          </div>
+
+          <div class="group-address">
+            <div class="ad-title">
+              <h4 class="name-title">ĐỀ TÀI</h4>
+            </div>
+            <div class="ad-contents">
+              <p>Xây dựng trang web ôn luyện và thi trực tuyến cho học sinh trung học phổ thông</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <include filename=include/footer>
+  </body>
+</html>

@@ -501,3 +501,60 @@ div.row.box-question{
  ._fanpage{
 	 margin-top: 32px;
  }
+/*con-tact*/
+.contact-container{
+	margin-top: 40px;
+}
+.contact{
+	margin-top: 40px;
+}
+.header-contact{
+	border-left: 5px solid #ff9900;
+	height: 2em;
+}
+.header-contact-title{
+	color: #14928e;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+.report{
+	margin-top: 20px;
+	border: 1px solid #c6c6c6;
+	padding-top: 20px;
+}
+.cot-1{
+	resize: none;
+}
+.rw{
+	margin-top: 10px;
+}
+.rw.rw-head{
+	margin-top: 10px;
+}
+.rw.rw-bot{
+	margin-bottom: 20px;
+}
+.btn-rp{
+	margin-top: 10px;
+}
+.group-info{
+	margin-top: 40px;
+}
+.group-name{
+	color: #14928e;
+	border-left: 5px solid #ff9900;
+	height: 2em;
+}
+.name-title{
+	line-height: 1.5em;
+	color: #14928e;
+}
+.member-group{
+	margin-top: 20px;
+}
+.tb-info{
+	margin-top: 20px;
+}
+.ad-title{
+	border-left: 5px solid #ff9900;
+}
