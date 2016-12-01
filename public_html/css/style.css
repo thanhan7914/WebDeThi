@@ -18,6 +18,7 @@ body{
 #log-in>a{
 	color: #14928e;
 	text-decoration: none;
+	line-height: 3em;
 }
 .input-group input.form-control{
 	border-radius: 0;
