@@ -56,18 +56,37 @@
     </div>
     <include filename=include/footer>
     <form id="score" style="display: none" method="post" action="/score">
-      <input type="hidden" name="id" value="<eng data=id>">
-      <input type="hidden" name="answer" id="answer" value="">
+      <input type="hidden" name="exam_id">
+      <input type="hidden" name="answers" id="answer" value="">
     </form>
     <script type="text/javascript">
       $('#score').click(function(){
         let url = location.href;
         let id = url.substring(url.length - 24, url.length);
-        console.log(id);
+
         let r = confirm("Bạn có chắc chắn muốn nộp bài thi?");
         if(r === true)
         {
-          $('#answer').val('dap an');
+          $('[name="exam_id"]').val(id);
+          let questions = $('.box-question');
+          let answers = [];
+
+          for(let i = 0; i < questions.length; i++)
+          {
+            let q = $(questions[i]);
+            let data = {};
+            data.id = q.find('.nex-right').find('span').attr('data-id');
+            let input = q.find('.cont-left').find('input[type="radio"]');
+            let j;
+            for(j = 0; j < input.length; j++)
+              if($(input[j]).attr('checked') === 'checked')
+                break;
+
+            data.answer = j;
+            answers.push(data);
+          }
+
+          $('#answer').val(JSON.stringify(answers));
           $('form[id="score"]').submit();
         }
       });

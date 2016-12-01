@@ -121,5 +121,6 @@ router.use(require('./ebook'));
 router.use(require('./exam'));
 router.use(require('./contest'));
 router.use('/contact', require('./contact'));
+router.use('/score', require('./score'));
 
 module.exports = router;
