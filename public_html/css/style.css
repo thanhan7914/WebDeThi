@@ -12,33 +12,22 @@ body{
 .header{
 	margin-top: 10px;
 }
-/*form.form-inline{
-	border: 1px solid #c6c6c6;
-}*/
-form input.b[type="submit"]{
-	background: url(../images/search-icon.png) no-repeat center center;
-	opacity: 0.7;
-	border: 1px solid #c6c6c6 !important;
-	width: 45px !important;
-	/*border: none !important;*/
+#custom-search-input{
+	margin-top: 10px;
 }
-form input.a[type="text"]{
-	border:1px solid #c6c6c6 !important;
-	/*border: none !important;*/
-}
-form input[type="password"]{
-	border:1px solid #c6c6c6 !important;
-}
-.form-control{
-	/*border: none !important;*/
-	border-radius: 0 !important;
-	box-shadow: none !important;
-	/*border: 1px solid #c6c6c6 !important;*/
-
-}
-
 #log-in>a{
 	color: #14928e;
+	text-decoration: none;
+}
+.input-group input.form-control{
+	border-radius: 0;
+}
+.input-group button.btn{
+	border-radius: 0;
+}
+.input-group i.glyphicon{
+	opacity: 0.8;
+	font-weight: 200;
 }
 .active{
 	background:  #34495e !important;

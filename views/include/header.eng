@@ -1,19 +1,23 @@
 <div class="container header">
   <div class="_header_">
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="logo">
           <a href="/"><img src="/assets/images/logo.gif" alt="free academy" /></a>
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-5 ">
         <div class="row">
-          <div class="col-md-6 col-md-offset-1">
-            <div class="search">
-              <form class="form-inline">
-                <input class="form-control a" type="text" name="" value="" placeholder="Tìm kiếm...">
-                <input class="form-control b" type="submit" name="" value="">
-              </form>
+          <div class="col-md-9">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" style="height:40px;font-size:14px;" placeholder="Tìm kiếm..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-lg" style="height:40px;" type="button">
+                            <i class="glyphicon glyphicon-search" ></i>
+                        </button>
+                    </span>
+                </div>
             </div>
           </div>
         </div>

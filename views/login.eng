@@ -44,7 +44,7 @@
   <div class="container login-page">
 		<div class="col-md-4 col-md-offset-4">
         <div class="head">
-            <h4 style="text-align: center; color:#ffffff;">ĐĂNG NHẬP</h4>
+            <h4 style="text-align: right; color:#ffffff;">ĐĂNG NHẬP</h4>
         </div>
 
         <div class="login-box wrap">
