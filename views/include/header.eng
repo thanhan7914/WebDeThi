@@ -1,8 +1,8 @@
 <div class="container header">
   <div class="row _header_">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <div class="logo">
-          <a href="/"><img src="/assets/images/logo.gif" alt="free academy" /></a>
+          <a href="/"><img src="/assets/images/logos.gif" alt="free academy" /></a>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div class="col-md-2 text-right">
+      <div class="col-md-3 text-right">
         <div id="log-in">
             <eng data=login>
         </div>
