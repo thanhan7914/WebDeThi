@@ -1,5 +1,5 @@
 <div class="container header">
-  <div class="_header_">
+  <div class="row _header_">
       <div class="col-md-5">
         <div class="logo">
           <a href="/"><img src="/assets/images/logo.gif" alt="free academy" /></a>
