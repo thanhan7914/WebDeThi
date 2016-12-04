@@ -18,7 +18,7 @@
 
 <body class="body-login">
 
-		<ul class="topnav" id="myTopnav">
+		<!-- <ul class="topnav" id="myTopnav">
 	    <li><a href="#">Trang chủ</a></li>
 	    <li><a href="#">Thi online</a></li>
 	    <li><a href="#">Tài liệu</a></li>
@@ -28,7 +28,9 @@
 	    <li class="icon">
 	      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
 	    </li>
-	  </ul>
+	  </ul> -->
+		<include filename=include/header>
+		<include filename=include/nav>
 
 	  <script>
 	  function myFunction() {
@@ -44,14 +46,14 @@
   <div class="container login-page">
 		<div class="col-md-4 col-md-offset-4">
         <div class="head">
-            <h4 style="text-align: right; color:#ffffff;">ĐĂNG NHẬP</h4>
+            <h4 style="text-align: center;">ĐĂNG NHẬP</h4>
         </div>
 
         <div class="login-box wrap">
 					<form method="post" action="/login">
             <div class="col-md-12">
 								<hr class="colorgraph">
-                <label class="account" style="color:#ffffff;">Tài khoản</label>
+                <label class="account">Tài khoản</label>
             </div>
 
             <div class="col-md-12">
@@ -59,7 +61,7 @@
             </div>
 
             <div class="col-md-12" style="margin-top: 10px;">
-                <label style="color:#ffffff;">Mật khẩu</label>
+                <label>Mật khẩu</label>
             </div>
 
             <div class="col-md-12">
@@ -67,11 +69,11 @@
             </div>
 
             <div class="row col-md-12">
-                <div class="col-md-6" style="color: #ffffff;">
+                <div class="col-md-6">
                     <input type="checkbox" name="check-box"> Nhớ mật khẩu?
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="#"><p style="color: #ffffff;">Quên mật khẩu?</p></a>
+                    <a href="#"><p>Quên mật khẩu?</p></a>
                 </div>
             </div>
 
@@ -85,6 +87,7 @@
 
     </div>
   </div>
+	<include filename=include/footer>
 </body>
 
 

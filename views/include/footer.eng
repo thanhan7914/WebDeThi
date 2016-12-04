@@ -8,10 +8,13 @@
               </div>
               <div class="col-md-4">
                   <form class="navbar-form navbar-left" role="email">
-                      <div class="form-group">
-                          <input type="email" class="form-control" placeholder="Email">
+                      <div class="input-group col-md-12">
+                          <input type="text" class="form-control input-lg" style="height:40px;font-size:14px;" placeholder="Email" />
+                          <span class="input-group-btn">
+                              <button class="btn btn-info btn-lg" style="height:40px;font-size:13px;" type="button">ĐĂNG KÝ
+                              </button>
+                          </span>
                       </div>
-                      <button type="submit" class="btn btn-info">Đăng ký</button>
                   </form>
                </div>
           </div>

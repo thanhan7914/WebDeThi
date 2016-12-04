@@ -35,7 +35,7 @@ body{
 	background:  #34495e !important;
 }
 /*nav*/
-.menus{
+.menu-nav{
 	margin-top: 10px;
 }
 ul.topnav {
@@ -96,13 +96,15 @@ ul.topnav li.icon {display: none;}
 	padding-right: 5px;
 }
 #myCarousel{
-	margin-top: 10px;
+	/*margin-top: 10px;*/
+	margin-bottom: 10px;
 }
 .carousel-indicators >.active{
 	background: #ffffff !important;
 }
 .introduction{
-	margin-top: 10px !important;
+	/*margin-top: 10px !important;*/
+
 	padding-bottom: 10px;
 
 }
@@ -135,7 +137,6 @@ footer{
 .contact{
 	margin-left: 15px;
 }
-
 .checkbox label, .radio label {
 	color: #888;
 }
@@ -173,10 +174,13 @@ p.introduce-content{
 	min-height: 165px;
 }
 div.container.news-content{
-	margin-top: 20px;
+	/*margin-top: 10px;*/
 }
 hr{
- border-color: #14928e !important;
+ border-color: #c6c6c6 !important;
+}
+h4{
+	font-weight: 400 !important;
 }
 /*confirm*/
 .cd-popup {
@@ -201,9 +205,10 @@ hr{
   transform: translateY(0);
 }
 /*login-page*/
+
 div.col-md-4.col-md-offset-4{
-	background: #14928e;
-	margin-top: 100px;
+	background: #f1f1f1;
+	margin-top: 20px;
 	border-radius: 5px;
 	padding-bottom: 10px;
 }
@@ -270,8 +275,10 @@ div.col-md-4.col-md-offset-4{
 }
 
 .newsfeed {
-	border-top: 1px solid #eee;
+	/*border-top: 1px solid #eee;*/
 	/*max-height: 164px;*/
+	margin-top: -12px;
+	margin-bottom: 20px;
 }
 
 .newsfeed-left, .newsfeed-right {
@@ -494,9 +501,6 @@ div.row.box-question{
  }
 /*con-tact*/
 .contact-container{
-	margin-top: 40px;
-}
-.contact{
 	margin-top: 40px;
 }
 .header-contact{

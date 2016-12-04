@@ -135,18 +135,20 @@
                     <h4 style="text-align: center;">Đề thi mới</h4>
                 </div>
 
-                <div class="link-exam">
-                    <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                </div>
-                 <div class="link-exam">
-                    <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                </div>
-                 <div class="link-exam">
-                    <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                </div>
-                 <div class="link-exam">
-                    <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                </div>
+                <marquee direction="up" scrollamount="2">
+                  <div class="link-exam">
+                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
+                  </div>
+                   <div class="link-exam">
+                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
+                  </div>
+                   <div class="link-exam">
+                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
+                  </div>
+                   <div class="link-exam">
+                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
+                  </div>
+                </marquee>
             </div>
 
             <div class="row g-page">
