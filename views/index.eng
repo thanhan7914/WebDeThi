@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row dethi-title">
             <div class="col-md-12">
-                <h4><a href="/exam" style="color: #14928e;text-decoration: none;"><img src="assets/images/exam.png"> ĐỀ THI</a></h4>
+                <h4><a href="/exlist" style="color: #14928e;text-decoration: none;"><img src="assets/images/exam.png"> ĐỀ THI</a></h4>
                 <hr>
             </div>
         </div>

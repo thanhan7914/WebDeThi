@@ -21,12 +21,11 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  //
   let POST = req.body;
   if(!utils.hasattr(POST, ['exam_id', 'answers']))
     return res.redirect('/');
 
-  let options = {};
+  let options = {ex_tit: 'De thi'};
   let id;
   let answers;
   try {
