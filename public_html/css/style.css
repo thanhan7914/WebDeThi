@@ -559,11 +559,10 @@ div.row.box-question{
 .ad-title{
 	border-left: 5px solid #ff9900;
 }
-<<<<<<< HEAD
 
 .post-exam {
 	min-height: 100px;
-=======
+}
 /*score*/
 .col-md-6>.title-top{
 	border: 1px solid #c6c6c6;
@@ -591,5 +590,4 @@ div.row.view-score{
 button.btn.btn-info.b1{
 	border-radius: 0;
 	margin-top: 20px;
->>>>>>> 19945ffcb681b75f7bbf7a05a14d615318f3af9d
 }

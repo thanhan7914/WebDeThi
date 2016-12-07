@@ -16,8 +16,7 @@ let check = function(answers, q_id, ans) {
 }
 
 router.get('/', function(req, res) {
-  // res.redirect('/');
-  res.render('score');
+  res.redirect('/');
 });
 
 router.post('/', function(req, res) {
@@ -47,6 +46,9 @@ router.post('/', function(req, res) {
     options.count = len;
   })
   .close(() => {
+    let hscore = utils.createHash(req.session.hex + '_' + options.nright + '_' + POST['exam_id']);
+    options.exam_id = POST['exam_id'];
+    req.session.hscore = hscore;
     res.render('score', options);
   }, (error) => {
     console.log(error);

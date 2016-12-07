@@ -30,7 +30,7 @@
                 </h1>
                 <div class="row">
                   <div class="col-md-11 col-md-offset-1">
-                    <span><label>Số câu làm đúng: </label> <eng data=score default='0.00' des='the nay chua diem'> </span>
+                    <span><label>Số câu làm đúng: </label> <eng data=nright default='0.00' des='so cau lm dung'> </span>
                   </div>
 
                   <div class="col-md-11 col-md-offset-1">
@@ -49,10 +49,10 @@
                 </div>
                 <div class="row btn-cont-comu">
                   <div class="col-md-3 col-md-offset-3">
-                    <button class="btn btn-info b1" type="button" name="xemdapan">Xem đáp án</button>
+                    <button class="btn btn-info b1" type="button" name="xemdapan" onclick="location.href='answer?t='+thash;">Xem đáp án</button>
                   </div>
                   <div class="col-md-3">
-                    <button class="btn btn-info b1" type="button" name="lamlaibai">Làm lại bài thi</button>
+                    <button class="btn btn-info b1" type="button" name="lamlaibai" onclick="history.back();">Làm lại bài thi</button>
                   </div>
                 </div>
               </div>
@@ -61,5 +61,9 @@
         </div>
       </div>
     <include filename=include/footer>
+
+    <script type="text/javascript">
+      var thash = '<eng data=nright>' + '_' + '<eng data=exam_id>';
+    </script>
   </body>
 </html>

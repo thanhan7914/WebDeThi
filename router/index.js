@@ -2,6 +2,14 @@ const router = require('express').Router();
 const Query = require('mongo-promise');
 const utils = require('../utils');
 
+router.use(function(req, res, next) {
+  if(typeof req.session !== 'undefined'
+   && typeof req.session.hex === 'undefined')
+     req.session.hex = utils.rhex(12);
+
+  next();
+});
+
 router.get('/', function(req, res) {
   let options = {
     login: `
@@ -122,5 +130,6 @@ router.use(require('./exam'));
 router.use(require('./contest'));
 router.use('/contact', require('./contact'));
 router.use('/score', require('./score'));
+router.use('/answer', require('./answer'));
 
 module.exports = router;

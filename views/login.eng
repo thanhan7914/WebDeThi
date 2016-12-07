@@ -17,18 +17,6 @@
 </head>
 
 <body class="body-login">
-
-		<!-- <ul class="topnav" id="myTopnav">
-	    <li><a href="#">Trang chủ</a></li>
-	    <li><a href="#">Thi online</a></li>
-	    <li><a href="#">Tài liệu</a></li>
-	    <li><a href="#">Tin tức</a></li>
-	    <li><a href="#">Liên hệ</a></li>
-
-	    <li class="icon">
-	      <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
-	    </li>
-	  </ul> -->
 		<include filename=include/header>
 		<include filename=include/nav>
 

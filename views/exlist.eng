@@ -27,6 +27,8 @@
                   <option value="-1">Kỳ thi</option>
       						<option value="0">Tốt nghiệp THPT</option>
       						<option value="1">Đại học</option>
+                  <option value="2">THPT QUỐC GIA</option>
+      						<option value="3">TIẾNG ANH QUỐC TẾ</option>                  
       					</select>
       				</li>
               <li>

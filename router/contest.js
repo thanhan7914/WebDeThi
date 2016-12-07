@@ -70,7 +70,7 @@ router.get('/contest', function(req, res) {
     res.render('contest', options);
   }, (error) => {
     res.redirect('/404');
-  })
+  });
 });
 
 module.exports = router;
