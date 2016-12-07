@@ -12,12 +12,54 @@
     <include filename=include/header>
     <include filename=include/nav>
 
-    <div class="container">
-      <eng data=ex_tit default='title' des='tieu de cua bai kiem tra'>
-      <eng data=score default='0.00' des='the nay chua diem'>
-      <eng data=nright default='0' des='the nay chua so cau dung'>
-      <eng data=count default='0' des='the nay chua so cau'>
-    </div>
+
+      <div class="container">
+        <div class="name-exam">
+          <h4 class="name-exam-title"><eng data=ex_tit default='title' des='tieu de cua bai kiem tra'></h4>
+        </div>
+
+        <div class="col-md-12 score-exam">
+          <div class="row">
+            <div class="col-md-6">
+              <div class=" row title-top">
+                <h5> ĐIỂM</h5>
+              </div>
+              <div class="row view-score">
+                <h1>
+                  <eng data=score default='0.00' des='the nay chua diem'>
+                </h1>
+                <div class="row">
+                  <div class="col-md-11 col-md-offset-1">
+                    <span><label>Số câu làm đúng: </label> <eng data=score default='0.00' des='the nay chua diem'> </span>
+                  </div>
+
+                  <div class="col-md-11 col-md-offset-1">
+                    <span><label>Tổng số câu: </label> <eng data=count default='0' des='the nay chua so cau'></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row title-top">
+                <h5>Xem Đáp Án & Lời Giải</h5>
+              </div>
+              <div class="row view-score">
+                <div class="col-md-12 cont-comu">
+                  <p>Nếu chưa hài lòng với kết quả, Bạn nên cố gắng tự kiểm tra lại bài làm trước khi xem đáp án hoặc lời giải!</p>
+                </div>
+                <div class="row btn-cont-comu">
+                  <div class="col-md-3 col-md-offset-3">
+                    <button class="btn btn-info b1" type="button" name="xemdapan">Xem đáp án</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-info b1" type="button" name="lamlaibai">Làm lại bài thi</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <include filename=include/footer>
   </body>
 </html>

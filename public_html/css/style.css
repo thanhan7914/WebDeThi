@@ -559,7 +559,37 @@ div.row.box-question{
 .ad-title{
 	border-left: 5px solid #ff9900;
 }
+<<<<<<< HEAD
 
 .post-exam {
 	min-height: 100px;
+=======
+/*score*/
+.col-md-6>.title-top{
+	border: 1px solid #c6c6c6;
+	background: #14928e;
+}
+div.row.view-score{
+	border: 1px solid #c6c6c6;
+	min-height: 160px;
+	background: linear-gradient(#ffffff,#f1f1f1);
+}
+.name-exam h4.name-exam-title{
+	color: #14928e;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+.title-top>h5{
+	color: #ffffff;
+	font-weight: 600;
+	text-align: center;
+}
+.row.view-score>h1{
+	text-align: center;
+	font-size: 60px;
+}
+button.btn.btn-info.b1{
+	border-radius: 0;
+	margin-top: 20px;
+>>>>>>> 19945ffcb681b75f7bbf7a05a14d615318f3af9d
 }
