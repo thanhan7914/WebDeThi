@@ -579,15 +579,6 @@ div.row.view-score{
 	text-align: center;
 	font-size: 60px;
 }
-.row>.text-lefts{
-	font-size: 14px;
-	font-weight: 600;
-	padding-left: 40px;
-}
-.view-score>.cont-comu>p{
-	font-weight: 600;
-	margin-top: 10px;
-}
 button.btn.btn-info.b1{
 	border-radius: 0;
 	margin-top: 20px;
