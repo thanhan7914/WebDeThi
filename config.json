@@ -18,6 +18,6 @@
   },
   "exam": {
     "subject": ["Toan Hoc", "Vat Ly", "Hoa Hoc", "Sinh Hoc", "Tieng Anh", "Ngu Van", "Lich Su", "Dia Ly"],
-    "level": ["Đề Thi Tốt Nghiệp THPT", "Đề Thi Đại Học"]
+    "level": ["Đề Thi Tốt Nghiệp THPT", "Đề Thi Đại Học", "Đề Thi THPT QUỐC GIA"]
   }
 }

@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row dethi-title">
             <div class="col-md-12">
-                <h4><a href="/exam" style="color: #14928e;text-decoration: none;"><img src="assets/images/exam.png"> ĐỀ THI</a></h4>
+                <h4><a href="/exlist" style="color: #14928e;text-decoration: none;"><img src="assets/images/exam.png"> ĐỀ THI</a></h4>
                 <hr>
             </div>
         </div>
@@ -81,14 +81,14 @@
                                 <span>ĐỀ THI THPT QUỐC GIA </span>
                             </h4>
                             <ul class="menu-item-ul">
-                                <li><a href="#" title="Toán Học"><span></span>Toán Học</a></li>
-                                <li><a href="#" title="Vật Lý"><span></span>Vật Lý</a></li>
-                                <li><a href="#" title="Hóa Học"><span></span>Hóa Học</a></li>
-                                <li><a href="#" title="Sinh Học"><span></span>Sinh Học</a></li>
-                                <li><a href="#" title="Ngữ Văn"><span></span>Ngữ Văn</a></li>
-                                <li><a href="#" title="Địa Lý"><span></span>Địa Lý</a></li>
-                                <li><a href="#" title="Lịch Sử"><span></span>Lịch Sử</a></li>
-                                <li><a href="#" title="Anh Văn"><span></span>Anh Văn</a></li>
+                                <li><a href="/exlist?subject=0&level=2" title="Toán Học"><span></span>Toán Học</a></li>
+                                <li><a href="/exlist?subject=1&level=2" title="Vật Lý"><span></span>Vật Lý</a></li>
+                                <li><a href="/exlist?subject=2&level=2" title="Hóa Học"><span></span>Hóa Học</a></li>
+                                <li><a href="/exlist?subject=3&level=2" title="Sinh Học"><span></span>Sinh Học</a></li>
+                                <li><a href="/exlist?subject=4&level=2" title="Ngữ Văn"><span></span>Ngữ Văn</a></li>
+                                <li><a href="/exlist?subject=5&level=2" title="Địa Lý"><span></span>Địa Lý</a></li>
+                                <li><a href="/exlist?subject=6&level=2" title="Lịch Sử"><span></span>Lịch Sử</a></li>
+                                <li><a href="/exlist?subject=7&level=2" title="Anh Văn"><span></span>Anh Văn</a></li>
                             </ul>
                          </div>
                     </div>
@@ -99,14 +99,14 @@
                                 <span>ĐỀ THI ĐẠI HỌC</span>
                             </h4>
                             <ul class="menu-item-ul">
-                                <li><a href="#" title="Toán Học"><span></span>Toán Học</a></li>
-                                <li><a href="#" title="Vật Lý"><span></span>Vật Lý</a></li>
-                                <li><a href="#" title="Hóa Học"><span></span>Hóa Học</a></li>
-                                <li><a href="#" title="Sinh Học"><span></span>Sinh Học</a></li>
-                                <li><a href="#" title="Ngữ Văn"><span></span>Ngữ Văn</a></li>
-                                <li><a href="#" title="Địa Lý"><span></span>Địa Lý</a></li>
-                                <li><a href="#" title="Lịch Sử"><span></span>Lịch Sử</a></li>
-                                <li><a href="#" title="Anh Văn"><span></span>Anh Văn</a></li>
+                                <li><a href="/exlist?subject=0&level=1" title="Toán Học"><span></span>Toán Học</a></li>
+                                <li><a href="/exlist?subject=1&level=1" title="Vật Lý"><span></span>Vật Lý</a></li>
+                                <li><a href="/exlist?subject=2&level=1" title="Hóa Học"><span></span>Hóa Học</a></li>
+                                <li><a href="/exlist?subject=3&level=1" title="Sinh Học"><span></span>Sinh Học</a></li>
+                                <li><a href="/exlist?subject=4&level=1" title="Ngữ Văn"><span></span>Ngữ Văn</a></li>
+                                <li><a href="/exlist?subject=5&level=1" title="Địa Lý"><span></span>Địa Lý</a></li>
+                                <li><a href="/exlist?subject=6&level=1" title="Lịch Sử"><span></span>Lịch Sử</a></li>
+                                <li><a href="/exlist?subject=7&level=1" title="Anh Văn"><span></span>Anh Văn</a></li>
                             </ul>
                         </div>
                     </div>
@@ -117,21 +117,21 @@
                                 <span>ĐỀ THI TỐT NGHIỆP THPT</span>
                             </h4>
                             <ul class="menu-item-ul">
-                                <li><a href="#" title="Toán Học"><span></span>
+                                <li><a href="/exlist?subject=0&level=0" title="Toán Học"><span></span>
                                     Toán Học</a> </li>
-                                <li><a href="#" title="Vật Lý"><span></span>
+                                <li><a href="/exlist?subject=1&level=0" title="Vật Lý"><span></span>
                                     Vật Lý</a> </li>
-                                <li><a href="#" title="Hóa Học"><span></span>
+                                <li><a href="/exlist?subject=2&level=0" title="Hóa Học"><span></span>
                                     Hóa Học</a> </li>
-                                <li><a href="#" title="Sinh Học"><span></span>
+                                <li><a href="/exlist?subject=3&level=0" title="Sinh Học"><span></span>
                                     Sinh Học</a> </li>
-                                <li><a href="#" title="Ngữ Văn"><span></span>
+                                <li><a href="/exlist?subject=4&level=0" title="Ngữ Văn"><span></span>
                                     Ngữ Văn</a> </li>
-                                <li><a href="#" title="Địa Lý"><span></span>
+                                <li><a href="/exlist?subject=5&level=0" title="Địa Lý"><span></span>
                                     Địa Lý</a> </li>
-                                <li><a href="#" title="Lịch Sử"><span></span>
+                                <li><a href="/exlist?subject=6&level=0" title="Lịch Sử"><span></span>
                                     Lịch Sử</a> </li>
-                                <li><a href="#" title="Anh Văn"><span></span>
+                                <li><a href="/exlist?subject=7&level=0" title="Anh Văn"><span></span>
                                     Anh Văn</a> </li>
                             </ul>
                         </div>
@@ -144,13 +144,13 @@
                             </h4>
                             <ul class="menu-item-ul">
 
-                                <li><a href="#" title="Tiếng Anh tổng quát - EDO">
+                                <li><a href="/exlist?subject=8&level=4" title="Tiếng Anh tổng quát - EDO">
                                     <span></span>Tiếng Anh tổng quát - EDO </a> </li>
-                                <li><a href="#" title="Tiếng Anh chuyên ngành - ESP">
+                                <li><a href="/exlist?subject=9&level=4" title="Tiếng Anh chuyên ngành - ESP">
                                     <span></span>Tiếng Anh chuyên ngành</a> </li>
-                                <li><a href="#" title="Luyện thi TOEIC - TOEIC OLPC">
+                                <li><a href="/exlist?subject=10&level=4" title="Luyện thi TOEIC - TOEIC OLPC">
                                     <span></span>Luyện thi TOEIC OLPC</a> </li>
-                                <li><a href="#" title="Luyện thi TOEFL">
+                                <li><a href="/exlist?subject=11&level=4" title="Luyện thi TOEFL">
                                     <span></span>Luyện thi TOEFL TPO </a> </li>
 
                             </ul>

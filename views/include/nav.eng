@@ -4,7 +4,7 @@
     <li><a href="#">Thi online</a></li>
     <li><a href="/ebook">Tài liệu</a></li>
     <li><a href="/newslist">Tin tức</a></li>
-    <li><a href="#">Liên hệ</a></li>
+    <li><a href="/contact">Liên hệ</a></li>
 
     <li class="icon">
       <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>

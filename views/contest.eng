@@ -13,10 +13,6 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/time_olympic.js"></script>
-
-    </script>
-
-    </script>
   </head>
   <body>
     <include filename=include/header>

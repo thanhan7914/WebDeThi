@@ -48,7 +48,7 @@ exports.compile = function(str, options)
       if(options[key] instanceof Object || options[key] instanceof Array)
          content = JSON.stringify(options[key]);
 
-      let reg = new RegExp('<eng data=' + String(key) + '(\sdefault=\'([^\']+)\')?(\sdes=\'([^\']+)\')?>','g');
+      let reg = new RegExp('<eng data=' + String(key) + '(\\sdefault=\'([^\\\']+)\')?(\\sdes=\'([^\\\']+)\')?>','g');
       if(reg.test(str))
         str = str.replace(reg, String(content));
     }

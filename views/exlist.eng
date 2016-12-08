@@ -10,170 +10,190 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>a, a:hover, a:active, a:focus {text-decoration: none;}</style>
   </head>
   <body>
     <include filename=include/header>
     <include filename=include/nav>
 
-    <div class="container">
-    	<div class="col-md-7 list-exams">
-    		<div class="row">
-    			<ul>
-    				<li style="color: #ffffff">ĐỀ THI</li>
-    				<li>
-    					<select>
-    						<option value="Thi Tốt nghiệp THPT">Tốt nghiệp THPT</option>
-    						<option value="Thi Đại học">Đại học</option>
-    					</select>
-    				</li>
+    <div class="container" style="max-width: 1140px;">
+      <div class="row">
+      	<div class="col-md-7 list-exams">
+      		<div class="row">
+      			<ul>
+      				<li style="color: #ffffff">ĐỀ THI</li>
+      				<li>
+      					<select name="level">
+                  <option value="-1">Kỳ thi</option>
+      						<option value="0">Tốt nghiệp THPT</option>
+      						<option value="1">Đại học</option>
+                  <option value="2">THPT QUỐC GIA</option>
+      						<option value="3">TIẾNG ANH QUỐC TẾ</option>                  
+      					</select>
+      				</li>
+              <li>
+                  <select name="subject">
+                      <option value="-1">Môn</option>
+                      <option value="0">Toán</option>
+                      <option value="1">Vật lý</option>
+                      <option value="2">Hóa Học</option>
+                      <option value="3">Sinh học</option>
+                      <option value="4">Tiếng Anh</option>
+                      <option value="5">Ngữ Văn</option>
+                      <option value="6">Lịch Sử</option>
+                      <option value="7">Địa lý</option>
+                  </select>
+              </li>
+      				<li>
+      					<select name="year">
+      						<option value="-1">Năm</option>
+      						<option value="2016">2016</option>
+      						<option value="2015">2015</option>
+      						<option value="2014">2014</option>
+      						<option value="2013">2013</option>
+      						<option value="2012">2012</option>
+      					</select>
+      				</li>
+              <li><input type="submit" id="search" value="Lọc" style="padding: 0px 8px; max-height: 36px; margin: 2px 1px; text-align: center;"></li>
+      			</ul>
+      		</div>
 
-                    <li>
-                        <select>
-                            <option value="Môn">Môn</option>
-                            <option value="Toán">Toán</option>
-                            <option value=" Vật Lý">Vật lý</option>
-                            <option value="Hóa Học">Hóa Học</option>
-                            <option value="Sinh Học">Sinh học</option>
-                            <option value="Tiếng Anh">Tiếng Anh</option>
-                            <option value="Ngữ Văn">Ngữ Văn</option>
-                            <option value="Lịch sử">Lịch Sử</option>
-                            <option value="Địa lý">Địa lý</option>
-                        </select>
-                    </li>
-
-    				<li>
-    					<select>
-    						<option value="Năm">Năm</option>
-    						<option value="2016">2016</option>
-    						<option value="2015">2015</option>
-    						<option value="2014">2014</option>
-    						<option value="2013">2013</option>
-    						<option value="2012">2012</option>
-    					</select>
-    				</li>
-    			</ul>
-    		</div>
-
-            <div class="block-exam">
-                <div class="title-post-exam">
-                    <a href="#"><h4>Đề thi thử môn toán 2017 có đáp án(50 câu trắc nghiệm)</h4></a>
-                </div>
-                <div class="post-exam">
-                    <div class="col-md-2">
-                        <a href="#"><img class="img-responsive" src="assets/images/thumnail_exam.jpg"></a>
-                    </div>
-                    <div class="col-md-10">
-                       <div class="author-time">
-                           <small style="color: #888;"><script>document.write(new Date())</script></small>
-                       </div>
-                       <div class="decriptions">
-                           <a href="#"><p style="color: #333;">description</p></a>
-                       </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block-exam">
-                <div class="title-post-exam">
-                    <a href="#"><h4>Đề thi thử môn toán 2017 có đáp án(50 câu trắc nghiệm)</h4></a>
-                </div>
-                <div class="post-exam">
-                    <div class="col-md-2">
-                        <a href="#"><img class="img-responsive" src="assets/images/thumnail_exam.jpg"></a>
-                    </div>
-                    <div class="col-md-10">
-                       <div class="author-time">
-                           <small style="color: #888;"><script>document.write(new Date())</script></small>
-                       </div>
-                       <div class="decriptions">
-                           <p style="color: #333;">description</p>
-                       </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block-exam">
-                <div class="title-post-exam">
-                    <a href="#"><h4>Đề thi thử môn toán 2017 có đáp án(50 câu trắc nghiệm)</h4></a>
-                </div>
-                <div class="post-exam">
-                    <div class="col-md-2">
-                        <a href="#"><img class="img-responsive" src="assets/images/thumnail_exam.jpg"></a>
-                    </div>
-                    <div class="col-md-10">
-                       <div class="author-time">
-                           <small style="color: #888;"><script>document.write(new Date())</script></small>
-                       </div>
-                       <div class="decriptions">
-                           <a href="#"><p style="color: #333;">description</p></a>
-                       </div>
-                    </div>
-                </div>
-            </div>
-
-    	</div>
+          <div id="shwn">
+            <!-- render -->
+          </div>
+      	</div>
 
 
 
-        <div class="col-md-4 col-md-offset-1 slider-left">
+          <div class="col-md-4 col-md-offset-1 slider-left">
 
-            <div class="row fanpage">
-                <div class="fb-page" data-href="https://www.facebook.com/freeacademy.vn"
-                  data-tabs="false"
-                  data-width="378px"
-                  data-height="400px"
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true">
-                  <blockquote cite="https://www.facebook.com/freeacademy.vn" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/freeacademy.vn">Free Academy</a>
-                  </blockquote>
-                </div>
-            </div>
-
-            <div class="row new-examination">
-                <div class="title-slider">
-                    <h4 style="text-align: center;">Đề thi mới</h4>
-                </div>
-
-                <marquee direction="up" scrollamount="2">
-                  <div class="link-exam">
-                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
+              <div class="row fanpage">
+                  <div class="fb-page" data-href="https://www.facebook.com/freeacademy.vn"
+                    data-tabs="false"
+                    data-width="378px"
+                    data-height="400px"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/freeacademy.vn" class="fb-xfbml-parse-ignore">
+                      <a href="https://www.facebook.com/freeacademy.vn">Free Academy</a>
+                    </blockquote>
                   </div>
-                   <div class="link-exam">
-                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                  </div>
-                   <div class="link-exam">
-                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                  </div>
-                   <div class="link-exam">
-                      <a href="#">>> Đề thi thử đại học trường chuyên đại học Vinh <span class="label label-danger">New</span></a>
-                  </div>
-                </marquee>
-            </div>
-
-            <div class="row g-page">
-              <div class="g-person" data-width="379" data-href="//plus.google.com/u/0/110716889034591838530" data-layout="landscape" data-rel="author">
               </div>
-            </div>
-        </div>
+
+          </div>
 
 
 
+      </div>
+
+      <div class="row" id="pagination">
+        <ul class="pagination">
+        </ul>
+      </div>
     </div>
-
     <include filename=include/footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+    <script type="text/javascript" src="/assets/js/pagination.js"></script>
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+      var filter = {};
+
+      var render = function(opts) {
+        var container = $('#shwn');
+        var datas = JSON.parse(opts.datas);
+
+        for(var obj of datas)
+        {
+          var href = '/exam/' + obj.title.toUrl() + '.' + obj._id;
+
+          container.append(`
+            <div class="block-exam">
+                <div class="title-post-exam">
+                    <a href="${href}"><h4>${obj.title}</h4></a>
+                </div>
+                <div class="post-exam">
+                    <div class="col-md-2">
+                        <a href="${href}"><img class="img-responsive" src="assets/images/thumnail_exam.jpg"></a>
+                    </div>
+                    <div class="col-md-10">
+                       <div class="author-time">
+                           <small style="color: #888;">${new Date(obj.datecreate).toString()}</small>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            `);
+        }
+
+        var pages = opts.pages;
+        var curpage = opts.curpage;
+
+        (new $Pagination($('.pagination'), pages, curpage)).init();
+      };
+
+      var search = function(o, page = 0) {
+        var filter = {};
+        for(var i in o)
+           if(o.hasOwnProperty(i) && o[i] !== null) filter[i] = o[i];
+
+        if(filter.hasOwnProperty('subject')) $('[name="subject"]').val(Number(filter['subject']));
+        if(filter.hasOwnProperty('year')) $('[name="year"]').val(Number(filter['year']));
+        if(filter.hasOwnProperty('level')) $('[name="level"]').val(Number(filter['level']));
+
+        $.post('/exlist',
+          {
+              filter,
+              page
+          },
+          function(datas, status){
+              render(datas);
+          }
+        );
+
+      }
+
+      $(document).ready(function() {
+        <eng data=call>
+
+        $('#search').click(function() {
+          let level = Number($('[name="level"]').val());
+          let subject = Number($('[name="subject"]').val());
+          let year = Number($('[name="year"]').val());
+
+          filter = {};
+          if(level !== -1) filter.level = level;
+          if(subject !== -1) filter.subject = subject;
+          if(year !== -1) filter.year = year;
+
+          $('#shwn').html('');
+          $('ul.pagination').html('');
+          search(filter, 0);
+        });
+
+        $('body').on('click', 'a[href*="page"]', function(e) {
+          let url = $(this).attr('href');
+          let page = Number(url.substring(url.length - 1));
+          $('#shwn').html('');
+          $('ul.pagination').html('');
+          search(filter, page);
+          e.preventDefault();
+        });
+      });
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>

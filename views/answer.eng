@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thi online</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Học và luyện thi trực tuyến</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <include filename=include/header>
+    <include filename=include/nav>
+
+    <div class="container">
+
+      <div class=" row box-exam-title">
+        <div class=" col-md-8 name-exam">
+          <h4 style="color:#00918d;"><a href="#score"><eng data=title></a></h4>
+        </div>
+        <div class="col-md-2 col-md-offset-2 clock text-left">
+        </div>
+      </div>
+
+      <div class="col-md-12 box-exam-content">
+        <div class=" row box-title">
+          <p style="color:#ffffff;"><strong>ĐỀ BÀI</strong></p>
+        </div>
+
+        <eng data=questions>
+      </div>
+    </div>
+    <include filename=include/footer>
+  </body>
+</html>
