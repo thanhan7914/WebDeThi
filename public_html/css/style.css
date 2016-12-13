@@ -713,3 +713,36 @@ a:hover{
 .confirm-box{
 	margin-bottom: 70px;
 }
+/*ebooklist*/
+.ebook-box #shwn{
+	margin-top: 52px;
+}
+.frm{
+	border: 1px solid #c6c6c6;
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+.box-ebooks-title>a:hover{
+	color: #
+}
+.left-box{
+	border-right: 1px solid #c6c6c6;
+	background: #14928e;
+}
+.left-box figure img{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.left-box figure img:hover{
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.box-ebooks-title>a>h4{
+	color: #14928e;
+	text-transform: uppercase;
+}
+.box-ebooks-title>a>h4:hover{
+	color: #f5a606;
+}
