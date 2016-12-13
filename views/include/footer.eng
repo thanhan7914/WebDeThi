@@ -11,8 +11,6 @@
                       <a href="#">HOME</a> |
                       <a href="#">CONTACT</a>
                     </div>
-
-
               </div>
 
               <div class="col-md-4 contacts">
@@ -24,12 +22,14 @@
                   </div>
               </div>
               <div class="col-md-4 freeacademy">
-                <h4>FREE ACADEMY</h4>
-                <a href="http://freeacademy.cf/">Trang chủ</a><br>
-                <a href="http://freeacademy.cf/">Thi online</a><br>
-                <a href="http://freeacademy.cf/ebook">Tài liệu</a><br>
-                <a href="http://freeacademy.cf/newslist">Tin tức</a><br>
-                <a href="http://freeacademy.cf/contact">Liên hệ</a>
+                <div class="col_bot_right">
+                  <h4>FREE ACADEMY</h4>
+                  <a href="http://freeacademy.cf/">Trang chủ</a><br>
+                  <a href="http://freeacademy.cf/">Thi online</a><br>
+                  <a href="http://freeacademy.cf/ebook">Tài liệu</a><br>
+                  <a href="http://freeacademy.cf/newslist">Tin tức</a><br>
+                  <a href="http://freeacademy.cf/contact">Liên hệ</a>
+                </div>
               </div>
           </div>
       </div>
