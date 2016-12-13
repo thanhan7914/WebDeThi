@@ -126,9 +126,10 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  return res.end('done');
-//  let POST = req.body;
-  //return res.end(JSON.stringify(POST));
+  res.end('done');
+});
+
+router.post('/', function(req, res) {
   if(POST['hash'] !== req.session.hash)
     return res.redirect('/404');
 
