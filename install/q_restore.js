@@ -61,7 +61,7 @@ let jQuestion = function(json) {
     qInsert(datas);
 }
 
-fs.readFile(__dirname + file, 'utf8', (err, data) => {
+fs.readFile(__dirname + file, (err, data) => {
   if (err) throw err;
 
   jQuestion(data);
