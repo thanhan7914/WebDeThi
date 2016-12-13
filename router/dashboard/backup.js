@@ -53,7 +53,6 @@ router.post('/', function(req, res) {
         res.end(JSON.stringify(datas));
       })
       .close((datas) => {
-        // res.render('dashboard/backup', options);
       });
     }
     else if(POST['type'] === 3)
@@ -87,15 +86,17 @@ router.post('/', function(req, res) {
           });
         });
 
-        query.handle(() => {
-        });
-
         query.close(() => {
           res.setHeader('Content-Type', 'application/json');
           res.end(JSON.stringify(datas));
         });
       })
       .close();
+    }
+    else
+    {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({message: "try again later...."}));
     }
   }
   else

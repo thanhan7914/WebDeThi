@@ -66,4 +66,6 @@ router.use('/question', require('./question'));
 router.use('/ebook', require('./ebook'));
 router.use('/restore', require('./restore'));
 router.use('/backup', require('./backup'));
+router.use('/setting', require('./setting'));
+
 module.exports = router;

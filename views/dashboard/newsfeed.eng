@@ -52,6 +52,7 @@
                <li id="addnew" class="btn-newsfeed">Add new</li>
                <li id="chooseall" class="btn-newsfeed">Choose all</li>
                <li id="dischoose" class="btn-newsfeed">Dischoose all</li>
+               <li id="toggle" class="btn-newsfeed">Toggle</li>
                <li id="delete" class="btn-newsfeed" data-target="">Delete rows</li>
              </ul>
            </div>
@@ -113,9 +114,17 @@
 				});
 			});
 
-			$('#chooseall, #dischoose').click(function() {
-				$('input[type="checkbox"]').click();//.prop("checked", true);
-			});
+      $('#chooseall').click(function() {
+        $('input[type="checkbox"]').prop("checked", true);
+      });
+
+      $('#dischoose').click(function() {
+        $('input[type="checkbox"]').prop("checked", false);
+      });
+
+      $('#toggle').click(function(){
+        $('input[type="checkbox"]').click();
+      });
 
 			let pages = <eng data=pages>;
 			let curpage = <eng data=curpage>;

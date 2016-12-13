@@ -29,7 +29,7 @@
               <div class="form-group">
                 <h4 style="display: inline">Collection: </h4>
                 <select name="type">
-                  <!-- <option value="0">All</option> -->
+                  <option value="0">All</option>
                   <option value="1">Newsfeed</option>
                   <option value="2">Document</option>
                   <option value="3">Question</option>
@@ -39,7 +39,8 @@
                   <option value="0">json</option>
                   <option value="1">csv</option>
                 </select>
-                <input type="submit" class="btn btn-primary" value="Backup">
+                <input type="checkbox" name="open" value="0" style="margin-left: 12px;"> Show as file
+                <input type="submit" class="btn btn-primary" value="Backup" style="margin-left: 12px;">
               </div>
               <div class="form-group">
                 <label for="title">ID:</label>
@@ -79,23 +80,88 @@
       }
 
       $('form').submit(function(e) {
-        let type = $('[name="type"]').val();
-        let mtype = $('[name="mtype"]').val();
-        let pid = $('[name="pid"]').val();
+        if(!($('[name="open"]').prop('checked'))) {
+          let type = $('[name="type"]').val();
+          let mtype = $('[name="mtype"]').val();
+          let pid = $('[name="pid"]').val();
 
-        $.post('/dashboard/backup',
+          if(Number(type) === 0)
           {
-            type,
-            mtype,
-            hash,
-            pid
-          },
-          function(datas, status){
-              render(datas);
-          }
-        );
+            let ds = {};
 
-        e.preventDefault();
+            new Promise(function(r, rj) {
+              $.post('/dashboard/backup',
+                {
+                  type: 1,
+                  mtype,
+                  hash,
+                  pid
+                },
+                function(datas, status){
+                  r(datas);
+                }
+              );
+            })
+            .then(function(datas) {
+              ds.newsfeed = datas;
+
+              return new Promise(function(r, rj) {
+                $.post('/dashboard/backup',
+                  {
+                    type: 2,
+                    mtype,
+                    hash,
+                    pid
+                  },
+                  function(datas, status){
+                    r(datas);
+                  }
+                );
+              });
+            })
+            .then(function(datas) {
+              ds.ebook = datas;
+
+              return new Promise(function(r, rj) {
+                $.post('/dashboard/backup',
+                  {
+                    type: 3,
+                    mtype,
+                    hash,
+                    pid
+                  },
+                  function(datas, status){
+                    r(datas);
+                  }
+                );
+              });
+            })
+            .then(function(datas) {
+              ds.exam = datas;
+              render(ds);
+            })
+            .catch(console.log);
+          }
+          else
+          {
+            $.post('/dashboard/backup',
+              {
+                type,
+                mtype,
+                hash,
+                pid
+              },
+              function(datas, status){
+                  render(datas);
+              }
+            );
+          }
+
+          e.preventDefault();
+        }
+        else {
+          $('[name="content"]').val('');
+        }
       });
     });
   </script>

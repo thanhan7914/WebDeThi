@@ -29,11 +29,11 @@
               <div class="col-md-4 freeacademy">
                 <div class="col_bot_right">
                   <h4>FREE ACADEMY</h4>
-                  <a href="http://freeacademy.cf/">Trang chủ</a><br>
-                  <a href="http://freeacademy.cf/">Thi online</a><br>
-                  <a href="http://freeacademy.cf/ebook">Tài liệu</a><br>
-                  <a href="http://freeacademy.cf/newslist">Tin tức</a><br>
-                  <a href="http://freeacademy.cf/contact">Liên hệ</a>
+                  <a href="/">Trang chủ</a><br>
+                  <a href="/exlist">Thi online</a><br>
+                  <a href="/ebook">Tài liệu</a><br>
+                  <a href="/newslist">Tin tức</a><br>
+                  <a href="/contact">Liên hệ</a>
                 </div>
               </div>
           </div>

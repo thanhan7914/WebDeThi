@@ -3,6 +3,9 @@ const Query = require('mongo-promise');
 const ObjectID = require('mongodb').ObjectID;
 const querystring = require('querystring');
 const utils = require('../../utils');
+const multer  = require('multer');
+const upload = multer({ dest: __dirname + '/public_html/uploads/' });
+const fs = require('fs');
 
 let insert = function(datas, collection) {
   new Query(utils.config.dbname)
@@ -70,7 +73,6 @@ let qInsert = function(data) {
 
     new Query(utils.config.dbname)
     .insert(dqs, 'question')
-    .handle(console.log)
     .close();
   })
   .close();
@@ -127,15 +129,9 @@ router.get('/', function(req, res) {
   res.render('dashboard/restore', options);
 });
 
-router.post('/', function(req, res) {
-  res.end('done');
-});
-
-router.post('/', function(req, res) {
+router.post('/', upload.single('ifile'), function(req, res) {
+  let POST = req.body;
   if(POST['hash'] !== req.session.hash)
-    return res.redirect('/404');
-
-  if(!utils.hasattr(POST, ['type', 'mtype', 'content']))
     return res.redirect('/404');
 
   POST['mtype'] = Number(POST['mtype']);
@@ -143,8 +139,13 @@ router.post('/', function(req, res) {
 
   if(POST['mtype'] === 0)
   {
-    let json = POST['content'];
     try {
+      let json;
+      if(typeof req.file.path !== 'undefined')
+        json = fs.readFileSync(req.file.path, 'utf8');
+      else
+        json = POST['content'];
+
       if(POST['type'] === 1)
         jInsert(json, ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
       else if(POST['type'] === 2)
