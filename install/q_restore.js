@@ -7,8 +7,6 @@ let file = '/q_data.json';
 
 let qInsert = function(data) {
   if(typeof data !== 'object') throw Error('not object');
-  if(data.type === 1)
-    return jInsert(JSON.stringify(data), ['title', 'subject', 'level', 'year', 'type', 'datecreate', 'question_file'], 'exam');
   if(!utils.hasattr(data, ['title', 'subject', 'level', 'year', 'type', 'datecreate', 'count', 'questions'])) throw Error('not attr');
 
   if(!(data.questions instanceof Array)) throw Error('questions not array');
@@ -19,6 +17,7 @@ let qInsert = function(data) {
   query.handle((result) => {
     exid = new ObjectID(result.ops[0]._id);
     let dqs = [];
+    console.log(exid);
 
     data.questions.forEach((question, idx) => {
       if(utils.hasattr(question, ['content', 'choice', 'answer']))
@@ -61,8 +60,13 @@ let jQuestion = function(json) {
     qInsert(datas);
 }
 
-fs.readFile(__dirname + file, (err, data) => {
+fs.readFile(__dirname + file, 'utf8', (err, data) => {
   if (err) throw err;
 
-  jQuestion(data);
+  new Query(utils.config.dbname)
+  .remove({}, 'exam')
+  .remove({}, 'question')
+  .close(() => {
+      jQuestion(data);
+  });
 });
