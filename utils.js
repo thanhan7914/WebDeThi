@@ -2,6 +2,8 @@
 
 const crypto = require('crypto');
 const mongo_promise = require('mongo-promise');
+const os = require('os');
+
 let config = require('./config.json');
 let entityMap = {
     '&': '&amp;',
@@ -36,6 +38,18 @@ module.exports = {
   },
   config,
   secret: 'L1gCZwDdLET5KoJzNq7B',
+  system: {
+    nodejs: {
+      v: process.version.replace('v', ''),
+    },
+    os: {
+      type: os.type(),
+      platform: os.platform(),
+      arch: os.arch(),
+      release: os.release(),
+      cpu: os.cpus().length,
+    }
+  },
   encode: function(text, secret, code){
     if(this._.isUndefined(code)) code = 'aes256';
     if(this._.isUndefined(secret)) secret = this.secret;
