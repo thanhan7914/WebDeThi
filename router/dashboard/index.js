@@ -64,4 +64,6 @@ router.get('/', function(req, res) {
 router.use('/newsfeed', require('./newsfeed'));
 router.use('/question', require('./question'));
 router.use('/ebook', require('./ebook'));
+router.use('/restore', require('./restore'));
+router.use('/backup', require('./backup'));
 module.exports = router;
