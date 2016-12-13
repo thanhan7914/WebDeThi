@@ -129,20 +129,45 @@ ul li{
 h4{
 	line-height: 1.5;
 }
-
+.menu-full-item>h4.menu-item-title{
+	border-left: 5px solid #f8a633;
+	color: #14928e;
+}
+.menu-full-item>h4.menu-item-title>span{
+	margin-left: 3px;
+}
+.menu-full-item>.menu-item-ul>li>a{
+	color: #333;
+	text-decoration: none;
+}
 footer{
 	margin-top: 20px;
 	height: 200px;
-	background-color:#f1f1f1;
+	background-color:#08a3cc;
+	border-top: 5px solid #0964cc;
+	color: #ffffff !important;
+}
+
+.Copyright>.col_bot_left>a{
+	color: #ffffff;
+	text-decoration: none;
+}
+.freeacademy>a{
+	color: #ffffff;
+	text-decoration: none !important;
 }
 .footer{
 	margin-top: 75px;
 }
-.contact{
-	margin-left: 15px;
+.info-webpage{
+	opacity: 0.6;
+	font-weight: 300;
 }
+/*.contact{
+	margin-left: 15px;
+}*/
 .checkbox label, .radio label {
-	color: #888;
+	color: #ffffff;
 }
 .modal-header{
    	background: #14928e;
@@ -170,13 +195,13 @@ h4.title-header{
 
 	margin-top: 0;
 }
-div.col-md-4.introduction{
+/*div.col-md-4.introduction{
 	border: 1px solid #14928e;
 }
 p.introduce-content{
 	margin-left: 5px;
 	min-height: 165px;
-}
+}*/
 div.container.news-content{
 	/*margin-top: 10px;*/
 }

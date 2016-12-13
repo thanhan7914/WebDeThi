@@ -1,42 +1,43 @@
 <div class="container">
 
   <footer>
-      <div class="container">
+      <div class="container footers">
           <div class="row">
-              <div class="col-md-4">
-                  <h4 style="color: #14928e"><strong>Đăng ký nhận tài liệu miễn phí</strong></h4>
-              </div>
-              <div class="col-md-4">
-                  <form class="navbar-form navbar-left" role="email">
-                      <div class="input-group col-md-12">
-                          <input type="text" class="form-control input-lg" style="height:40px;font-size:14px;" placeholder="Email" />
-                          <span class="input-group-btn">
-                              <button class="btn btn-info btn-lg" style="height:40px;font-size:13px;" type="button">ĐĂNG KÝ
-                              </button>
-                          </span>
-                      </div>
-                  </form>
-               </div>
-          </div>
-
-          <div class="row">
-              <div class="Copyright">
-                  <div class="col-md-4">
-                      <p style="color:#14928e">&copy Copyright: FREE ACADEMY COMPANY</p>
+              <div class=" col-md-4 Copyright">
+                    <div class="col_bot_left">
+                      <h4>THÔNG TIN</h4>
+                      <p style="color:#ffffff">&copy Copyright: FREE ACADEMY COMPANY</p>
                       <a href="#">RSS</a> |
                       <a href="#">HOME</a> |
                       <a href="#">CONTACT</a>
-                  </div>
+                    </div>
+
+
               </div>
 
-              <div class="col-md-4">
-                  <div class="contact">
-                          <a href="#"><img src="/assets/images/facebook.png"></a>
-                          <a href="#"><img src="/assets/images/google-plus.png"></a>
-                          <a href="#"><img src="/assets/images/twitter.png"></a>
+              <div class="col-md-4 contacts">
+                  <div class="col-bot-mid">
+                    <h4>CONTACT</h4>
+                    <a href="#"><img src="/assets/images/facebook.png"></a>
+                    <a href="#"><img src="/assets/images/google-plus.png"></a>
+                    <a href="#"><img src="/assets/images/twitter.png"></a>
                   </div>
               </div>
+              <div class="col-md-4 freeacademy">
+                <h4>FREE ACADEMY</h4>
+                <a href="http://freeacademy.cf/">Trang chủ</a><br>
+                <a href="http://freeacademy.cf/">Thi online</a><br>
+                <a href="http://freeacademy.cf/ebook">Tài liệu</a><br>
+                <a href="http://freeacademy.cf/newslist">Tin tức</a><br>
+                <a href="http://freeacademy.cf/contact">Liên hệ</a>
+              </div>
           </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 info-webpage">
+          <h5 style="text-align:center;">CƠ QUAN CHỦ QUẢN</h5>
+          <p style="text-align:center;">Trường đại học BÁCH KHOA-Đại học ĐÀ NẴNG<br>Địa chỉ: 54 Nguyễn Lương Bằng-Quận Liên Chiểu-Thành phố Đà Nẵng</p>
+        </div>
       </div>
   </footer>
 
