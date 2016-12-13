@@ -29,7 +29,7 @@
               <div class="form-group">
                 <h4 style="display: inline">Collection: </h4>
                 <select name="type">
-                  <option value="0">All</option>
+                  <!-- <option value="0">All</option> -->
                   <option value="1">Newsfeed</option>
                   <option value="2">Document</option>
                   <option value="3">Question</option>
