@@ -4,7 +4,7 @@ const utils = require('./utils');
 
 module.exports = function(req, res) {
   let local = req.url;
-  let ip = req.connection.remoteAddress || req.headers['x-forwarded-for'];
+  let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
   new Query(utils.config.dbname)
   .remove({time: {$lt: Date.now() - 1000 * 60 * utils.config.tconline}}, 'online')
