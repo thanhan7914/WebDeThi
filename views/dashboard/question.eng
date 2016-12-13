@@ -113,12 +113,20 @@
 			});
 
       $('#chooseall').click(function() {
-        $('input[type="checkbox"]').prop("checked", true);
-      });
+				let iput = $('input[type="checkbox"]');
+				let len = iput.length;
+				for(let i = 0; i < len; i++)
+				  if(!($(iput[i]).prop("checked")))
+					  $(iput[i]).click();
+			});
 
-      $('#dischoose').click(function() {
-        $('input[type="checkbox"]').prop("checked", false);
-      });
+			$('#dischoose').click(function() {
+				let iput = $('input[type="checkbox"]');
+				let len = iput.length;
+				for(let i = 0; i < len; i++)
+				  if($(iput[i]).prop("checked"))
+					  $(iput[i]).click();
+			});
 
       $('#toggle').click(function(){
         $('input[type="checkbox"]').click();
