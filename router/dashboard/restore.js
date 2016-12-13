@@ -159,7 +159,7 @@ router.post('/', upload.single('ifile'), function(req, res) {
           jInsert(JSON.stringify(datas['newsfeed']), ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
 
         if(datas.hasOwnProperty('ebook'))
-          jInsert(JSON.stringify(datas['ebook']), ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
+          jInsert(JSON.stringify(datas['ebook']), ['datecreate', 'author', 'title', 'content', 'description', 'level', 'subject'], 'ebook');
 
         if(datas.hasOwnProperty('exam'))
           jQuestion(JSON.stringify(datas['exam']));
