@@ -66,6 +66,7 @@ fs.readFile(__dirname + file, 'utf8', (err, data) => {
   new Query(utils.config.dbname)
   .remove({}, 'exam')
   .remove({}, 'question')
+  .except(console.log)
   .close(() => {
       jQuestion(data);
   });

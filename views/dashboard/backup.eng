@@ -55,12 +55,23 @@
 
        </div>
 		</div><!--/.row-->
-	</div>	<!--/.main-->
+	</div><!--/.main-->
 
 	<script src="/assets/js/libs/jquery.min.js"></script>
 	<script src="/assets/js/libs/bootstrap.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
+      let url = location.href;
+      if(url.endsWith('/')) url = url.substring(0, url.length - 1);
+      let local = url.substring(url.lastIndexOf('/') + 1).toLowerCase();
+      ['dashboard', 'newsfeed', 'question', 'ebook', 'backup', 'restore'].forEach((elem, idx) => {
+        if(local.startsWith(elem))
+        {
+          $('.nav.menu').find('li').removeClass('active');
+          $('.nav.menu').find('li').eq(idx).addClass('active');
+        }
+      });
+
       const hash = '<eng data=hash>';
 
       let render = function(datas) {

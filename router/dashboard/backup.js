@@ -76,7 +76,7 @@ router.post('/', function(req, res) {
 
             docs.forEach((doc) => {
               let q = {};
-              utils.clonewithout(doc, q, ['_id']);
+              utils.clonewithout(doc, q, ['_id', 'exam_id']);
               dqs.push(q);
             });
 
