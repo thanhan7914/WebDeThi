@@ -2,41 +2,15 @@
 
   <footer>
       <div class="container">
-          <!-- <div class="row">
-              <div class="col-md-4">
-                  <h4 style="color: #14928e"><strong>Đăng ký nhận tài liệu miễn phí</strong></h4>
-              </div>
-              <div class="col-md-4">
-                  <form class="navbar-form navbar-left" role="email">
-                      <div class="input-group col-md-12">
-                          <input type="text" class="form-control input-lg" style="height:40px;font-size:14px;" placeholder="Email" />
-                          <span class="input-group-btn">
-                              <button class="btn btn-info btn-lg" style="height:40px;font-size:13px;" type="button">ĐĂNG KÝ
-                              </button>
-                          </span>
-                      </div>
-                  </form>
-               </div>
-          </div> -->
-
-          <div class="row">
-              <div class="Copyright">
-                  <div class="col-md-4">
-                      <p style="color:#14928e">&copy Copyright: FREE ACADEMY COMPANY</p>
-                      <a href="#">RSS</a> |
-                      <a href="/">HOME</a> |
-                      <a href="/contact">CONTACT</a>
-                  </div>
-      <div class="container footers">
           <div class="row">
               <div class=" col-md-4 Copyright">
-                    <div class="col_bot_left">
-                      <h4>THÔNG TIN</h4>
-                      <p style="color:#ffffff">&copy Copyright: FREE ACADEMY COMPANY</p>
-                      <a href="#">RSS</a> |
-                      <a href="#">HOME</a> |
-                      <a href="#">CONTACT</a>
-                    </div>
+                  <div class="col_bot_left">
+                    <h4>THÔNG TIN</h4>
+                    <p style="color:#ffffff">&copy Copyright: FREE ACADEMY COMPANY</p>
+                    <a href="#">RSS</a> |
+                    <a href="#">HOME</a> |
+                    <a href="#">CONTACT</a>
+                  </div>
               </div>
 
               <div class="col-md-4 contacts">
@@ -47,6 +21,7 @@
                     <a href="#"><img src="/assets/images/twitter.png"></a>
                   </div>
               </div>
+
               <div class="col-md-4 freeacademy">
                 <div class="col_bot_right">
                   <h4>FREE ACADEMY</h4>
@@ -58,7 +33,6 @@
                 </div>
               </div>
           </div>
-      </div>
       <div class="row">
         <div class="col-md-12 info-webpage">
           <h5 style="text-align:center;">CƠ QUAN CHỦ QUẢN</h5>
