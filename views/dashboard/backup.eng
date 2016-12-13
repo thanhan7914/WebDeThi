@@ -41,6 +41,10 @@
                 </select>
                 <input type="submit" class="btn btn-primary" value="Backup">
               </div>
+              <div class="form-group">
+                <label for="title">ID:</label>
+                <input type="text" class="form-control" id="pid" name="pid" value="" placeholder="blank">
+              </div>
               <div id="file"></div>
               <div class="form-group">
                 <label for="fd_content">Result:</label>
@@ -60,19 +64,20 @@
       const hash = '<eng data=hash>';
 
       let render = function(datas) {
-        console.log(datas);
         $('#fd_content').val(JSON.stringify(datas));
       }
 
       $('form').submit(function(e) {
         let type = $('[name="type"]').val();
         let mtype = $('[name="mtype"]').val();
+        let pid = $('[name="pid"]').val();
 
         $.post('/dashboard/backup',
           {
             type,
             mtype,
-            hash
+            hash,
+            pid
           },
           function(datas, status){
               render(datas);

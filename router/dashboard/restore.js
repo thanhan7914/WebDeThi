@@ -141,22 +141,22 @@ router.post('/', function(req, res) {
     let json = POST['content'];
     try {
       if(POST['type'] === 1)
-      jInsert(json, ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
+        jInsert(json, ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
       else if(POST['type'] === 2)
-      jInsert(json, ['datecreate', 'author', 'title', 'content', 'description', 'level', 'subject'], 'ebook');
+        jInsert(json, ['datecreate', 'author', 'title', 'content', 'description', 'level', 'subject'], 'ebook');
       else if(POST['type'] === 3)
-      jQuestion(json);
+        jQuestion(json);
       else if(POST['type'] === 0)
       {
         let datas = JSON.parse(json);
         if(datas.hasOwnProperty('newsfeed'))
-        jInsert(JSON.stringify(datas['newsfeed']), ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
+          jInsert(JSON.stringify(datas['newsfeed']), ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
 
         if(datas.hasOwnProperty('ebook'))
-        jInsert(JSON.stringify(datas['ebook']), ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
+          jInsert(JSON.stringify(datas['ebook']), ['datecreate', 'author', 'title', 'content', 'description'], 'newsfeed');
 
         if(datas.hasOwnProperty('exam'))
-        jQuestion(JSON.stringify(datas['exam']));
+          jQuestion(JSON.stringify(datas['exam']));
       }
     }
     catch(e)

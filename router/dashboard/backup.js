@@ -25,6 +25,11 @@ router.post('/', function(req, res) {
     username: req.session.user.username,
     hash: req.session.hash
   };
+  let filter = {};
+  if(typeof POST['pid'] !== 'undefined')
+    try {
+      filter = {_id: new ObjectID(POST['pid'])};
+    }catch(e){}
 
   if(POST['mtype'] === 0)
   {
@@ -34,7 +39,7 @@ router.post('/', function(req, res) {
       if(POST['type'] == 2) collection = 'ebook';
 
       return new Query(utils.config.dbname)
-      .find({}, collection)
+      .find(filter, collection)
       .handle((rows) => {
         let datas = [];
 
@@ -56,7 +61,7 @@ router.post('/', function(req, res) {
       let collection = 'exam';
 
       return new Query(utils.config.dbname)
-      .find({}, collection)
+      .find(filter, collection)
       .handle((rows) => {
         let datas = [];
         let query = new Query(utils.config.dbname);
