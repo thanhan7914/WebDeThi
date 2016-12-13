@@ -34,6 +34,10 @@ app.use(function(err, req, res, next) {
 
 app.use(require('./router'));
 app.use('/dashboard', require('./router/dashboard'));
+app.use('/403', function(req, res) {
+  res.status(403);
+  res.render('error/403');
+});
 
 app.use(function(req, res, next) {
   res.status(404);

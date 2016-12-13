@@ -5,7 +5,7 @@ const utils = require('../../utils');
 router.use(function(req, res, next) {
   if(typeof req.session === 'undefined'
       || !req.session.hasOwnProperty('user') || !req.session.hasOwnProperty('hash'))
-    return res.redirect('/');
+    return res.redirect('/403');
 
   next();
 });
@@ -66,6 +66,6 @@ router.use('/question', require('./question'));
 router.use('/ebook', require('./ebook'));
 router.use('/restore', require('./restore'));
 router.use('/backup', require('./backup'));
-router.use('/setting', require('./setting'));
+router.use(require('./setting'));
 
 module.exports = router;

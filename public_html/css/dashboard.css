@@ -956,3 +956,8 @@ h1.page-header {
 span[data] {
 	color: blue;
 }
+
+.ff {
+	margin: 4px 8px;
+	padding: 4px 6px;
+}

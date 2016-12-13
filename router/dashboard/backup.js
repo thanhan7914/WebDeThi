@@ -4,6 +4,12 @@ const ObjectID = require('mongodb').ObjectID;
 const querystring = require('querystring');
 const utils = require('../../utils');
 
+router.use(function(req, res, next) {
+  if(req.session.user.level > 0)
+    return res.redirect('/403');
+  next();
+});
+
 router.get('/', function(req, res) {
   res.render('dashboard/backup', {
     username: req.session.user.username,

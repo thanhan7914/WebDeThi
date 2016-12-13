@@ -1,10 +1,125 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>change</title>
-  </head>
-  <body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Academy - Dashboard</title>
 
-  </body>
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/css/dashboard.css" rel="stylesheet">
+<link href="/assets/css/newsfeed.css" rel="stylesheet">
+
+<script src="/assets/js/libs/lumino.glyphs.js"></script>
+</head>
+<body>
+   <include filename=dashboard/include/header>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Setting</h1>
+			</div>
+		</div><!--/.row-->
+
+		<div class="row">
+        <!-- hien thi tin tuc-->
+        <div class="col-md-6">
+          <div class="panel panel-default" style="padding: 12px 14px; font-family: monospace;">
+            <h3>Display</h3>
+            <div class="pad-12">
+              <form action="/dashboard/setting" method="post">
+                <input type="hidden" name="hash" value="<eng data=hash>">
+                <div class="ff">
+                  Newsfeed: <input type="text" size="3" name="d_newsfeed" value="<eng data=d_newsfeed default='5'>"> - <input type="text" size="3" name="newsfeed" value="<eng data=newsfeed default='5'>"> index
+                </div>
+                <div class="ff">
+                  Document: <input type="text" size="3" name="d_ebook" value="<eng data=d_ebook default='5'>"> - <input type="text" size="3" name="ebook" value="<eng data=ebook default='5'>"> index
+                </div>
+                <div class="ff">
+                  Question: <input type="text" size="3" name="d_exam" value="<eng data=d_exam default='5'>"> - <input type="text" size="3" name="exam" value="<eng data=exam default='5'>"> index
+                </div>
+                <div class="ff">
+                  Time check online: <input type="text" size="3" name="tconline" value="<eng data=tconline default='5'>"> minute(s).
+                </div>
+                <div class="ff">
+                  <input type="submit" name="ok" value="Update">
+                </div>
+              </form>
+              <h3>Create User</h3>
+              <form action="createuser" method="post">
+                <div class="pad-12">
+                  <input type="hidden" name="hash" value="<eng data=hash>">
+                  <div class="ff">
+                    Username: <input type="text" name="username" value="" placeholder="username">
+                  </div>
+                  <div class="ff">
+                    Password:
+                    <input type="password" name="pass" value="" placeholder="password">
+                    <input type="password" name="rpass" value="" placeholder="repeat password">
+                  </div>
+                  <div class="ff">
+                    Privilege: <select name="level">
+                      <option value="1">Editable</option>
+                      <option value="0">Master</option>
+                    </select>
+                  </div>
+                  <div class="ff">
+                    <input type="submit" name="ok" value="Create User">
+                  </div>
+                </div>
+            </form>
+            <h3>Change Pass</h3>
+            <form action="changepass" method="post">
+              <div class="pad-12">
+                <input type="hidden" name="hash" value="<eng data=hash>">
+                <div class="ff">
+                  Password:
+                  <input type="password" name="opass" value="" placeholder="old password">
+                </div>
+                <div class="ff">
+                  New Password: <br>
+                  <input type="password" name="pass" value="" placeholder="new password">
+                  <input type="password" name="rpass" value="" placeholder="repeat password">
+                </div>
+                <div class="ff">
+                  <input type="submit" name="ok" value="Change">
+                </div>
+              </div>
+          </form>
+          </div>
+       </div>
+		</div><!--/.row-->
+    <div class="col-md-6">
+      <div class="panel panel-primary" style="font-family: monospace;">
+        <div class="panel-heading">Users</div>
+        <div class="panel-body" style="padding: 12px; 14px;">
+          <ul id="users"></ul>
+        </div>
+      </div>
+    </div>
+	</div>	<!--/.main-->
+
+	<script src="/assets/js/libs/jquery.min.js"></script>
+	<script src="/assets/js/libs/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		(function() {
+			let url = location.href;
+			if(url.endsWith('/')) url = url.substring(0, url.length - 1);
+			let local = url.substring(url.lastIndexOf('/') + 1).toLowerCase();
+			['dashboard', 'newsfeed', 'question', 'ebook', 'backup', 'restore', 'setting'].forEach((elem, idx) => {
+				if(local.startsWith(elem))
+				{
+					$('.nav.menu').find('li').removeClass('active');
+					$('.nav.menu').find('li').eq(idx).addClass('active');
+				}
+			});
+
+      let users = JSON.parse(`<eng data=users default='{}'>`);
+      let hash = '<eng data=hash>';
+      let c = $('#users');
+      users.forEach((user) => {
+        c.append(`<li>${user.username} - ${user.level === 0? 'Master':'Editable'} [<a href="removeuser?hash=${hash}&user=${user._id}">remove</a>]</li>`);
+      });
+		})();
+	</script>
+</body>
 </html>

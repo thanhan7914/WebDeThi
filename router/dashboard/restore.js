@@ -101,6 +101,12 @@ let jQuestion = function(json) {
     qInsert(datas);
 }
 
+router.use(function(req, res, next) {
+  if(req.session.user.level > 0)
+    return res.redirect('/403');
+  next();
+});
+
 router.get('/', function(req, res) {
   let options = {
     username: req.session.user.username,
