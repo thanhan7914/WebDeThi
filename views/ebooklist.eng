@@ -16,7 +16,7 @@
     <include filename=include/nav>
 
     <div class="container">
-      <div class="col-md-7">
+      <div class="col-md-7 ebook-box">
         <div id="shwn">
         </div>
         <!-- pagination -->
@@ -65,9 +65,26 @@
           var href = '/ebook/' + obj.title.toUrl() + '.' + obj._id;
 
           container.append(`
-            <div class="frm">
-              <a href="${href}" target="_self"><p>${obj.title}</p></a>
-              <p><small>${new Date(obj.datecreate).toString()}</small></p>
+
+            <div class="row frm">
+              <div class="col-md-3 left-box">
+                <figure>
+                  <img class="img-responsive" src="assets/images/pdf.png">
+                </figure>
+              </div>
+              <div class="col-md-9 right-box">
+                <div class="box-ebooks">
+                  <div class="box-ebooks-title">
+                    <h4><a href="${href}" target="_self"><h4 >${obj.title}</h4></a></h4>
+                  </div>
+                  <div class="box-ebooks-body">
+                    <label>Định dạng file:<span style="color:#db0807;"> PDF</span></label>
+                  </div>
+                  <div class="box-ebooks-footer">
+                    <p>Ngày đăng: <small>${new Date(obj.datecreate).toString()}</small></p>
+                  </div>
+                </div>
+              </div>
             </div>
             `);
         }
