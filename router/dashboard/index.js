@@ -27,6 +27,19 @@ router.get('/', function(req, res) {
   .handle((c) => {
     options.count_ebook = c;
   })
+  .find({}, 'counter')
+  .handle((rows) => {
+    let counter = 0;
+    rows.forEach((row) => {
+      counter += row.count;
+    });
+
+    options.counter = counter;
+  })
+  .find({}, 'online')
+  .handle((rows) => {
+    options.online = JSON.stringify(rows);
+  })
   .close(() => {
     res.render('dashboard/index', options);
   }, (error) => {

@@ -934,3 +934,9 @@ h1.page-header {
   border-bottom: 1px solid #eee;
   margin-bottom: 20px;
 }
+
+.panel-dashboard {
+	min-height: 360px;
+	margin: auto 5px;
+	padding: 4px 8px;
+}

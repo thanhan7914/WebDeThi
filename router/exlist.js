@@ -21,6 +21,7 @@ router.get('/exlist', function(req, res) {
     if(level !== NaN) filter.level = level;
     if(subject !== NaN) filter.subject = subject;
     if(year !== NaN) filter.year = year;
+    if(typeof GET['q'] !== 'undefined') filter.title = GET['q'];
 
     options.call = `search(JSON.parse(\`${JSON.stringify(filter)}\`), 0);`;
   }
@@ -42,6 +43,9 @@ router.post('/exlist', function(req, res) {
     utils.clonewith(POST['filter'], filter, ['subject', 'level', 'year']);
     for(let i in filter)
       if(filter.hasOwnProperty(i)) filter[i] = Number(filter[i]);
+
+    if(typeof POST['filter']['title'] !== 'undefined')
+      filter.title = utils.like(POST['filter']['title']);
   }
 
   if(typeof POST['page'] !== 'undefined')
@@ -74,6 +78,10 @@ router.post('/exlist', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({error}));
   });
+});
+
+router.post('/search', function(req, res) {
+  res.redirect('/exlist?q=' + req.body['q']);
 });
 
 

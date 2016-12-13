@@ -126,7 +126,7 @@ module.exports = {
 
     return un;
   },
-  toUrl: function change_alias(str) {
+  vi2en: function(str) {
     str= str.toLowerCase();
     str= str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
     str= str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
@@ -135,11 +135,28 @@ module.exports = {
     str= str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
     str= str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
     str= str.replace(/đ/g,"d");
+    return str;
+  },
+  toUrl: function change_alias(str) {
+    str = this.vi2en(str);
     str= str.replace(/“|”|!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g,"-");
     str= str.replace(/-+-/g,"-"); //thay thế 2- thành 1-
     str= str.replace(/^\-+|\-+$/g,"");
 
     return str;
+  },
+  like: function(str) {
+    str= this.toUrl(str);
+    str= str.replace(/a/g, '(a|à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)');
+    str= str.replace(/e/g, '(e|è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)');
+    str= str.replace(/i/g, '(i|ì|í|ị|ỉ|ĩ)');
+    str= str.replace(/o/g, '(o|ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)');
+    str= str.replace(/u/g, '(u|ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)');
+    str= str.replace(/y/g, '(y|ỳ|ý|ỵ|ỷ|ỹ)');
+    str= str.replace(/d/g, '(d|đ)');
+    str= str.replace(/-/g, '(.+)');
+
+    return new RegExp(str, "gi");
   },
   escapeHtml: function(a, c) {
     if(!(c instanceof Array)) c = [];
@@ -153,5 +170,9 @@ module.exports = {
       hex += par[Math.floor(Math.random() * 16)];
 
     return hex;
+  },
+  time: function() {
+    let date = new Date();
+    return (new Date(`${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`)).getTime();
   }
 };

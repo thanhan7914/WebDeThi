@@ -21,6 +21,12 @@ app.engine(engine.ext, engine.__engine__);
 app.set('views', __dirname + '/views');
 app.set('view engine', engine.ext);
 
+const counter = require('./counter');
+
+app.use(function(req, res, next) {
+  counter(req, res);
+  next();
+});
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error/500');

@@ -74,13 +74,31 @@
 							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">25.2k</div>
+							<div class="large"><eng data=counter></div>
 							<div class="text-muted">Page Views</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div><!--/.row-->
+
+		<div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="panel panel-default panel-dashboard">
+            <h1>Online:</h1>
+            <ul id="online"></ul>
+          </div>
+        </div>
+     </div>
+     <div class="col-md-6">
+       <div class="row">
+         <div class="panel panel-default panel-dashboard">
+//vler
+         </div>
+       </div>
+    </div>
+    </div>
 	</div>	<!--/.main-->
 
 	<script src="/assets/js/libs/jquery.min.js"></script>
@@ -97,6 +115,14 @@
 					$('.nav.menu').find('li').eq(idx).addClass('active');
 				}
 			});
+
+      let ocontainer = $('#online');
+      let online = JSON.parse(`<eng data=online default='[]'>`);
+      online.forEach((elem, idx) => {
+        let ip = String(elem.ip).match(/[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}/)[0];
+
+        ocontainer.append(`<li><a target="_blank" href="http://www.geoip.co.uk/ipwhois.php?ip=${ip}">${ip}</a> - <a href="${elem.local}" target="_blank">${elem.local}</a></li>`);
+      });
 		})();
 	</script>
 </body>

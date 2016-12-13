@@ -1,7 +1,7 @@
 <div class="container menu-nav">
   <ul class="topnav" id="myTopnav">
     <li><a href="/">Trang chủ</a></li>
-    <li><a href="#">Thi online</a></li>
+    <li><a href="/exlist">Thi online</a></li>
     <li><a href="/ebook">Tài liệu</a></li>
     <li><a href="/newslist">Tin tức</a></li>
     <li><a href="/contact">Liên hệ</a></li>
