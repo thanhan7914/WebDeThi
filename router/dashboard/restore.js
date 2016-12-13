@@ -50,9 +50,11 @@ let qInsert = function(data) {
   if(!(data.questions instanceof Array)) throw Error('questions not array');
 
   let exid;
-  let query = new Query(utils.config.dbname);
-  query.insert(data, 'exam');
-  query.handle((result) => {
+  let g = {};
+  utils.clonewithout(data, g, ['questions']);
+  return new Query(utils.config.dbname)
+  .insert(g, 'exam')
+  .handle((result) => {
     exid = new ObjectID(result.ops[0]._id);
     let dqs = [];
 
@@ -68,10 +70,10 @@ let qInsert = function(data) {
 
     new Query(utils.config.dbname)
     .insert(dqs, 'question')
+    .handle(console.log)
     .close();
-  });
-
-  return query.close();
+  })
+  .close();
 }
 
 let jQuestion = function(json) {

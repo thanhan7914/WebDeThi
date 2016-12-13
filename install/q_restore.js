@@ -1,4 +1,5 @@
 const Query = require('mongo-promise');
+const ObjectID = require('mongodb').ObjectID;
 const utils = require('../utils');
 const fs = require('fs');
 const datas = require('./q_data.json');
@@ -14,9 +15,11 @@ let qInsert = function(data) {
   if(!(data.questions instanceof Array)) throw Error('questions not array');
 
   let exid;
-  let query = new Query(utils.config.dbname);
-  query.insert(data, 'exam');
-  query.handle((result) => {
+  let g = {};
+  utils.clonewithout(data, g, ['questions']);
+  return new Query(utils.config.dbname)
+  .insert(g, 'exam')
+  .handle((result) => {
     exid = new ObjectID(result.ops[0]._id);
     let dqs = [];
 
@@ -32,14 +35,13 @@ let qInsert = function(data) {
 
     new Query(utils.config.dbname)
     .insert(dqs, 'question')
+    .handle(console.log)
     .close();
-  });
-
-  return query.close();
+  })
+  .close();
 }
 
 let jQuestion = function(datas) {
-//  let datas = JSON.parse(json);
 
   if(datas instanceof Array)
   {
@@ -61,4 +63,11 @@ let jQuestion = function(datas) {
     qInsert(datas);
 }
 
-jQuestion(datas);
+new Query(utils.config.dbname)
+.remove({}, 'exam')
+.remove({}, 'question')
+.handle(() => {
+  jQuestion(datas);
+})
+.except(console.log)
+.close();
