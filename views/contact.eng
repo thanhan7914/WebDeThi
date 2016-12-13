@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
     <include filename=include/header>
@@ -112,13 +113,13 @@
               <td>4</td>
               <td>Trương Trường Đạt</td>
               <td>13T3</td>
-              <td>102130103</td>
+              <td>102130102</td>
             </tr>
             <tr>
               <td>5</td>
-              <td>Nguyễn Thanh Hảo</td>
+              <td>Lê Thanh Hảo</td>
               <td>13T3</td>
-              <td>102130085</td>
+              <td>102130226</td>
             </tr>
           </table>
 

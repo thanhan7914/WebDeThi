@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
   </head>
@@ -16,7 +16,7 @@
     <include filename=include/header>
     <include filename=include/nav>
 
-    <div class="container">
+    <div class="container confirm-box">
       <div class="sp-confirm-header">
         <h4 class="sp-confirm-title" style="text-align:center;"><eng data=hedtit></h4>
       </div>

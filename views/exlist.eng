@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>a, a:hover, a:active, a:focus {text-decoration: none;}</style>
   </head>
