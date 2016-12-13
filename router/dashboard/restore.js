@@ -54,17 +54,21 @@ let qInsert = function(data) {
   query.insert(data, 'exam');
   db.handle((result) => {
     exid = new ObjectID(result.ops[0]._id);
-  });
+    let dqs = [];
 
-  data.questions.forEach((question, idx) => {
-    if(utils.hasattr(question, ['content', 'choice', 'answer']))
-    {
-      let f = {};
-      utils.clonewithout(question, f, ['_id']);
-      query.insert(f, 'question', function(r, fd) {
-        fd.exam_id = exid;
-      });
-    }
+    data.questions.forEach((question, idx) => {
+      if(utils.hasattr(question, ['content', 'choice', 'answer']))
+      {
+        let f = {};
+        utils.clonewithout(question, f, ['_id']);
+        f.exam_id = exid;
+        dqs.push(f);
+      }
+    });
+
+    new Query(utils.config.dbname)
+    .insert(dqs, 'question')
+    .close();
   });
 
   return query.close();
