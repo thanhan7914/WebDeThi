@@ -83,18 +83,48 @@
 		</div><!--/.row-->
 
 		<div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="row">
           <div class="panel panel-default panel-dashboard">
-            <h1>Online:</h1>
+            <h2>Online:</h2>
             <ul id="online"></ul>
           </div>
         </div>
      </div>
-     <div class="col-md-6">
+     <div class="col-md-8">
        <div class="row">
          <div class="panel panel-default panel-dashboard">
-//vler
+           <h2>Information:</h2>
+           <div id="info" class="panel-information">
+             <div class="system pad-12">
+               <p>Nodejs version: <span data="nodev">6.4.4</span></p>
+               <h3>OS</h3>
+               <div class="pad-12">
+                 Type: <span data="type"></span>,
+                 Platform: <span data="platform"></span>,
+                 Architecture: <span data="arch"></span>,
+                 Cores: <span data="cpu"></span>,
+                 Release: <span data="release"></span>
+               </div>
+             </div>
+             <div class="pad-12">
+               <h3>Show at most</h3>
+               <div class="pad-12">
+                 <h4>dashboard</h4>
+                 <div class="pad-12">
+                   <span data="dnewsfeed"></span> newsfeed,
+                   <span data="dexam"></span> question,
+                   <span data="debook"></span> documents
+                 </div>
+                 <h4>index</h4>
+                 <div class="pad-12">
+                   <span data="newsfeed"></span> newsfeed,
+                   <span data="exam"></span> question,
+                   <span data="ebook"></span> documents
+                 </div>
+               </div>
+             </div>
+           </div>
          </div>
        </div>
     </div>
@@ -121,8 +151,21 @@
       online.forEach((elem, idx) => {
         let ip = String(elem.ip).match(/[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}\.[0-9]{1,4}/)[0];
 
-        ocontainer.append(`<li><a target="_blank" href="http://www.geoip.co.uk/ipwhois.php?ip=${ip}">${ip}</a> - <a href="${elem.local}" target="_blank">${elem.local}</a></li>`);
+        ocontainer.append(`<li>${elem.username} - <a target="_blank" href="http://www.infobyip.com/ip-${ip}.html">${ip}</a> - <a href="${elem.local}" target="_blank">${elem.local}</a></li>`);
       });
+      ocontainer.prev().text('Online (' + online.length + '):');
+
+      let system = JSON.parse(`<eng data=system default='{}'>`);
+      $('span[data="nodev"]').text(system.nodejs.v);
+      for(let obj in system.os)
+        $('span[data="' + obj + '"]').text(system.os[obj]);
+
+      let config = JSON.parse(`<eng data=config default='{}'>`);
+
+      for(let obj in config.dashboard)
+        $('span[data="d' + obj + '"]').text(config.dashboard[obj]);
+      for(let obj in config.show)
+        $('span[data="' + obj + '"]').text(config.show[obj]);
 		})();
 	</script>
 </body>

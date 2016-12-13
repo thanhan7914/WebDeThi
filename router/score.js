@@ -8,7 +8,8 @@ let check = function(answers, q_id, ans) {
 
   for(let i = 0; i < len; i++)
     if(String(answers[i].id) === String(q_id))
-      if(Number(answers[i].answer) === Number(ans))
+      if(Number(answers[i].answer) !== NaN
+         && Number(answers[i].answer) === Number(ans))
         return true;
       else return false;
 
@@ -41,7 +42,7 @@ router.post('/', function(req, res) {
       chk.push(check(answers, docs[i]._id, docs[i].answer));
 
     let chtr = chk.filter(i => i).length;
-    options.score = ((chtr / chk.length) * 100).toFixed(2);
+    options.score = ((chtr / len) * 10).toFixed(2);
     options.nright = chtr;
     options.count = len;
   })
