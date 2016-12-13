@@ -42,17 +42,17 @@ let jInsert = function(json, attr, collection) {
 }
 
 let qInsert = function(data) {
-  if(typeof datas !== 'object') throw Error('not object');
+  if(typeof data !== 'object') throw Error('not object');
   if(data.type === 1)
     return jInsert(JSON.stringify(data), ['title', 'subject', 'level', 'year', 'type', 'datecreate', 'question_file'], 'exam');
-  if(!utils.hasattr(datas, ['title', 'subject', 'level', 'year', 'type', 'datecreate', 'count', 'questions'])) throw Error('not attr');
+  if(!utils.hasattr(data, ['title', 'subject', 'level', 'year', 'type', 'datecreate', 'count', 'questions'])) throw Error('not attr');
 
   if(!(data.questions instanceof Array)) throw Error('questions not array');
 
   let exid;
   let query = new Query(utils.config.dbname);
   query.insert(data, 'exam');
-  db.handle((result) => {
+  query.handle((result) => {
     exid = new ObjectID(result.ops[0]._id);
     let dqs = [];
 
